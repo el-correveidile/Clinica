@@ -350,8 +350,8 @@ La película plantea además preguntas éticas que no tienen respuesta fácil. �
       "¿Conoces canciones de otro país o idioma que te emocionen especialmente? ¿Por qué crees que ocurre eso?",
     ],
     referencias: [
-      { titulo: "Hable con ella — ficha completa", fuente: "FilmAffinity", url: "https://www.filmaffinity.com/es/film430689.html" },
-      { titulo: "«Cucurrucucú paloma» — letra y contexto", fuente: "Cervantes Virtual", url: "https://www.cervantesvirtual.com" },
+      { titulo: "Hable con ella — ficha completa", fuente: "FilmAffinity", url: "https://www.filmaffinity.com/es/film780724.html" },
+      { titulo: "«Cucurrucucú paloma» — letra y contexto", fuente: "Cancioneros.com", url: "https://www.cancioneros.com/nc/18816/0/cucurrucucu-paloma-tomas-mendez" },
     ],
     tarea: "Elige una de estas dos opciones. Opción A (más literaria): Almodóvar escribió un texto evocador sobre la primera escena de la película (Benigno y Marco en el teatro de Pina Bausch). Continúa ese texto añadiendo tres o cuatro líneas en el mismo estilo: impresionista, sensorial, sin explicar demasiado. Opción B (más periodística): Imagina que eres periodista y acabas de ver Hable con ella. Escribe el párrafo introductorio de una entrevista con Almodóvar: preséntalo, sitúa el contexto del Óscar y anticipa el tema central de tu conversación. En ambos casos, entre 200 y 250 palabras.",
   },
