@@ -323,39 +323,37 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
   },
   {
     n: 10,
-    titulo: "Almodóvar y la imagen de España",
-    obra: "Pedro Almodóvar · 1980–",
-    nudo: "¿Quién define la imagen de un país?",
-    lectura: `Cuando alguien que no ha estado nunca en España imagina el país, ¿qué ve? Quizá toros, sol, flamenco y siesta. O quizá, si ha visto cine, mujeres fuertes al borde de un ataque de nervios, colores saturados, pasiones desbordadas y humor irreverente: el mundo de Pedro Almodóvar. Para buena parte del público extranjero, Almodóvar es España, igual que para otros lo es una bailaora de lunares. ¿Cómo se construye esa imagen y quién decide cuál se impone?
+    titulo: "«Hable con ella» de Almodóvar",
+    obra: "Pedro Almodóvar · España, 2001",
+    nudo: "¿Puede el cine hablar donde las palabras fallan?",
+    lectura: `El telón de rosas color salmón se abre para mostrar un espectáculo de la coreógrafa alemana Pina Bausch: Café Müller. Entre el público, dos hombres sentados por casualidad uno al lado del otro observan la escena en silencio. Uno, Benigno, es un joven enfermero. El otro, Marco, es un escritor de cuarenta y pocos años. Los dos lloran. No se conocen. Así empieza Hable con ella (2001), el largometraje con el que Pedro Almodóvar ganó el Óscar al mejor guión original en 2003 —la primera vez que un director español lograba ese reconocimiento—, y con el que estuvo nominado también al mejor director.
 
-Almodóvar nació y creció en una España rural, gris y católica, bajo la dictadura de Franco. Cuando esta terminó, en los años de la «movida madrileña», su cine estalló como una reacción contra aquella sobriedad: color, libertad sexual, modernidad, exceso. Curiosamente, ese estilo provocó rechazo en España y entusiasmo fuera. Con Mujeres al borde de un ataque de nervios (1988) llegó el reconocimiento internacional, y poco a poco Almodóvar se convirtió en uno de los embajadores culturales del país, en lo que algunos llaman «la marca España».
+La película narra la historia de estos dos hombres y las dos mujeres a las que cuidan: Alicia, una estudiante de ballet que yace en coma en la clínica donde Benigno trabaja; y Lydia, una torera que también ha quedado inconsciente tras una cogida en la plaza. Entre las cuatro historias, Almodóvar construye una meditación sobre la soledad, la amistad y la incomunicación, donde los monólogos ante alguien que no puede responder se convierten, paradójicamente, en la forma más íntima de diálogo.
 
-Lo interesante es que su relación con esa imagen es ambigua. Por un lado, usa elementos muy españoles —el folclore, lo castizo, el melodrama, la religión—, pero los reescribe con ironía, los lleva al kitsch, los pone patas arriba. No repite el cliché: juega con él, lo transforma. Por otro, al hacerlo, crea una nueva imagen de España que también acaba volviéndose tópico: ahora «lo español» puede ser tanto el tricornio como el universo almodovariano.
+El propio director ha escrito sobre su película con una lucidez poco común: «Hable con ella es una historia sobre la amistad de dos hombres, sobre la soledad, y la larga convalecencia de las heridas provocadas por la pasión. Es también una película sobre la incomunicación de las parejas, y sobre la comunicación. Sobre el cine como tema de conversación. Sobre cómo los monólogos ante una persona silente pueden ser una forma eficaz de diálogo. Del silencio como elocuencia del cuerpo, del cine como vehículo ideal en las relaciones de las personas, de cómo el cine contado en palabras detiene el tiempo y se instala en las vidas de quien lo cuenta y del que lo escucha.»
 
-Esto plantea la pregunta de la sesión. La imagen que el mundo tiene de un país no es neutral ni casual: la construyen las películas, la música, la publicidad turística, los gobiernos con sus campañas. Existe incluso una expresión, «marca país», para ese esfuerzo deliberado por vender una determinada idea de una nación. Pero ¿quién controla ese relato? ¿El Estado, que querría una imagen amable y vendible? ¿Los artistas, que muchas veces muestran lo incómodo? ¿Los propios extranjeros, que eligen qué quieren ver?
+En el centro emocional de la película está la canción «Cucurrucucú paloma», del mexicano Tomás Méndez, interpretada por el cantante brasileño Caetano Veloso en una escena que muchos consideran una de las más hermosas del cine español reciente. La elección no es casual: Almodóvar trabaja siempre con la música como si fuera otro personaje, capaz de decir lo que los actores no pueden articular. Una canción de desamor mexicana, cantada por una voz brasileña, en una película española: ese cruce de tradiciones resume mucho del universo almodovariano.
 
-El caso de Almodóvar muestra la tensión. A veces ha reforzado clichés; a veces los ha desmontado; a veces ha enfadado a quienes querían una España más «decente» de cara al exterior. Y, sin embargo, ha llevado el español y la cultura española a los grandes festivales del mundo sin renunciar a su idioma ni a su mirada.
-
-Quizá la lección sea que la imagen de un país nunca la define una sola voz. Es siempre una batalla entre relatos: el oficial y el incómodo, el turístico y el artístico, el de dentro y el de fuera. Cada película, cada canción, cada anuncio añade un trazo a un retrato que nunca se termina del todo y en el que rara vez estamos todos de acuerdo.`,
-    lexico: ["el embajador cultural", "la marca país", "castizo", "el kitsch", "el melodrama", "el folclore", "irreverente", "el cliché", "reescribir", "ambiguo", "el relato", "desbordado"],
+La película plantea además preguntas éticas que no tienen respuesta fácil. ¿Tiene derecho alguien a cuidar a quien no puede decidir sobre ese cuidado? ¿Dónde termina la ternura y dónde empieza la invasión? Almodóvar no responde con juicios; retrata con una mezcla de compasión e ironía que obliga al espectador a posicionarse solo. Para el propio director, hablar con quien no puede oírte es también «una película sobre la alegría de narrar y sobre la palabra como arma para huir de la soledad, la enfermedad, la muerte y la locura». Esa incomodidad productiva es quizá su mayor logro: nos fuerza a hablar sobre lo que normalmente callamos.`,
+    lexico: ["el telón", "el coma", "la convalecencia", "la cogida", "el monólogo", "la persona silente", "la incomunicación", "la ternura", "la torera", "el guión original", "el enfermero", "la elocuencia"],
     comentario: [
-      "¿Qué dos imágenes de España contrapone el texto al principio?",
-      "¿Cómo influyeron el final del franquismo y la «movida» en el cine de Almodóvar?",
-      "¿De qué manera usa Almodóvar los elementos «españoles»: los repite o los transforma?",
-      "¿Qué significa la expresión «marca país»?",
-      "Según el texto, ¿por qué la imagen de un país «nunca la define una sola voz»?",
+      "¿Qué tienen en común Benigno y Marco en la primera escena de la película?",
+      "¿A quiénes cuidan los dos protagonistas y qué circunstancia comparten las dos mujeres?",
+      "Según el texto de Almodóvar, ¿cómo pueden los monólogos ante alguien en silencio convertirse en diálogo?",
+      "¿Por qué crees que Almodóvar eligió una canción mexicana cantada por un brasileño para una escena clave de su película española?",
+      "¿Qué pregunta ética plantea la relación de Benigno con Alicia? Explícala con tus propias palabras.",
     ],
     debate: [
-      "¿Quién debería tener más peso al definir la imagen de un país: sus artistas o sus gobiernos?",
-      "¿Es bueno o malo que un solo cineasta «represente» a todo un país en el extranjero?",
-      "¿La imagen que el mundo tiene de tu país se parece a la realidad? ¿Quién la ha creado?",
-      "¿Preferirías una imagen «amable» y turística de tu país o una más honesta aunque incómoda?",
+      "¿Crees que Marco tiene derecho a cuidar de Lydia durante su convalecencia sin que ella pueda decidirlo? ¿Y Benigno con Alicia?",
+      "¿Hablarle a alguien que no puede escucharte tiene sentido? ¿Lo has hecho alguna vez?",
+      "La película mezcla ternura y perturbación en los mismos personajes: ¿el cine tiene el deber de juzgar moralmente a sus protagonistas?",
+      "¿Conoces canciones de otro país o idioma que te emocionen especialmente? ¿Por qué crees que ocurre eso?",
     ],
     referencias: [
-      { titulo: "La riqueza visual del cine de Pedro Almodóvar", fuente: "The Conversation (UGR)", url: "https://theconversation.com/la-riqueza-visual-del-cine-de-pedro-almodovar-113875" },
-      { titulo: "Por qué Almodóvar es la auténtica Marca España", fuente: "El Español", url: "https://www.elespanol.com/bluper/series/20200114/almodovar-autentica-marca-espana-no-quieran-reconocerlo/459455021_0.html" },
+      { titulo: "Hable con ella — ficha completa", fuente: "FilmAffinity", url: "https://www.filmaffinity.com/es/film430689.html" },
+      { titulo: "«Cucurrucucú paloma» — letra y contexto", fuente: "Cervantes Virtual", url: "https://www.cervantesvirtual.com" },
     ],
-    tarea: "Piensa en la imagen que el resto del mundo tiene de tu país. En 200–250 palabras, describe ese cliché y compáralo con tu experiencia real. ¿Qué películas, música o campañas lo han creado? ¿Hay artistas de tu país que lo desmonten, como hace Almodóvar? Relaciónalo con lo comentado en clase.",
+    tarea: "Elige una de estas dos opciones. Opción A (más literaria): Almodóvar escribió un texto evocador sobre la primera escena de la película (Benigno y Marco en el teatro de Pina Bausch). Continúa ese texto añadiendo tres o cuatro líneas en el mismo estilo: impresionista, sensorial, sin explicar demasiado. Opción B (más periodística): Imagina que eres periodista y acabas de ver Hable con ella. Escribe el párrafo introductorio de una entrevista con Almodóvar: preséntalo, sitúa el contexto del Óscar y anticipa el tema central de tu conversación. En ambos casos, entre 200 y 250 palabras.",
   },
   {
     n: 11,
