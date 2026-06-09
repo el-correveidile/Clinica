@@ -211,6 +211,7 @@ Antes de clase, lee «La aurora» (tienes el texto enlazado más abajo) y, si pu
       { titulo: "«La aurora»: texto del poema y sus versiones musicales", fuente: "PoeMAS · UNED", url: "https://poemas.uned.es/poema/la-aurora-federico-garcia-lorca/" },
       { titulo: "Diez años sin Morente, el amigo de los modernos", fuente: "La Voz del Sur", url: "https://www.lavozdelsur.es/levantaos/diez-anos-sin-morente-amigo-modernos_253315_102.html" },
     ],
+    video: { src: "https://www.youtube.com/embed/sXKOtFtSCtg?si=BsS0WYhMdItG9EAk", titulo: "«La aurora» · Enrique Morente y Lagartija Nick (Omega, 1996)" },
     tarea: "Lee «La aurora» entera y elige los dos o tres versos que más te golpeen. En 200–250 palabras, explica qué imagen crea Lorca en ellos y qué sensación te producen. Después escucha la versión de Enrique Morente (Omega, 1996): ¿la música refuerza o transforma lo que sentiste al leer? Guarda esta reflexión: la retomamos en la sesión de flamenco.",
   },
   {
@@ -247,7 +248,7 @@ Escuchad «La aurora» en su versión de Omega y comparadla con el poema que le�
       { titulo: "El flamenco — ficha del Patrimonio Inmaterial", fuente: "UNESCO", url: "https://ich.unesco.org/es/RL/el-flamenco-00363" },
       { titulo: "Omega (Enrique Morente y Lagartija Nick)", fuente: "La Fonoteca", url: "https://lafonoteca.net/disco/omega_lagartija-nick/" },
     ],
-    video: { src: "https://www.youtube.com/embed/sXKOtFtSCtg?si=BsS0WYhMdItG9EAk", titulo: "«La aurora» · Enrique Morente y Lagartija Nick (Omega, 1996)" },
+    video: { src: "https://www.youtube.com/embed/U9WKTK4H5xk?si=phQFrJVtoiml1V1n", titulo: "Entrevista con Aurora Carbonell, viuda de Morente: cómo se hizo Omega" },
     tarea: "Escucha «La aurora» en la versión de Enrique Morente (Omega, 1996) y vuelve al poema de Lorca que leíste. En 200–250 palabras, compara las dos experiencias: ¿qué aporta la música a las palabras?, ¿crees que Morente respeta el poema o lo transforma? Termina con tu postura: ¿es Omega una traición a la tradición o una forma de salvarla?",
   },
   {
