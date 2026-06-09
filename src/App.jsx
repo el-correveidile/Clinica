@@ -247,6 +247,7 @@ Escuchad «La aurora» en su versión de Omega y comparadla con el poema que le�
       { titulo: "El flamenco — ficha del Patrimonio Inmaterial", fuente: "UNESCO", url: "https://ich.unesco.org/es/RL/el-flamenco-00363" },
       { titulo: "Omega (Enrique Morente y Lagartija Nick)", fuente: "La Fonoteca", url: "https://lafonoteca.net/disco/omega_lagartija-nick/" },
     ],
+    video: { src: "https://www.youtube.com/embed/sXKOtFtSCtg?si=BsS0WYhMdItG9EAk", titulo: "«La aurora» · Enrique Morente y Lagartija Nick (Omega, 1996)" },
     tarea: "Escucha «La aurora» en la versión de Enrique Morente (Omega, 1996) y vuelve al poema de Lorca que leíste. En 200–250 palabras, compara las dos experiencias: ¿qué aporta la música a las palabras?, ¿crees que Morente respeta el poema o lo transforma? Termina con tu postura: ¿es Omega una traición a la tradición o una forma de salvarla?",
   },
   {
