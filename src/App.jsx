@@ -349,6 +349,7 @@ La película plantea además preguntas éticas que no tienen respuesta fácil. �
       "La película mezcla ternura y perturbación en los mismos personajes: ¿el cine tiene el deber de juzgar moralmente a sus protagonistas?",
       "¿Conoces canciones de otro país o idioma que te emocionen especialmente? ¿Por qué crees que ocurre eso?",
     ],
+    video: { src: "https://www.youtube.com/embed/hwRNWQ2FwvQ?si=gSxkjhegQ0goRPDz", titulo: "«Cucurrucucú paloma» · Caetano Veloso en Hable con ella" },
     referencias: [
       { titulo: "Hable con ella — ficha completa", fuente: "FilmAffinity", url: "https://www.filmaffinity.com/es/film780724.html" },
       { titulo: "«Cucurrucucú paloma» — letra y contexto", fuente: "Cancioneros.com", url: "https://www.cancioneros.com/nc/18816/0/cucurrucucu-paloma-tomas-mendez" },
@@ -581,6 +582,21 @@ function Sesion({ idx, ir }) {
           <Bloque etiqueta="Debate" color="var(--bermellon)" tiempo="≈ 25 min">
             <p style={{ fontStyle: "italic", fontSize: "1.15rem", marginTop: 0, marginBottom: 18, color: "var(--tinta)" }}>{s.nudo}</p>
             <ListaPreguntas items={s.debate} color="var(--bermellon)" />
+            {s.video && (
+              <div style={{ marginTop: 24 }}>
+                <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--bermellon)", marginBottom: 10 }}>{s.video.titulo}</div>
+                <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 6, overflow: "hidden", background: "#000" }}>
+                  <iframe
+                    src={s.video.src}
+                    title={s.video.titulo}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                  />
+                </div>
+              </div>
+            )}
             {s.referencias && (
               <div style={{ marginTop: 24, background: "rgba(39,56,75,.05)", borderLeft: "2px solid var(--azul)", padding: "16px 18px", borderRadius: "0 4px 4px 0" }}>
                 <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--azul)", marginBottom: 12 }}>Para preparar el debate</div>
