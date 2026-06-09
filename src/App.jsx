@@ -321,6 +321,7 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
       { titulo: "El Niño de las Pinturas (Raúl Ruiz): su obra, Nueva York y Lorca", fuente: "Patrimonio · Universidad de Granada", url: "https://patrimonio.ugr.es/obra-del-mes/sin-titulo-el-nino-de-las-pinturas/" },
       { titulo: "Banksy: el arte urbano como protesta social", fuente: "Medialab", url: "https://medialab.news/bansky-el-arte-urbano-como-protesta-social/" },
     ],
+    video: { src: "https://www.youtube.com/embed/0ls8CkCZ-L0?si=lrhu98cUTCgc37zy", titulo: "El Niño de las Pinturas · Raúl Ruiz y su obra en Granada" },
     tarea: "Fotografía (o recuerda) un grafiti o un mural de tu ciudad. En 200–250 palabras, descríbelo y argumenta si para ti es arte o vandalismo, explicando tus criterios. Después, di a cuál de los dos se parece más en su significado —la denuncia anónima de Banksy o la poesía de barrio de El Niño de las Pinturas— y por qué.",
   },
   {
