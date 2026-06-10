@@ -475,6 +475,8 @@ const ESTILOS = `
 
 .ref-link{ transition:color .2s, border-color .2s; }
 .ref-link:hover{ color:var(--bermellon); border-color:var(--bermellon); }
+
+.lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
 `;
 
 function Sello({ texto, color }) {
@@ -581,7 +583,16 @@ function Sesion({ idx, ir }) {
               </figure>
             )}
             <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {s.lexico.map((w) => (<span key={w} style={{ fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)" }}>{w}</span>))}
+              {s.lexico.map((w) => {
+                const query = encodeURIComponent(w.replace(/^(el|la|los|las|lo)\s+/i, ""));
+                return (
+                  <a key={w} href={`https://dle.rae.es/?w=${query}`} target="_blank" rel="noreferrer"
+                    className="lexico-chip"
+                    style={{ fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", textDecoration: "none", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s" }}>
+                    {w}
+                  </a>
+                );
+              })}
             </div>
           </Bloque>
 
