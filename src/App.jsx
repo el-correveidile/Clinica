@@ -321,6 +321,20 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
       { titulo: "El Niño de las Pinturas (Raúl Ruiz): su obra, Nueva York y Lorca", fuente: "Patrimonio · Universidad de Granada", url: "https://patrimonio.ugr.es/obra-del-mes/sin-titulo-el-nino-de-las-pinturas/" },
       { titulo: "Banksy: el arte urbano como protesta social", fuente: "Medialab", url: "https://medialab.news/bansky-el-arte-urbano-como-protesta-social/" },
     ],
+    lexicoDefs: {
+      "la pintada": "Escrito o dibujo trazado sobre una pared u otro lugar público.",
+      "el grafiti": "Pintada realizada sobre paredes u otras superficies en el espacio urbano.",
+      "el tag": "Firma personal usada por los grafiteros como marca de identidad.",
+      "la plantilla": "Figura recortada en cartulina u otro material que sirve de guía para reproducir una forma.",
+      "efímero": "Pasajero, de muy corta duración.",
+      "el anonimato": "Estado o condición de quien no da a conocer su nombre o identidad.",
+      "la consigna": "Lema o mensaje que resume la posición o reivindicación de un grupo.",
+      "hiperrealista": "Que imita la realidad con una exactitud extrema; perteneciente al hiperrealismo.",
+      "íntimo": "Muy interior; perteneciente al ámbito personal y reservado.",
+      "la zona gris": "Ámbito de ambigüedad donde no está claro si algo es lícito o correcto.",
+      "el espacio público": "Lugar de uso colectivo al que todos tienen acceso: calles, plazas, parques.",
+      "la propiedad": "Derecho de poseer algo y disponer de ello dentro de los límites legales.",
+    },
     video: { src: "https://www.youtube.com/embed/0ls8CkCZ-L0?si=lrhu98cUTCgc37zy", titulo: "El Niño de las Pinturas · Raúl Ruiz y su obra en Granada" },
     imagen: { src: "/lorca-banksy.jpeg", pie: "Federico García Lorca al estilo Banksy" },
     tarea: "Fotografía (o recuerda) un grafiti o un mural de tu ciudad. En 200–250 palabras, descríbelo y argumenta si para ti es arte o vandalismo, explicando tus criterios. Después, di a cuál de los dos se parece más en su significado —la denuncia anónima de Banksy o la poesía de barrio de El Niño de las Pinturas— y por qué.",
@@ -477,7 +491,47 @@ const ESTILOS = `
 .ref-link:hover{ color:var(--bermellon); border-color:var(--bermellon); }
 
 .lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
+.lexico-chip--def:hover .lexico-chip{ background:var(--azul); color:var(--papel); }
 `;
+
+function LexicoChip({ word, def }) {
+  const [open, setOpen] = useState(false);
+  const query = encodeURIComponent(word.replace(/^(el|la|los|las|lo)\s+/i, ""));
+  const raeUrl = `https://dle.rae.es/?w=${query}`;
+  if (!def) {
+    return (
+      <a href={raeUrl} target="_blank" rel="noreferrer" className="lexico-chip"
+        style={{ display: "inline-block", fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", textDecoration: "none", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s" }}>
+        {word}
+      </a>
+    );
+  }
+  return (
+    <span style={{ position: "relative", display: "inline-block" }}>
+      <span
+        className="lexico-chip lexico-chip--def"
+        onClick={() => setOpen(o => !o)}
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+        style={{ display: "inline-block", fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s", cursor: "pointer", userSelect: "none" }}
+      >
+        {word}<span style={{ marginLeft: 5, fontSize: ".7em", opacity: .45, fontFamily: "sans-serif" }}>?</span>
+      </span>
+      {open && (
+        <span onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}
+          style={{ position: "absolute", bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)", background: "var(--tinta)", color: "var(--papel)", padding: "12px 14px", borderRadius: 6, fontSize: ".82rem", lineHeight: 1.6, width: 240, zIndex: 200, boxShadow: "0 8px 28px rgba(28,24,20,.45)", display: "block" }}>
+          <span style={{ fontStyle: "italic", opacity: .55, fontSize: ".72rem", display: "block", marginBottom: 5, letterSpacing: ".06em" }}>RAE</span>
+          {def}
+          <a href={raeUrl} target="_blank" rel="noreferrer"
+            style={{ display: "block", marginTop: 8, fontSize: ".75rem", color: "var(--bermellon)", textDecoration: "none", opacity: .85 }}>
+            Ver en RAE →
+          </a>
+          <span style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", borderWidth: 6, borderStyle: "solid", borderColor: "var(--tinta) transparent transparent transparent", display: "block", width: 0, height: 0 }} />
+        </span>
+      )}
+    </span>
+  );
+}
 
 function Sello({ texto, color }) {
   return (
@@ -583,16 +637,9 @@ function Sesion({ idx, ir }) {
               </figure>
             )}
             <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {s.lexico.map((w) => {
-                const query = encodeURIComponent(w.replace(/^(el|la|los|las|lo)\s+/i, ""));
-                return (
-                  <a key={w} href={`https://dle.rae.es/?w=${query}`} target="_blank" rel="noreferrer"
-                    className="lexico-chip"
-                    style={{ fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", textDecoration: "none", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s" }}>
-                    {w}
-                  </a>
-                );
-              })}
+              {s.lexico.map((w) => (
+                <LexicoChip key={w} word={w} def={s.lexicoDefs?.[w]} />
+              ))}
             </div>
           </Bloque>
 
