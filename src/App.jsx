@@ -654,8 +654,9 @@ function LexicoChip({ word, def }) {
   const chipRef = useRef(null);
   const closeTimer = useRef(null);
 
-  const query = encodeURIComponent(word.replace(/^(el|la|los|las|lo)\s+/i, ""));
-  const raeUrl = `https://dle.rae.es/?w=${query}`;
+  const cleaned = word.replace(/^(el|la|los|las|lo)\s+/i, "").trim();
+  const isMultiWord = /[\s/]/.test(cleaned);
+  const raeUrl = isMultiWord ? null : `https://dle.rae.es/?w=${encodeURIComponent(cleaned)}`;
 
   function calcTip() {
     if (!chipRef.current) return;
@@ -671,12 +672,10 @@ function LexicoChip({ word, def }) {
   function keepOpen() { clearTimeout(closeTimer.current); }
 
   if (!def) {
-    return (
-      <a href={raeUrl} target="_blank" rel="noreferrer" className="lexico-chip"
-        style={{ display: "inline-block", fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", textDecoration: "none", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s" }}>
-        {word}
-      </a>
-    );
+    const chipStyle = { display: "inline-block", fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s" };
+    return raeUrl
+      ? <a href={raeUrl} target="_blank" rel="noreferrer" className="lexico-chip" style={{ ...chipStyle, textDecoration: "none" }}>{word}</a>
+      : <span className="lexico-chip" style={chipStyle}>{word}</span>;
   }
   return (
     <span ref={chipRef} style={{ display: "inline-block" }}>
@@ -696,10 +695,12 @@ function LexicoChip({ word, def }) {
           style={{ position: "fixed", left: tip.left, bottom: tip.bottom, width: 240, background: "var(--tinta)", color: "var(--papel)", padding: "12px 14px", borderRadius: 6, fontSize: ".82rem", lineHeight: 1.6, zIndex: 9999, boxShadow: "0 8px 28px rgba(28,24,20,.45)", display: "block" }}>
           <span style={{ fontStyle: "italic", opacity: .55, fontSize: ".72rem", display: "block", marginBottom: 5, letterSpacing: ".06em" }}>RAE</span>
           {def}
-          <a href={raeUrl} target="_blank" rel="noreferrer"
-            style={{ display: "block", marginTop: 8, fontSize: ".75rem", color: "var(--bermellon)", textDecoration: "none", opacity: .85 }}>
-            Ver en RAE →
-          </a>
+          {raeUrl && (
+            <a href={raeUrl} target="_blank" rel="noreferrer"
+              style={{ display: "block", marginTop: 8, fontSize: ".75rem", color: "var(--bermellon)", textDecoration: "none", opacity: .85 }}>
+              Ver en RAE →
+            </a>
+          )}
           <span style={{ position: "absolute", top: "100%", left: tip.arrowLeft, transform: "translateX(-50%)", borderWidth: 6, borderStyle: "solid", borderColor: "var(--tinta) transparent transparent transparent", display: "block", width: 0, height: 0 }} />
         </span>
       )}
