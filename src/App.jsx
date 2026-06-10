@@ -274,56 +274,6 @@ Esta noche canalla no respondo de mí.`,
   },
   {
     n: 6,
-    titulo: "El muralismo mexicano",
-    obra: "Rivera, Orozco, Siqueiros · 1920–1950",
-    nudo: "¿Arte para el pueblo o adoctrinamiento?",
-    lectura: `Tras la Revolución mexicana, el país necesitaba reinventarse, y lo hizo, entre otras cosas, pintando las paredes. En 1921, el ministro de Educación José Vasconcelos tuvo una idea poco común: en lugar de encerrar el arte en los museos, lo sacaría a la calle. Encargó a un grupo de pintores que cubrieran los muros de los edificios públicos —escuelas, ministerios, palacios— con enormes murales que contaran la historia de México a un pueblo que, en buena parte, no sabía leer. Así nació el muralismo, uno de los movimientos artísticos más influyentes del continente.
-
-Tres nombres destacan sobre los demás, los llamados «tres grandes»: Diego Rivera, José Clemente Orozco y David Alfaro Siqueiros. Sus murales no eran decorativos. Narraban la conquista, la opresión de los indígenas, las luchas campesinas, la Revolución y la promesa de un futuro mejor. Eran lecciones de historia pintadas a gran escala, pensadas para que cualquiera, al cruzar un patio o subir una escalera, recibiera un mensaje claro sobre quién era el pueblo mexicano y de dónde venía.
-
-Hasta aquí, la idea resulta seductora: un arte gratuito, accesible, que devuelve la cultura a la mayoría en lugar de reservarla a una élite. Los propios muralistas lo defendían en su manifiesto, donde declaraban que el arte debía dejar de ser un lujo individual para convertirse en educación y combate. Querían un arte útil, comprometido, al servicio del pueblo.
-
-Pero ahí mismo aparece la sombra. Aquel arte estaba financiado y dirigido por el Estado, y contaba la historia que al Estado le interesaba contar. Los héroes y los villanos estaban repartidos de antemano; el mensaje, casi siempre, reforzaba la legitimidad del nuevo régimen surgido de la Revolución. ¿Dónde termina la educación y dónde empieza la propaganda? Cuando un gobierno paga a unos artistas para que enseñen al pueblo qué debe pensar de su propia historia, la frontera se vuelve borrosa. Algunos historiadores han llegado a señalar en aquellos murales tonos que rozan el adoctrinamiento.
-
-El propio Siqueiros era explícito: para él, el arte y la política eran inseparables, y el arte debía ser difusor y guía de una ideología. No lo ocultaba. Y quizá esa franqueza nos ayude a pensar el problema con calma: tal vez todo arte público lleve dentro un mensaje, y la cuestión no sea si lo tiene, sino si lo confiesa y si nos deja espacio para discutirlo.
-
-Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el espacio público para moldear lo que pensamos. Los murales mexicanos, monumentales y hermosos, nos obligan a una pregunta incómoda que no ha caducado: ¿puede un arte ser a la vez profundamente bello y profundamente instrumental?, ¿y quién decide la diferencia entre enseñar y dirigir?`,
-    lexico: ["el muro", "el mural", "encargar", "el ministerio", "el manifiesto", "el adoctrinamiento", "la propaganda", "la legitimidad", "el régimen", "comprometido", "instrumental", "la élite"],
-    comentario: [
-      "¿Qué idea poco común tuvo Vasconcelos en 1921 y con qué fin?",
-      "¿Por qué los murales se pintaban en edificios públicos y no en museos?",
-      "Según el texto, ¿qué hacía atractivo el proyecto muralista?",
-      "¿Dónde sitúa el texto la frontera entre educación y propaganda?",
-      "¿Qué quería decir Siqueiros al afirmar que el arte debía ser «difusor y guía»?",
-    ],
-    debate: [
-      "¿Puede un arte pagado por el Estado ser libre, o siempre acaba sirviendo a quien lo paga?",
-      "¿Dónde está, para ti, la línea entre educar y adoctrinar?",
-      "El arte del espacio público —murales, monumentos, publicidad—, ¿nos forma o nos manipula?",
-      "¿Conoces imágenes que en tu país transmitan una idea concreta de la historia o de la nación?",
-    ],
-    referencias: [
-      { titulo: "México y la Revolución: el muralismo", fuente: "Secretaría de Cultura de México", url: "https://www.cultura.gob.mx/mexico1900-1950/conceptos/detalle/?id=2" },
-      { titulo: "Los herederos del muralismo mexicano, un siglo después", fuente: "Infobae", url: "https://www.infobae.com/cultura/2022/08/17/los-herederos-del-muralismo-mexicano-un-siglo-despues/" },
-    ],
-    lexicoDefs: {
-      "el muro": "Pared o tapia de gran espesor.",
-      "el mural": "Pintura o imagen realizada directamente sobre una pared o muro.",
-      "encargar": "Pedir a alguien que realice un trabajo o que lleve a cabo una tarea.",
-      "el ministerio": "Departamento del gobierno a cargo de una rama de la administración pública.",
-      "el manifiesto": "Escrito público en que un individuo o colectivo expone sus ideas o intenciones.",
-      "el adoctrinamiento": "Acción de inculcar una doctrina o conjunto de creencias de forma sistemática.",
-      "la propaganda": "Información difundida para promover una causa, idea o movimiento político.",
-      "la legitimidad": "Conformidad con la ley o con lo que se considera justo y razonable.",
-      "el régimen": "Sistema de gobierno. // Conjunto de normas que rigen una actividad.",
-      "comprometido": "Que asume y defiende una causa o ideología con responsabilidad.",
-      "instrumental": "Que sirve como medio o instrumento para un fin determinado.",
-      "la élite": "Minoría selecta que ocupa una posición privilegiada en la sociedad.",
-    },
-    tarea: "Busca una imagen colocada en un espacio público de tu ciudad o país (un mural, un monumento, un cartel oficial o una gran campaña). En 200–250 palabras, descríbela y analiza qué mensaje transmite y a quién beneficia. ¿Te parece que educa, que conmemora o que adoctrina? Relaciónalo con el caso del muralismo mexicano.",
-  },
-  {
-    n: 7,
     titulo: "Lorca en Nueva York: «La aurora»",
     obra: "Federico García Lorca · Poeta en Nueva York (1929-1930)",
     nudo: "¿Qué le hace la gran ciudad al ser humano?",
@@ -374,7 +324,7 @@ Antes de clase, lee «La aurora» (tienes el texto enlazado más abajo) y, si pu
     tarea: "Lee «La aurora» entera y elige los dos o tres versos que más te golpeen. En 200–250 palabras, explica qué imagen crea Lorca en ellos y qué sensación te producen. Después escucha la versión de Enrique Morente (Omega, 1996): ¿la música refuerza o transforma lo que sentiste al leer? Guarda esta reflexión: la retomamos en la sesión de flamenco.",
   },
   {
-    n: 8,
+    n: 7,
     titulo: "Flamenco: Morente y «Omega»",
     obra: "Enrique Morente · Omega (1996)",
     nudo: "¿El flamenco debe conservarse intacto o reinventarse?",
@@ -425,7 +375,7 @@ Escuchad «La aurora» en su versión de Omega y comparadla con el poema que le�
     tarea: "Escucha «La aurora» en la versión de Enrique Morente (Omega, 1996) y vuelve al poema de Lorca que leíste. En 200–250 palabras, compara las dos experiencias: ¿qué aporta la música a las palabras?, ¿crees que Morente respeta el poema o lo transforma? Termina con tu postura: ¿es Omega una traición a la tradición o una forma de salvarla?",
   },
   {
-    n: 9,
+    n: 8,
     titulo: "La Alhambra y el turismo",
     obra: "Granada nazarí · s. XIII–XV",
     nudo: "¿Cómo es vivir en una ciudad-museo?",
@@ -475,7 +425,7 @@ La Alhambra seguirá ahí, paciente, como lleva siete siglos. La pregunta no es 
     tarea: "Piensa en un lugar de tu país muy visitado por turistas. En 200–250 palabras, describe cómo es y cómo ha cambiado (o podría cambiar) la vida de quienes viven allí a causa del turismo. ¿Qué medidas propondrías para equilibrar las dos cosas? Relaciónalo con lo que comentamos sobre Granada y la Alhambra.",
   },
   {
-    n: 10,
+    n: 9,
     titulo: "Arte urbano y grafiti",
     obra: "Banksy y El Niño de las Pinturas",
     nudo: "¿Vandalismo o arte? Dos formas de pintar la calle.",
@@ -527,7 +477,7 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
     tarea: "Fotografía (o recuerda) un grafiti o un mural de tu ciudad. En 200–250 palabras, descríbelo y argumenta si para ti es arte o vandalismo, explicando tus criterios. Después, di a cuál de los dos se parece más en su significado —la denuncia anónima de Banksy o la poesía de barrio de El Niño de las Pinturas— y por qué.",
   },
   {
-    n: 11,
+    n: 10,
     titulo: "«Hable con ella» de Almodóvar",
     obra: "Pedro Almodóvar · España, 2001",
     nudo: "¿Puede el cine hablar donde las palabras fallan?",
@@ -576,7 +526,7 @@ La película plantea además preguntas éticas que no tienen respuesta fácil. �
     tarea: "Elige una de estas dos opciones. Opción A (más literaria): Almodóvar escribió un texto evocador sobre la primera escena de la película (Benigno y Marco en el teatro de Pina Bausch). Continúa ese texto añadiendo tres o cuatro líneas en el mismo estilo: impresionista, sensorial, sin explicar demasiado. Opción B (más periodística): Imagina que eres periodista y acabas de ver Hable con ella. Escribe el párrafo introductorio de una entrevista con Almodóvar: preséntalo, sitúa el contexto del Óscar y anticipa el tema central de tu conversación. En ambos casos, entre 200 y 250 palabras.",
   },
   {
-    n: 12,
+    n: 11,
     titulo: "Arte, redes e inteligencia artificial",
     obra: "Imagen generada · s. XXI",
     nudo: "Autoría, original y copia.",
@@ -626,54 +576,54 @@ No se trata de estar a favor o en contra de la tecnología, que ya está aquí y
     tarea: "Busca dos imágenes sobre un mismo tema: una hecha por una persona y otra generada por IA (o genera tú una). En 200–250 palabras, compáralas: ¿notas la diferencia?, ¿cuál te emociona más y por qué?, ¿importa quién (o qué) la hizo? Defiende tu postura sobre si una imagen creada por IA puede considerarse arte.",
   },
   {
-    n: 13,
-    titulo: "¿De quién es el arte?",
-    obra: "Museos, restitución y acceso",
-    nudo: "Debate de cierre del curso.",
-    lectura: `Llegamos a la última sesión, y lo hacemos con una pregunta que recoge muchas de las anteriores: ¿de quién es el arte? A lo largo del curso hemos visto obras que cambiaban de dueño, de sentido y de lugar. Ahora miramos el sitio donde guardamos casi todo ese arte —el museo— y descubrimos que tampoco él es un lugar neutral.
+    n: 12,
+    titulo: "El muralismo mexicano",
+    obra: "Rivera, Orozco, Siqueiros · 1920–1950",
+    nudo: "¿Arte para el pueblo o adoctrinamiento?",
+    lectura: `Tras la Revolución mexicana, el país necesitaba reinventarse, y lo hizo, entre otras cosas, pintando las paredes. En 1921, el ministro de Educación José Vasconcelos tuvo una idea poco común: en lugar de encerrar el arte en los museos, lo sacaría a la calle. Encargó a un grupo de pintores que cubrieran los muros de los edificios públicos —escuelas, ministerios, palacios— con enormes murales que contaran la historia de México a un pueblo que, en buena parte, no sabía leer. Así nació el muralismo, uno de los movimientos artísticos más influyentes del continente.
 
-Los grandes museos europeos están llenos de objetos llegados de muy lejos: esculturas griegas, bronces africanos, momias egipcias, tesoros americanos. Muchos no llegaron comprándolos, sino tomándolos. Los bronces de Benín, por ejemplo, fueron saqueados por tropas británicas en 1897 y repartidos por museos de medio mundo. Los mármoles del Partenón fueron arrancados de Atenas a comienzos del siglo XIX y siguen en Londres. Durante generaciones, estos objetos se exhibieron como trofeos, con una cartela que daba su nombre y su fecha, pero no contaba cómo habían llegado allí.
+Tres nombres destacan sobre los demás, los llamados «tres grandes»: Diego Rivera, José Clemente Orozco y David Alfaro Siqueiros. Sus murales no eran decorativos. Narraban la conquista, la opresión de los indígenas, las luchas campesinas, la Revolución y la promesa de un futuro mejor. Eran lecciones de historia pintadas a gran escala, pensadas para que cualquiera, al cruzar un patio o subir una escalera, recibiera un mensaje claro sobre quién era el pueblo mexicano y de dónde venía.
 
-En los últimos años, los países de origen reclaman cada vez con más fuerza la devolución de lo que les quitaron, y algunos museos han empezado a responder. Francia devolvió obras a Benín y Senegal; Alemania y los Países Bajos han iniciado restituciones; el Vaticano entregó a Atenas fragmentos del Partenón. Otros, como el Museo Británico, se resisten y proponen, a lo sumo, «préstamos». A este movimiento de revisar el pasado colonial de las colecciones se le llama «descolonizar el museo».
+Hasta aquí, la idea resulta seductora: un arte gratuito, accesible, que devuelve la cultura a la mayoría en lugar de reservarla a una élite. Los propios muralistas lo defendían en su manifiesto, donde declaraban que el arte debía dejar de ser un lujo individual para convertirse en educación y combate. Querían un arte útil, comprometido, al servicio del pueblo.
 
-El debate es genuino y tiene dos caras. Quienes piden la devolución argumentan que esos objetos forman parte de la identidad de un pueblo y que conservarlos es perpetuar un robo: ningún país debería tener que viajar al extranjero para ver su propio patrimonio. Quienes se resisten responden que los grandes museos universales permiten que cualquiera, en un solo lugar, conozca el arte de toda la humanidad, y que algunas piezas estarían peor protegidas en sus lugares de origen. Hay incluso un punto intermedio: que una adquisición fuera legal según las leyes de su época no la hace, hoy, moralmente aceptable.
+Pero ahí mismo aparece la sombra. Aquel arte estaba financiado y dirigido por el Estado, y contaba la historia que al Estado le interesaba contar. Los héroes y los villanos estaban repartidos de antemano; el mensaje, casi siempre, reforzaba la legitimidad del nuevo régimen surgido de la Revolución. ¿Dónde termina la educación y dónde empieza la propaganda? Cuando un gobierno paga a unos artistas para que enseñen al pueblo qué debe pensar de su propia historia, la frontera se vuelve borrosa. Algunos historiadores han llegado a señalar en aquellos murales tonos que rozan el adoctrinamiento.
 
-Detrás de todo ello late una pregunta que nos acompaña desde la primera sesión, cuando hablábamos de quién tenía derecho a mirar y a representar. El arte, ¿pertenece a quien lo creó, a quien lo posee, al país que lo vio nacer o a toda la humanidad? ¿Es el museo un lugar de conocimiento compartido o un almacén de botín? Probablemente no haya una respuesta única, y por eso vale la pena discutirlo entre todos.
+El propio Siqueiros era explícito: para él, el arte y la política eran inseparables, y el arte debía ser difusor y guía de una ideología. No lo ocultaba. Y quizá esa franqueza nos ayude a pensar el problema con calma: tal vez todo arte público lleve dentro un mensaje, y la cuestión no sea si lo tiene, sino si lo confiesa y si nos deja espacio para discutirlo.
 
-Cerramos el curso como lo empezamos: ante una obra de arte y con más preguntas que certezas. Quizá sea eso lo que mejor hace el arte —y la cultura que hemos recorrido estas doce sesiones—: no darnos respuestas cómodas, sino obligarnos a pensar, a hablar y a escucharnos. Que la conversación siga fuera de clase.`,
-    lexico: ["el museo", "la colección", "el saqueo", "el expolio", "la restitución", "la devolución", "descolonizar", "la cartela", "el botín", "perpetuar", "el préstamo", "universal"],
+Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el espacio público para moldear lo que pensamos. Los murales mexicanos, monumentales y hermosos, nos obligan a una pregunta incómoda que no ha caducado: ¿puede un arte ser a la vez profundamente bello y profundamente instrumental?, ¿y quién decide la diferencia entre enseñar y dirigir?`,
+    lexico: ["el muro", "el mural", "encargar", "el ministerio", "el manifiesto", "el adoctrinamiento", "la propaganda", "la legitimidad", "el régimen", "comprometido", "instrumental", "la élite"],
     comentario: [
-      "¿Por qué dice el texto que el museo «tampoco es un lugar neutral»?",
-      "¿Qué ejemplos de objetos saqueados menciona y cómo llegaron a Europa?",
-      "¿Qué significa «descolonizar el museo» y qué países han empezado a hacerlo?",
-      "Resume los dos argumentos enfrentados sobre la devolución.",
-      "¿Con qué sesión del curso enlaza el texto y por qué?",
+      "¿Qué idea poco común tuvo Vasconcelos en 1921 y con qué fin?",
+      "¿Por qué los murales se pintaban en edificios públicos y no en museos?",
+      "Según el texto, ¿qué hacía atractivo el proyecto muralista?",
+      "¿Dónde sitúa el texto la frontera entre educación y propaganda?",
+      "¿Qué quería decir Siqueiros al afirmar que el arte debía ser «difusor y guía»?",
     ],
     debate: [
-      "¿Deben los museos devolver las obras que se llevaron en contextos coloniales?",
-      "¿Es mejor ver el arte de toda la humanidad reunido en un gran museo o repartido en sus países de origen?",
-      "Que algo fuera legal en su época, ¿lo hace justo hoy?",
-      "De todo lo que hemos visto en el curso: el arte, ¿de quién es?",
+      "¿Puede un arte pagado por el Estado ser libre, o siempre acaba sirviendo a quien lo paga?",
+      "¿Dónde está, para ti, la línea entre educar y adoctrinar?",
+      "El arte del espacio público —murales, monumentos, publicidad—, ¿nos forma o nos manipula?",
+      "¿Conoces imágenes que en tu país transmitan una idea concreta de la historia o de la nación?",
     ],
     referencias: [
-      { titulo: "Cómo descolonizar un museo: de revisar el colonialismo a devolver lo robado", fuente: "Newtral", url: "https://www.newtral.es/descolonizar-museo/20240125/" },
-      { titulo: "Descolonizar el arte: Europa y España frente a la restitución", fuente: "Artisting", url: "https://artisting.es/descolonizar-el-arte-europa-y-espana-frente-a-la-restitucion-de-obras-coloniales/" },
+      { titulo: "México y la Revolución: el muralismo", fuente: "Secretaría de Cultura de México", url: "https://www.cultura.gob.mx/mexico1900-1950/conceptos/detalle/?id=2" },
+      { titulo: "Los herederos del muralismo mexicano, un siglo después", fuente: "Infobae", url: "https://www.infobae.com/cultura/2022/08/17/los-herederos-del-muralismo-mexicano-un-siglo-despues/" },
     ],
     lexicoDefs: {
-      "el museo": "Institución que conserva, exhibe e investiga objetos de valor artístico, histórico o científico.",
-      "la colección": "Conjunto de objetos reunidos por su valor, interés o similitud.",
-      "el saqueo": "Robo con violencia de los bienes de una ciudad, institución o persona.",
-      "el expolio": "Despojo o sustracción de bienes, especialmente en contextos de conquista o colonialismo.",
-      "la restitución": "Acción de devolver algo a quien lo poseía antes.",
-      "la devolución": "Acto de restituir algo a su dueño o lugar de origen.",
-      "descolonizar": "Liberar a un país o institución de las estructuras e influencias del colonialismo.",
-      "la cartela": "Rótulo o etiqueta que identifica y describe un objeto expuesto en un museo.",
-      "el botín": "Conjunto de bienes tomados al enemigo o arrebatados por la fuerza.",
-      "perpetuar": "Hacer que algo dure indefinidamente o por mucho tiempo.",
-      "el préstamo": "Cesión temporal de algo a alguien con la obligación de devolverlo.",
-      "universal": "Que pertenece o se extiende a todo el mundo o a la totalidad de los seres.",
+      "el muro": "Pared o tapia de gran espesor.",
+      "el mural": "Pintura o imagen realizada directamente sobre una pared o muro.",
+      "encargar": "Pedir a alguien que realice un trabajo o que lleve a cabo una tarea.",
+      "el ministerio": "Departamento del gobierno a cargo de una rama de la administración pública.",
+      "el manifiesto": "Escrito público en que un individuo o colectivo expone sus ideas o intenciones.",
+      "el adoctrinamiento": "Acción de inculcar una doctrina o conjunto de creencias de forma sistemática.",
+      "la propaganda": "Información difundida para promover una causa, idea o movimiento político.",
+      "la legitimidad": "Conformidad con la ley o con lo que se considera justo y razonable.",
+      "el régimen": "Sistema de gobierno. // Conjunto de normas que rigen una actividad.",
+      "comprometido": "Que asume y defiende una causa o ideología con responsabilidad.",
+      "instrumental": "Que sirve como medio o instrumento para un fin determinado.",
+      "la élite": "Minoría selecta que ocupa una posición privilegiada en la sociedad.",
     },
-    tarea: "Elige la sesión del curso que más te haya marcado. En 250–300 palabras, explica por qué, qué aprendiste y cómo ha cambiado tu manera de mirar el arte o la sociedad. Termina respondiendo, con tu propia voz, a la pregunta que cierra el curso: ¿de quién es el arte?",
+    tarea: "Busca una imagen colocada en un espacio público de tu ciudad o país (un mural, un monumento, un cartel oficial o una gran campaña). En 200–250 palabras, descríbela y analiza qué mensaje transmite y a quién beneficia. ¿Te parece que educa, que conmemora o que adoctrina? Relaciónalo con el caso del muralismo mexicano.",
   },
 ];
 
