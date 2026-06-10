@@ -322,6 +322,7 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
       { titulo: "Banksy: el arte urbano como protesta social", fuente: "Medialab", url: "https://medialab.news/bansky-el-arte-urbano-como-protesta-social/" },
     ],
     video: { src: "https://www.youtube.com/embed/0ls8CkCZ-L0?si=lrhu98cUTCgc37zy", titulo: "El Niño de las Pinturas · Raúl Ruiz y su obra en Granada" },
+    imagen: { src: "/lorca-banksy.jpeg", pie: "Federico García Lorca al estilo Banksy" },
     tarea: "Fotografía (o recuerda) un grafiti o un mural de tu ciudad. En 200–250 palabras, descríbelo y argumenta si para ti es arte o vandalismo, explicando tus criterios. Después, di a cuál de los dos se parece más en su significado —la denuncia anónima de Banksy o la poesía de barrio de El Niño de las Pinturas— y por qué.",
   },
   {
@@ -573,6 +574,12 @@ function Sesion({ idx, ir }) {
         <>
           <Bloque etiqueta="Lectura" color="var(--tinta)" tiempo="≈ 15 min">
             <div className="lectura">{s.lectura.split("\n\n").map((p, i) => <p key={i}>{p}</p>)}</div>
+            {s.imagen && (
+              <figure style={{ margin: "24px 0 0", padding: 0 }}>
+                <img src={s.imagen.src} alt={s.imagen.pie} style={{ width: "100%", borderRadius: 6, display: "block" }} />
+                {s.imagen.pie && <figcaption className="disp" style={{ fontSize: ".78rem", color: "var(--tinta-suave)", marginTop: 8, fontStyle: "italic", letterSpacing: ".04em" }}>{s.imagen.pie}</figcaption>}
+              </figure>
+            )}
             <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
               {s.lexico.map((w) => (<span key={w} style={{ fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)" }}>{w}</span>))}
             </div>
