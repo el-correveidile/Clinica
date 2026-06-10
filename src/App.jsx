@@ -214,7 +214,7 @@ Lo organizó la Comisión de los 33, un grupo de intelectuales y ciudadanos demo
 
 Javier Egea fue, de los tres poetas, quien vivió con mayor intensidad esa mezcla de poesía y vida. Nacido en Granada en 1952, trabajó como guía en la Huerta de San Vicente, la casa-museo de Lorca, y recitó sus versos en escenarios tan distintos como La Tertulia y la Casa de las Américas en Cuba. En 1982 publicó *Paseo de los tristes*, un libro que todavía sacude por su lirismo y su crudeza social. Murió en agosto de 1999, a los cuarenta y siete años, tras una depresión prolongada.
 
-El poema que leeremos podría haber salido de cualquier esquina del Albaicín. Habla de una mujer perdida, de una ciudad gris, de drogas y pobreza, de una navaja que es lo único que le queda al que habla. Pero habla de todo eso con la precisión formal de un poema clásico, como si quisiera demostrar que la calle más difícil también puede ser literatura:
+El poema que leeremos podría haber salido de cualquier esquina de una ciudad moderna. Habla de una mujer perdida, de una ciudad gris, de drogas y pobreza, de una navaja que es lo único que le queda al que habla. Pero habla de todo eso con la precisión formal de un poema clásico, como si quisiera demostrar que la calle más difícil también puede ser literatura:
 
 Yo no sé si la quise pero andaba conmigo,
 me guiaba su risa por la ciudad tan gris.
