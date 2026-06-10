@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const SESIONES = [
   {
@@ -650,8 +650,26 @@ const ESTILOS = `
 
 function LexicoChip({ word, def }) {
   const [open, setOpen] = useState(false);
+  const [tip, setTip] = useState({ left: 0, bottom: 0, arrowLeft: 120 });
+  const chipRef = useRef(null);
+  const closeTimer = useRef(null);
+
   const query = encodeURIComponent(word.replace(/^(el|la|los|las|lo)\s+/i, ""));
   const raeUrl = `https://dle.rae.es/?w=${query}`;
+
+  function calcTip() {
+    if (!chipRef.current) return;
+    const r = chipRef.current.getBoundingClientRect();
+    const W = 240;
+    const raw = r.left + r.width / 2 - W / 2;
+    const clamped = Math.max(8, Math.min(raw, window.innerWidth - W - 8));
+    setTip({ left: clamped, bottom: window.innerHeight - r.top + 10, arrowLeft: r.left + r.width / 2 - clamped });
+  }
+
+  function openTip()  { clearTimeout(closeTimer.current); calcTip(); setOpen(true); }
+  function closeTip() { closeTimer.current = setTimeout(() => setOpen(false), 120); }
+  function keepOpen() { clearTimeout(closeTimer.current); }
+
   if (!def) {
     return (
       <a href={raeUrl} target="_blank" rel="noreferrer" className="lexico-chip"
@@ -661,26 +679,28 @@ function LexicoChip({ word, def }) {
     );
   }
   return (
-    <span style={{ position: "relative", display: "inline-block" }}>
+    <span ref={chipRef} style={{ display: "inline-block" }}>
       <span
         className="lexico-chip lexico-chip--def"
-        onClick={() => setOpen(o => !o)}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
+        onClick={() => { open ? setOpen(false) : openTip(); }}
+        onMouseEnter={openTip}
+        onMouseLeave={closeTip}
         style={{ display: "inline-block", fontSize: ".88rem", background: "var(--papel-2)", padding: "4px 11px", borderRadius: 20, color: "var(--azul)", border: "1px solid transparent", transition: "background .2s, border-color .2s, color .2s", cursor: "pointer", userSelect: "none" }}
       >
         {word}<span style={{ marginLeft: 5, fontSize: ".7em", opacity: .45, fontFamily: "sans-serif" }}>?</span>
       </span>
       {open && (
-        <span onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}
-          style={{ position: "absolute", bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)", background: "var(--tinta)", color: "var(--papel)", padding: "12px 14px", borderRadius: 6, fontSize: ".82rem", lineHeight: 1.6, width: 240, zIndex: 200, boxShadow: "0 8px 28px rgba(28,24,20,.45)", display: "block" }}>
+        <span
+          onMouseEnter={keepOpen}
+          onMouseLeave={closeTip}
+          style={{ position: "fixed", left: tip.left, bottom: tip.bottom, width: 240, background: "var(--tinta)", color: "var(--papel)", padding: "12px 14px", borderRadius: 6, fontSize: ".82rem", lineHeight: 1.6, zIndex: 9999, boxShadow: "0 8px 28px rgba(28,24,20,.45)", display: "block" }}>
           <span style={{ fontStyle: "italic", opacity: .55, fontSize: ".72rem", display: "block", marginBottom: 5, letterSpacing: ".06em" }}>RAE</span>
           {def}
           <a href={raeUrl} target="_blank" rel="noreferrer"
             style={{ display: "block", marginTop: 8, fontSize: ".75rem", color: "var(--bermellon)", textDecoration: "none", opacity: .85 }}>
             Ver en RAE →
           </a>
-          <span style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", borderWidth: 6, borderStyle: "solid", borderColor: "var(--tinta) transparent transparent transparent", display: "block", width: 0, height: 0 }} />
+          <span style={{ position: "absolute", top: "100%", left: tip.arrowLeft, transform: "translateX(-50%)", borderWidth: 6, borderStyle: "solid", borderColor: "var(--tinta) transparent transparent transparent", display: "block", width: 0, height: 0 }} />
         </span>
       )}
     </span>
