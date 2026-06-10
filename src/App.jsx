@@ -199,6 +199,81 @@ Quizá la mejor manera de hacerle justicia sea exactamente la contraria a compra
   },
   {
     n: 5,
+    titulo: "La otra sentimentalidad",
+    obra: "Javier Egea · «Noche canalla» · 1982",
+    nudo: "¿Puede la poesía nacer de la calle y hablar del presente sin dejar de ser literatura?",
+    lectura: `A principios de los años ochenta, mientras España estrenaba su primera democracia tras cuarenta años de dictadura, un bar-librería de la calle Pintor López Mezquita de Granada se convirtió en el centro de gravedad de una generación. El local se llamaba La Tertulia, y en torno a sus mesas coincidían Luis García Montero, Álvaro Salvador, Javier Egea y, más tarde, Antonio Muñoz Molina. Compartían algo más que una mesa y una jarra de vino: la convicción de que la poesía tenía que hablar del presente y de la calle.
+
+Detrás de aquella convicción había un maestro: Juan Carlos Rodríguez, profesor de literatura en la Universidad de Granada. Rodríguez les enseñó a leer los poemas como documentos históricos, como productos de una sociedad concreta. Para él, la poesía no era un adorno del espíritu ni una expresión del alma eterna: era una práctica social, una forma de tomar partido. Los sentimientos mismos —el amor, el miedo, el deseo— no son impulsos naturales, sino construcciones que cada época moldea a su manera. Esa lección empapó todo lo que sus discípulos escribieron.
+
+La Tertulia fue también editorial. En 1982 publicó Granada Tango, un libro colectivo de poemas para letras de tango cuyo prólogo, escrito por Mariano Maresca, describía el género como el lugar de «los cuerpos derrotados»: de quienes sabían que cuarenta años de franquismo no desaparecen con un cambio de gobierno. Ese mismo año, en noviembre de 1982, Maresca fundó la revista Olvidos de Granada, que dirigió hasta 1987 y que se convirtió en el archivo vivo de la cultura granadina. En sus páginas se publicaban poemas, entrevistas, ensayos y manifiestos. En 1983 acogió el texto que le daría nombre al movimiento: La otra sentimentalidad, firmado por García Montero, Egea y Salvador, que proclamaba con pocas y contundentes palabras que sentir también tiene historia.
+
+Granada en aquellos años era además la ciudad de Enrique Morente. Desde 1976 se celebraba allí el acto conocido como el Cinco a las cinco, un homenaje a Federico García Lorca en que voces muy distintas leían sus poemas. Morente fue una de las primeras en participar, y su manera de pronunciar a Lorca —con la misma reverencia y la misma libertad con que después grabaría Omega— resonó durante años en la memoria de quienes lo escucharon.
+
+Javier Egea fue, de los tres poetas, quien vivió con mayor intensidad esa mezcla de poesía y vida. Nacido en Granada en 1952, trabajó como guía en la Huerta de San Vicente, la casa-museo de Lorca, y recitó sus versos en escenarios tan distintos como La Tertulia y la Casa de las Américas en Cuba. En 1982 publicó Paseo de los tristes, un libro que todavía sacude por su lirismo y su crudeza social. Murió en 1999, a los cuarenta y seis años, tras una depresión prolongada.
+
+El poema que leeremos podría haber salido de cualquier esquina del Albaicín. Habla de una mujer perdida, de una ciudad gris, de drogas y pobreza, de una navaja que es lo único que le queda al que habla. Pero habla de todo eso con la precisión formal de un poema clásico, como si quisiera demostrar que la calle más difícil también puede ser literatura:
+
+Yo no sé si la quise pero andaba conmigo,
+me guiaba su risa por la ciudad tan gris.
+Ella tenía en su boca colinas de Ketama
+y el cielo de sus ojos me pintaba de añil.
+
+Yo vi tantas estrellas como ella puso siempre
+en aquel cielo raso como un paño de tul.
+Ella llevaba el pelo como la Janis Joplin
+y los labios morados como el Parfait-Amour.
+
+La he perdido en un bosque de jeringas brillantes
+por donde nos decían que se llegaba al mar;
+se fue sobre un caballo de hermosos ojos negros,
+por más que yo me muera no la podré olvidar.
+
+Bajo el cielo ceniza me conducen mis piernas.
+Esta noche no tengo ni esperanza ni amor.
+Sólo queda el calor de mi pobre navaja.
+Hoy me he visto la cara de un retrato-robot.
+
+A pesar de sus ojos he salido a la calle,
+a pesar de sus ojos me ha tocado vivir.
+En un barrio de muertos me trajeron al mundo.
+Esta noche canalla no respondo de mí.`,
+    lexico: ["la tertulia", "el manifiesto", "la sentimentalidad", "el magisterio", "la transición", "la jeringa", "el añil", "canalla", "el retrato-robot", "la navaja", "el recital", "la crudeza"],
+    lexicoDefs: {
+      "la tertulia": "Reunión de personas que se juntan habitualmente para conversar, debatir o recrearse.",
+      "el manifiesto": "Escrito en que se hace pública una declaración de doctrinas, propósitos o programas.",
+      "la sentimentalidad": "Propensión a la sensibilidad y a los sentimientos. // En el movimiento poético, la idea de que los sentimientos son una construcción histórica y social.",
+      "el magisterio": "Enseñanza y guía intelectual del maestro sobre sus discípulos. // Autoridad y peso de quien enseña.",
+      "la transición": "Acción de pasar de un estado a otro distinto. // Por antonomasia en España, el período de paso de la dictadura franquista a la democracia (1975–1978).",
+      "la jeringa": "Instrumento formado por un tubo con émbolo, usado para aspirar o impulsar líquidos. // En el poema, alusión a la drogadicción.",
+      "el añil": "Planta de cuyo tallo se extrae un colorante azul intenso. // Color azul oscuro que tira a violáceo.",
+      "canalla": "Ruin, indigno, despreciable. // Noche canalla: noche sin ley, sin amparo, entregada a lo peor.",
+      "el retrato-robot": "Representación del rostro de un desconocido elaborada a partir de descripciones de testigos, usada por la policía.",
+      "la navaja": "Instrumento cortante cuya hoja puede doblarse sobre el mango para guardarla.",
+      "el recital": "Función artística en que interviene un solo intérprete. // Lectura en voz alta de composiciones poéticas propias o ajenas.",
+      "la crudeza": "Falta de suavizamiento en el tratamiento de un tema o en la descripción de la realidad.",
+    },
+    comentario: [
+      "¿Qué tenían en común García Montero, Álvaro Salvador y Javier Egea más allá de reunirse en La Tertulia?",
+      "Explica con tus palabras qué quería decir Juan Carlos Rodríguez cuando afirmaba que los sentimientos son «construcciones sociales».",
+      "¿Qué papel desempeñó la revista Olvidos de Granada en el movimiento La otra sentimentalidad?",
+      "¿En qué consistía el Cinco a las cinco y qué tenía de especial la participación de Enrique Morente?",
+      "En el poema, ¿qué crees que representa «el bosque de jeringas brillantes» y qué le ha ocurrido a la mujer que ama el protagonista?",
+    ],
+    debate: [
+      "¿Debe la poesía hablar de lo cotidiano y de lo marginal, o es la literatura un espacio para lo elevado y lo universal?",
+      "«Los sentimientos tienen historia»: ¿crees que amar o sufrir hoy es realmente distinto a cómo se amaba o sufría hace cien años?",
+      "El grupo nació en torno a un bar, una revista artesanal y un maestro universitario. ¿Qué papel juega hoy internet en la formación de movimientos culturales?",
+      "Javier Egea fue guía del museo de Lorca y vivió en la misma ciudad que Morente. ¿Crees que el lugar donde uno vive influye decisivamente en lo que crea?",
+    ],
+    referencias: [
+      { titulo: "La otra sentimentalidad — artículo sobre el movimiento poético", fuente: "Wikipedia", url: "https://es.wikipedia.org/wiki/La_otra_sentimentalidad" },
+      { titulo: "Javier Egea — portal de autor", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/portales/javier_egea/" },
+    ],
+    tarea: "Elige un espacio concreto de tu ciudad o lugar de origen —una calle, un bar, un mercado, una plaza— y escribe un poema breve de 8 a 12 versos que lo retrate desde dentro. Escríbelo como alguien que conoce sus sombras, no como un turista que lo describe desde fuera. Inspírate en la técnica de Egea: imágenes cotidianas, lenguaje directo y al menos una metáfora que transforme algo común en algo inesperado. Añade un párrafo de 50–70 palabras explicando qué quisiste decir con el poema y por qué elegiste ese lugar.",
+  },
+  {
+    n: 6,
     titulo: "El muralismo mexicano",
     obra: "Rivera, Orozco, Siqueiros · 1920–1950",
     nudo: "¿Arte para el pueblo o adoctrinamiento?",
@@ -248,7 +323,7 @@ Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el esp
     tarea: "Busca una imagen colocada en un espacio público de tu ciudad o país (un mural, un monumento, un cartel oficial o una gran campaña). En 200–250 palabras, descríbela y analiza qué mensaje transmite y a quién beneficia. ¿Te parece que educa, que conmemora o que adoctrina? Relaciónalo con el caso del muralismo mexicano.",
   },
   {
-    n: 6,
+    n: 7,
     titulo: "Lorca en Nueva York: «La aurora»",
     obra: "Federico García Lorca · Poeta en Nueva York (1929-1930)",
     nudo: "¿Qué le hace la gran ciudad al ser humano?",
@@ -299,7 +374,7 @@ Antes de clase, lee «La aurora» (tienes el texto enlazado más abajo) y, si pu
     tarea: "Lee «La aurora» entera y elige los dos o tres versos que más te golpeen. En 200–250 palabras, explica qué imagen crea Lorca en ellos y qué sensación te producen. Después escucha la versión de Enrique Morente (Omega, 1996): ¿la música refuerza o transforma lo que sentiste al leer? Guarda esta reflexión: la retomamos en la sesión de flamenco.",
   },
   {
-    n: 7,
+    n: 8,
     titulo: "Flamenco: Morente y «Omega»",
     obra: "Enrique Morente · Omega (1996)",
     nudo: "¿El flamenco debe conservarse intacto o reinventarse?",
@@ -350,7 +425,7 @@ Escuchad «La aurora» en su versión de Omega y comparadla con el poema que le�
     tarea: "Escucha «La aurora» en la versión de Enrique Morente (Omega, 1996) y vuelve al poema de Lorca que leíste. En 200–250 palabras, compara las dos experiencias: ¿qué aporta la música a las palabras?, ¿crees que Morente respeta el poema o lo transforma? Termina con tu postura: ¿es Omega una traición a la tradición o una forma de salvarla?",
   },
   {
-    n: 8,
+    n: 9,
     titulo: "La Alhambra y el turismo",
     obra: "Granada nazarí · s. XIII–XV",
     nudo: "¿Cómo es vivir en una ciudad-museo?",
@@ -400,7 +475,7 @@ La Alhambra seguirá ahí, paciente, como lleva siete siglos. La pregunta no es 
     tarea: "Piensa en un lugar de tu país muy visitado por turistas. En 200–250 palabras, describe cómo es y cómo ha cambiado (o podría cambiar) la vida de quienes viven allí a causa del turismo. ¿Qué medidas propondrías para equilibrar las dos cosas? Relaciónalo con lo que comentamos sobre Granada y la Alhambra.",
   },
   {
-    n: 9,
+    n: 10,
     titulo: "Arte urbano y grafiti",
     obra: "Banksy y El Niño de las Pinturas",
     nudo: "¿Vandalismo o arte? Dos formas de pintar la calle.",
@@ -452,7 +527,7 @@ Porque esa es la cuestión que sigue sin resolverse: ¿de quién es la pared de 
     tarea: "Fotografía (o recuerda) un grafiti o un mural de tu ciudad. En 200–250 palabras, descríbelo y argumenta si para ti es arte o vandalismo, explicando tus criterios. Después, di a cuál de los dos se parece más en su significado —la denuncia anónima de Banksy o la poesía de barrio de El Niño de las Pinturas— y por qué.",
   },
   {
-    n: 10,
+    n: 11,
     titulo: "«Hable con ella» de Almodóvar",
     obra: "Pedro Almodóvar · España, 2001",
     nudo: "¿Puede el cine hablar donde las palabras fallan?",
@@ -501,7 +576,7 @@ La película plantea además preguntas éticas que no tienen respuesta fácil. �
     tarea: "Elige una de estas dos opciones. Opción A (más literaria): Almodóvar escribió un texto evocador sobre la primera escena de la película (Benigno y Marco en el teatro de Pina Bausch). Continúa ese texto añadiendo tres o cuatro líneas en el mismo estilo: impresionista, sensorial, sin explicar demasiado. Opción B (más periodística): Imagina que eres periodista y acabas de ver Hable con ella. Escribe el párrafo introductorio de una entrevista con Almodóvar: preséntalo, sitúa el contexto del Óscar y anticipa el tema central de tu conversación. En ambos casos, entre 200 y 250 palabras.",
   },
   {
-    n: 11,
+    n: 12,
     titulo: "Arte, redes e inteligencia artificial",
     obra: "Imagen generada · s. XXI",
     nudo: "Autoría, original y copia.",
@@ -551,7 +626,7 @@ No se trata de estar a favor o en contra de la tecnología, que ya está aquí y
     tarea: "Busca dos imágenes sobre un mismo tema: una hecha por una persona y otra generada por IA (o genera tú una). En 200–250 palabras, compáralas: ¿notas la diferencia?, ¿cuál te emociona más y por qué?, ¿importa quién (o qué) la hizo? Defiende tu postura sobre si una imagen creada por IA puede considerarse arte.",
   },
   {
-    n: 12,
+    n: 13,
     titulo: "¿De quién es el arte?",
     obra: "Museos, restitución y acceso",
     nudo: "Debate de cierre del curso.",
