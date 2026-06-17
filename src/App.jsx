@@ -814,6 +814,125 @@ function ListaPreguntas({ items, color }) {
   );
 }
 
+async function downloadPDF(s) {
+  const { jsPDF } = await import("jspdf");
+  const doc = new jsPDF({ unit: "mm", format: "a4" });
+  const ML = 20, TW = 170, PH = 297, MT = 22;
+  let y = MT;
+
+  const newPage = () => { doc.addPage(); y = MT; };
+  const guard = (h = 6) => { if (y + h > PH - 20) newPage(); };
+  const strip = str => str.replace(/\*([^*]+)\*/g, "$1");
+
+  const sectionLabel = (text, rgb) => {
+    guard(10);
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(...rgb);
+    doc.text(text.toUpperCase(), ML, y);
+    y += 6;
+    doc.setTextColor(28, 24, 20);
+  };
+
+  const bodyText = (text, size = 10.5, indent = 0) => {
+    doc.setFontSize(size);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(28, 24, 20);
+    const lh = size * 0.43;
+    const lines = doc.splitTextToSize(strip(text), TW - indent);
+    lines.forEach(line => { guard(lh + 1); doc.text(line, ML + indent, y); y += lh; });
+  };
+
+  // Cabecera
+  doc.setFontSize(9); doc.setFont("helvetica", "bold"); doc.setTextColor(178, 58, 34);
+  doc.text(`SESIÓN ${String(s.n).padStart(2, "0")}`, ML, y); y += 7;
+
+  doc.setFontSize(20); doc.setFont("helvetica", "bold"); doc.setTextColor(28, 24, 20);
+  doc.splitTextToSize(s.titulo, TW).forEach(l => { doc.text(l, ML, y); y += 9; }); y += 1;
+
+  doc.setFontSize(10); doc.setFont("helvetica", "italic"); doc.setTextColor(120, 110, 100);
+  doc.text(s.obra, ML, y); y += 10;
+
+  doc.setDrawColor(220, 210, 200); doc.setLineWidth(0.3);
+  doc.line(ML, y, ML + TW, y); y += 8;
+
+  // Lectura
+  if (s.lectura) {
+    sectionLabel("Lectura", [178, 58, 34]);
+    s.lectura.split("\n\n").forEach(para => {
+      const verses = para.split("\n");
+      if (verses.length > 1) {
+        verses.forEach(v => {
+          if (!v.trim()) return;
+          guard(5); doc.setFontSize(10.5); doc.setFont("helvetica", "normal"); doc.setTextColor(28, 24, 20);
+          doc.text(strip(v), ML + 8, y); y += 5;
+        });
+        y += 3;
+      } else {
+        bodyText(para, 10.5); y += 3;
+      }
+    });
+    y += 3;
+  }
+
+  // Léxico
+  if (s.lexico?.length) {
+    sectionLabel("Léxico", [28, 24, 20]);
+    bodyText(s.lexico.join("  ·  "), 10); y += 5;
+  }
+
+  // Comentario
+  if (s.comentario?.length) {
+    sectionLabel("Comentario del texto", [39, 56, 75]);
+    const lh = 10.5 * 0.43;
+    s.comentario.forEach((q, i) => {
+      guard(8);
+      doc.setFontSize(10.5); doc.setFont("helvetica", "bold"); doc.setTextColor(39, 56, 75);
+      doc.text(`${i + 1}.`, ML, y);
+      doc.setFont("helvetica", "normal"); doc.setTextColor(28, 24, 20);
+      doc.splitTextToSize(strip(q), TW - 8).forEach(l => { guard(lh + 1); doc.text(l, ML + 8, y); y += lh; });
+      y += 3;
+    });
+    y += 3;
+  }
+
+  // Debate
+  if (s.debate?.length) {
+    sectionLabel("Debate", [178, 58, 34]);
+    doc.setFontSize(11); doc.setFont("helvetica", "italic"); doc.setTextColor(60, 50, 40);
+    doc.splitTextToSize(strip(s.nudo), TW).forEach(l => { guard(5.5); doc.text(l, ML, y); y += 5.5; });
+    y += 5;
+    const lh = 10.5 * 0.43;
+    s.debate.forEach((q, i) => {
+      guard(8);
+      doc.setFontSize(10.5); doc.setFont("helvetica", "bold"); doc.setTextColor(178, 58, 34);
+      doc.text(`${i + 1}.`, ML, y);
+      doc.setFont("helvetica", "normal"); doc.setTextColor(28, 24, 20);
+      doc.splitTextToSize(strip(q), TW - 8).forEach(l => { guard(lh + 1); doc.text(l, ML + 8, y); y += lh; });
+      y += 3;
+    });
+    y += 3;
+  }
+
+  // Tarea
+  if (s.tarea) {
+    sectionLabel("Tarea para casa", [28, 24, 20]);
+    bodyText(s.tarea, 10.5); y += 4;
+  }
+
+  // Pie de página
+  const total = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= total; i++) {
+    doc.setPage(i);
+    doc.setFontSize(8); doc.setFont("helvetica", "normal"); doc.setTextColor(160, 150, 140);
+    doc.text("Arte y sociedad en la cultura hispánica · C1", ML, PH - 10);
+    doc.text(`${i} / ${total}`, ML + TW, PH - 10, { align: "right" });
+  }
+
+  const slug = s.titulo.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-");
+  doc.save(`sesion-${String(s.n).padStart(2, "0")}-${slug}.pdf`);
+}
+
 function Sesion({ idx, ir }) {
   const s = SESIONES[idx];
   const hayMaterial = !!s.lectura;
@@ -824,10 +943,16 @@ function Sesion({ idx, ir }) {
 
   return (
     <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)" }}>
-      <button onClick={() => ir(null)} className="disp"
-        style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".78rem", letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 30, padding: 0 }}>
-        ← Índice del curso
-      </button>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
+        <button onClick={() => ir(null)} className="disp"
+          style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".78rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
+          ← Índice del curso
+        </button>
+        <button onClick={() => downloadPDF(s)} className="disp"
+          style={{ background: "none", border: "1px solid rgba(178,58,34,.35)", cursor: "pointer", color: "var(--bermellon)", fontSize: ".72rem", letterSpacing: ".14em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 3 }}>
+          ↓ Descargar PDF
+        </button>
+      </div>
 
       <header className="fade-up" style={{ marginBottom: 38 }}>
         <span className="disp" style={{ fontSize: "1rem", fontWeight: 600, color: "var(--bermellon)", letterSpacing: ".1em" }}>Sesión {String(s.n).padStart(2, "0")}</span>
