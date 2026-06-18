@@ -691,15 +691,15 @@ const ESTILOS = `
 .lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
 .lexico-chip--def:hover .lexico-chip{ background:var(--azul); color:var(--papel); }
 
-.plat-nav{ background:var(--azul); position:sticky; top:0; z-index:200; }
-.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:52px; display:flex; align-items:center; }
-.plat-nav-brand{ font-family:'Fraunces',serif; font-size:1rem; font-weight:600; color:var(--papel); cursor:pointer; letter-spacing:-.01em; background:none; border:none; padding:0; }
-.plat-nav-brand em{ color:var(--oro); font-style:normal; }
-.plat-nav-links{ display:flex; gap:18px; margin-left:26px; flex:1; }
-.plat-nav-link{ font-family:'Fraunces',serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(242,235,221,.52); cursor:pointer; transition:color .2s; background:none; border:none; padding:0; }
-.plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--papel); }
-.plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.3; }
-.plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(242,235,221,.32); }
+.plat-nav{ background:var(--papel); border-bottom:1px solid rgba(28,24,20,.12); position:sticky; top:0; z-index:200; }
+.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:56px; display:flex; align-items:center; }
+.plat-nav-brand{ cursor:pointer; background:none; border:none; padding:0; display:flex; align-items:center; }
+.plat-nav-brand img{ height:34px; width:auto; display:block; }
+.plat-nav-links{ display:flex; gap:18px; margin-left:0; flex:none; }
+.plat-nav-link{ font-family:'Fraunces',serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--tinta-suave); cursor:pointer; transition:color .2s; background:none; border:none; padding:0; opacity:.65; }
+.plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--tinta); opacity:1; }
+.plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.28; }
+.plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-suave); opacity:.4; }
 .feature-card{ background:rgba(255,253,247,.55); border:1px solid rgba(28,24,20,.16); border-radius:6px; padding:26px; }
 .course-card-soon{ background:rgba(242,235,221,.35); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
 .hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--bermellon); color:var(--papel); border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
@@ -789,12 +789,10 @@ function PlatformaHeader({ view, ir }) {
     <nav className="plat-nav">
       <div className="plat-nav-inner">
         <button className="plat-nav-brand" onClick={() => ir(null)}>
-          bla<em>bla</em>ELE
+          <img src="/logo-blablaele.png" alt="blablaELE · HABLAMOS ESPAÑOL" />
         </button>
-        <div style={{ marginLeft: 8, marginRight: "auto" }}>
-          <span className="plat-nav-tag" style={{ letterSpacing: ".18em" }}>HABLAMOS ESPAÑOL</span>
-        </div>
-        <div className="plat-nav-links" style={{ marginLeft: 0, flex: "none" }}>
+        <div style={{ flex: 1 }} />
+        <div className="plat-nav-links">
           <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
           <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => ir("curso")}>Recursos</button>
           <span className="plat-nav-link is-dim">Profesores</span>
