@@ -639,6 +639,8 @@ const ESTILOS = `
   --tinta-suave:#5A5043;
   --bermellon:#B23A22;
   --azul:#27384B;
+  --verde:#5A8C6E;
+  --oro:#D4A574;
 }
 .app-c1 *{ box-sizing:border-box; }
 .app-c1{
@@ -673,6 +675,21 @@ const ESTILOS = `
 
 .lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
 .lexico-chip--def:hover .lexico-chip{ background:var(--azul); color:var(--papel); }
+
+.plat-nav{ background:var(--azul); position:sticky; top:0; z-index:200; }
+.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:52px; display:flex; align-items:center; }
+.plat-nav-brand{ font-family:'Fraunces',serif; font-size:1rem; font-weight:600; color:var(--papel); cursor:pointer; letter-spacing:-.01em; background:none; border:none; padding:0; }
+.plat-nav-brand em{ color:var(--oro); font-style:normal; }
+.plat-nav-links{ display:flex; gap:18px; margin-left:26px; flex:1; }
+.plat-nav-link{ font-family:'Fraunces',serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(242,235,221,.52); cursor:pointer; transition:color .2s; background:none; border:none; padding:0; }
+.plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--papel); }
+.plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.3; }
+.plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(242,235,221,.32); }
+.feature-card{ background:rgba(255,253,247,.55); border:1px solid rgba(28,24,20,.16); border-radius:6px; padding:26px; }
+.course-card-soon{ background:rgba(242,235,221,.35); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
+.hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--bermellon); color:var(--papel); border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
+.hero-btn-primary:hover{ background:#8f2d1a; }
+.hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(242,235,221,.6); border:1px solid rgba(242,235,221,.28); padding:13px 24px; border-radius:4px; cursor:default; opacity:.55; }
 `;
 
 function LexicoChip({ word, def }) {
@@ -750,9 +767,157 @@ function Sello({ texto, color }) {
   );
 }
 
+function PlatformaHeader({ view, ir }) {
+  const isHome = view === null;
+  const isCurso = view === "curso" || typeof view === "number";
+  return (
+    <nav className="plat-nav">
+      <div className="plat-nav-inner">
+        <button className="plat-nav-brand" onClick={() => ir(null)}>
+          Clínica <em>Cultural</em>
+        </button>
+        <div className="plat-nav-links">
+          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => ir("curso")}>Cursos</button>
+          <span className="plat-nav-link is-dim">Diagnóstico</span>
+          <span className="plat-nav-link is-dim">Farmacias</span>
+          <span className="plat-nav-link is-dim">Seguro LC</span>
+        </div>
+        <span className="plat-nav-tag">BlablaELE</span>
+      </div>
+    </nav>
+  );
+}
+
+function Inicio({ ir }) {
+  return (
+    <div>
+      {/* Hero */}
+      <section style={{ background: "var(--azul)", color: "var(--papel)", padding: "clamp(56px,9vw,104px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div className="fade-up" style={{ marginBottom: 18, display: "flex", gap: 10 }}>
+            <Sello texto="Granada · España" color="var(--oro)" />
+            <Sello texto="Español A1–C2" color="rgba(242,235,221,.45)" />
+          </div>
+          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(2.6rem,6.5vw,4.4rem)", fontWeight: 600, lineHeight: .97, margin: "0 0 22px", letterSpacing: "-.02em" }}>
+            Clínica Cultural<br />
+            <em style={{ fontWeight: 400, color: "var(--oro)" }}>y Lingüística</em>
+          </h1>
+          <p className="fade-up" style={{ animationDelay: ".14s", maxWidth: 540, fontSize: "1.18rem", lineHeight: 1.62, opacity: .78, margin: "0 0 34px" }}>
+            Tu español, diagnosticado y tratado en Granada.
+            No es un curso: es una experiencia integral donde el idioma se vive, no se estudia.
+          </p>
+          <div className="fade-up" style={{ animationDelay: ".2s", display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <button className="hero-btn-primary" onClick={() => ir("curso")}>Ver cursos →</button>
+            <button className="hero-btn-ghost">Diagnóstico gratuito (próx.)</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Journey */}
+      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Tu camino en la clínica</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 22 }}>
+            {[
+              { n: "01", t: "Entras a consulta", d: "Describes tus objetivos, tu nivel y lo que necesitas del español." },
+              { n: "02", t: "Te diagnosticamos", d: "Evaluación inicial + plan de tratamiento lingüístico y cultural personalizado." },
+              { n: "03", t: "Aplicamos el tratamiento", d: "Cursos, tutorías, rutas culturales y herramientas de inmersión real en Granada." },
+            ].map(step => (
+              <div key={step.n} className="feature-card">
+                <div className="disp" style={{ fontSize: "2.1rem", fontWeight: 600, color: "var(--bermellon)", lineHeight: 1, marginBottom: 14 }}>{step.n}</div>
+                <div className="disp" style={{ fontSize: "1.08rem", fontWeight: 600, marginBottom: 9 }}>{step.t}</div>
+                <p style={{ fontSize: ".96rem", lineHeight: 1.6, color: "var(--tinta-suave)", margin: 0 }}>{step.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cursos */}
+      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Cursos</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))", gap: 20 }}>
+            <button onClick={() => ir("curso")} className="cartela"
+              style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "28px", display: "flex", flexDirection: "column", gap: 12, fontFamily: "inherit" }}>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <Sello texto="C1 · Avanzado" color="var(--bermellon)" />
+                <Sello texto="Activo" color="var(--verde)" />
+              </div>
+              <div className="disp" style={{ fontSize: "1.22rem", fontWeight: 600, lineHeight: 1.18 }}>Arte y sociedad en la cultura hispánica</div>
+              <p style={{ fontSize: ".92rem", color: "var(--tinta-suave)", lineHeight: 1.58, margin: 0 }}>
+                Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.
+              </p>
+              <span className="disp" style={{ fontSize: ".73rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>12 sesiones → Entrar</span>
+            </button>
+            {[
+              { t: "Escuela de Poetas", d: "Del Romancero a los poetas de la experiencia. Creación y análisis poético en español." },
+              { t: "Laboratorio de Cine", d: "El cine español como espejo de la historia. Buñuel, Almodóvar, Amenábar." },
+            ].map(c => (
+              <div key={c.t} className="course-card-soon">
+                <div style={{ marginBottom: 12 }}><Sello texto="Próximamente" color="var(--tinta-suave)" /></div>
+                <div className="disp" style={{ fontSize: "1.12rem", fontWeight: 600, lineHeight: 1.18, marginBottom: 10 }}>{c.t}</div>
+                <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.56, margin: 0 }}>{c.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Farmacia y herramientas */}
+      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Farmacia lingüística y herramientas</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
+            {[
+              { t: "Diagnóstico", d: "Test de nivel + entrevista clínica. Construimos tu plan personalizado con La Doctora." },
+              { t: "Farmacias", d: "Píldoras gramaticales, pomadas literarias y jarabes culturales dosificados a tu nivel." },
+              { t: "Seguro LC", d: "Tarjeta digital con descuentos en actividades y espacios culturales de Granada." },
+              { t: "Parejas lingüísticas", d: "¿Vives en Granada? Hazte mentor y acompaña a un estudiante internacional." },
+            ].map(f => (
+              <div key={f.t} className="feature-card" style={{ opacity: .65 }}>
+                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>Próximamente</div>
+                <div className="disp" style={{ fontSize: "1.02rem", fontWeight: 600, marginBottom: 8 }}>{f.t}</div>
+                <p style={{ fontSize: ".88rem", lineHeight: 1.56, color: "var(--tinta-suave)", margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section style={{ padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
+          <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Con el respaldo de</span>
+          <hr className="regla" style={{ flex: 1, minWidth: 40 }} />
+          {["Universidad de Granada", "Centro de Lenguas Modernas", "Espacio V Centenario"].map(p => (
+            <span key={p} className="disp" style={{ fontSize: ".85rem", color: "var(--azul)", letterSpacing: ".03em" }}>{p}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function Portada({ ir }) {
   return (
     <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)" }}>
+      <div style={{ marginBottom: 24 }}>
+        <button onClick={() => ir(null)} className="disp"
+          style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".72rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
+          ← Clínica Cultural
+        </button>
+      </div>
       <header className="fade-up" style={{ marginBottom: "clamp(36px,5vw,64px)" }}>
         <div style={{ display: "flex", gap: 10, marginBottom: 22 }}>
           <Sello texto="C1 · Avanzado" color="var(--bermellon)" />
@@ -944,7 +1109,7 @@ function Sesion({ idx, ir }) {
   return (
     <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
-        <button onClick={() => ir(null)} className="disp"
+        <button onClick={() => ir("curso")} className="disp"
           style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".78rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
           ← Índice del curso
         </button>
@@ -1046,15 +1211,31 @@ function Sesion({ idx, ir }) {
 }
 
 export default function App() {
-  const [idx, setIdx] = useState(null);
+  const [view, setView] = useState(null);
+
+  function ir(target) {
+    window.scrollTo(0, 0);
+    setView(target);
+  }
+
   return (
     <div className="app-c1">
       <style>{ESTILOS}</style>
-      {idx === null ? <Portada ir={setIdx} /> : <Sesion idx={idx} ir={setIdx} />}
+      <PlatformaHeader view={view} ir={ir} />
+      {view === null
+        ? <Inicio ir={ir} />
+        : view === "curso"
+          ? <Portada ir={ir} />
+          : <Sesion idx={view} ir={ir} />
+      }
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <span className="disp" style={{ fontSize: ".82rem", color: "var(--tinta-suave)" }}>Javier Benítez · Centro de Lenguas Modernas, UGR</span>
-          <span className="disp" style={{ fontSize: ".95rem", color: "var(--bermellon)", letterSpacing: ".1em" }}>[|]</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .6 }}>Clínica Cultural y Lingüística</span>
+            <span className="disp" style={{ fontSize: ".95rem", color: "var(--bermellon)", letterSpacing: ".1em" }}>[|]</span>
+            <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .45 }}>BlablaELE</span>
+          </div>
         </div>
       </footer>
     </div>
