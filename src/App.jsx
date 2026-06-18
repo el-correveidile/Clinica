@@ -788,9 +788,9 @@ function PlatformaHeader({ view, ir }) {
   return (
     <nav className="plat-nav">
       <div className="plat-nav-inner">
-        <button className="plat-nav-brand" onClick={() => ir(null)}>
+        <a href="/" className="plat-nav-brand" onClick={e => { e.preventDefault(); ir(null); }}>
           <img src="/logo-blablaele.png" alt="blablaELE · HABLAMOS ESPAÑOL" />
-        </button>
+        </a>
         <div style={{ flex: 1 }} />
         <div className="plat-nav-links">
           <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
