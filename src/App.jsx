@@ -629,6 +629,21 @@ Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el esp
   },
 ];
 
+const METADATA = {
+  1:  { nivel: "C1", materia: ["Arte"],                tipo: "Pintura"     },
+  2:  { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  3:  { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  4:  { nivel: "C1", materia: ["Arte", "Identidad"],   tipo: "Pintura"     },
+  5:  { nivel: "C1", materia: ["Literatura"],          tipo: "Poesía"      },
+  6:  { nivel: "C1", materia: ["Literatura", "Música"],tipo: "Poesía"      },
+  7:  { nivel: "C1", materia: ["Música"],              tipo: "Música"      },
+  8:  { nivel: "C1", materia: ["Patrimonio", "Historia"], tipo: "Patrimonio" },
+  9:  { nivel: "C1", materia: ["Arte"],                tipo: "Arte urbano" },
+  10: { nivel: "C1", materia: ["Cine"],                tipo: "Cine"        },
+  11: { nivel: "C1", materia: ["Arte", "Tecnología"],  tipo: "Debate"      },
+  12: { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+};
+
 const ESTILOS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
@@ -774,135 +789,178 @@ function PlatformaHeader({ view, ir }) {
     <nav className="plat-nav">
       <div className="plat-nav-inner">
         <button className="plat-nav-brand" onClick={() => ir(null)}>
-          Clínica <em>Cultural</em>
+          bla<em>bla</em>ELE
         </button>
-        <div className="plat-nav-links">
-          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
-          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => ir("curso")}>Cursos</button>
-          <span className="plat-nav-link is-dim">Diagnóstico</span>
-          <span className="plat-nav-link is-dim">Farmacias</span>
-          <span className="plat-nav-link is-dim">Seguro LC</span>
+        <div style={{ marginLeft: 8, marginRight: "auto" }}>
+          <span className="plat-nav-tag" style={{ letterSpacing: ".18em" }}>HABLAMOS ESPAÑOL</span>
         </div>
-        <span className="plat-nav-tag">BlablaELE</span>
+        <div className="plat-nav-links" style={{ marginLeft: 0, flex: "none" }}>
+          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => ir("curso")}>Recursos</button>
+          <span className="plat-nav-link is-dim">Profesores</span>
+          <span className="plat-nav-link is-dim">Comunidad</span>
+        </div>
       </div>
     </nav>
   );
 }
 
 function Inicio({ ir }) {
+  const [filtro, setFiltro] = useState({ nivel: null, destreza: null, tipo: null });
+
+  const RECURSOS = [
+    {
+      id: "arte-c1",
+      titulo: "Arte y sociedad en la cultura hispánica",
+      desc: "Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.",
+      nivel: "C1", destreza: "Producción oral", tipo: "Mini web",
+      sesiones: 12, activo: true,
+      ir: () => ir("curso"),
+    },
+    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false },
+    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false },
+    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false },
+  ];
+
+  const NIVELES   = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const DESTREZAS = [...new Set(RECURSOS.map(r => r.destreza))];
+  const TIPOS     = [...new Set(RECURSOS.map(r => r.tipo))];
+
+  const toggleFiltro = (campo, valor) =>
+    setFiltro(prev => ({ ...prev, [campo]: prev[campo] === valor ? null : valor }));
+
+  const filtrados = RECURSOS.filter(r => {
+    if (filtro.nivel    && r.nivel    !== filtro.nivel)    return false;
+    if (filtro.destreza && r.destreza !== filtro.destreza) return false;
+    if (filtro.tipo     && r.tipo     !== filtro.tipo)     return false;
+    return true;
+  });
+
+  const hayFiltro = Object.values(filtro).some(Boolean);
+
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: "var(--azul)", color: "var(--papel)", padding: "clamp(56px,9vw,104px) clamp(20px,4vw,48px)" }}>
+      <section style={{ background: "var(--azul)", color: "var(--papel)", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-          <div className="fade-up" style={{ marginBottom: 18, display: "flex", gap: 10 }}>
-            <Sello texto="Granada · España" color="var(--oro)" />
-            <Sello texto="Español A1–C2" color="rgba(242,235,221,.45)" />
+          <div className="fade-up" style={{ marginBottom: 14 }}>
+            <Sello texto="Español A1–C2" color="var(--oro)" />
           </div>
-          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(2.6rem,6.5vw,4.4rem)", fontWeight: 600, lineHeight: .97, margin: "0 0 22px", letterSpacing: "-.02em" }}>
-            Clínica Cultural<br />
-            <em style={{ fontWeight: 400, color: "var(--oro)" }}>y Lingüística</em>
+          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(3rem,8vw,5.6rem)", fontWeight: 600, lineHeight: .95, margin: "0 0 10px", letterSpacing: "-.03em", fontStyle: "italic" }}>
+            bla<em style={{ fontStyle: "normal" }}>bla</em>ELE
           </h1>
-          <p className="fade-up" style={{ animationDelay: ".14s", maxWidth: 540, fontSize: "1.18rem", lineHeight: 1.62, opacity: .78, margin: "0 0 34px" }}>
-            Tu español, diagnosticado y tratado en Granada.
-            No es un curso: es una experiencia integral donde el idioma se vive, no se estudia.
+          <p className="disp fade-up" style={{ animationDelay: ".1s", fontSize: "clamp(.9rem,2vw,1.1rem)", letterSpacing: ".28em", textTransform: "uppercase", color: "var(--oro)", margin: "0 0 26px", opacity: .9 }}>
+            HABLAMOS ESPAÑOL
           </p>
-          <div className="fade-up" style={{ animationDelay: ".2s", display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <button className="hero-btn-primary" onClick={() => ir("curso")}>Ver cursos →</button>
-            <button className="hero-btn-ghost">Diagnóstico gratuito (próx.)</button>
+          <p className="fade-up" style={{ animationDelay: ".16s", maxWidth: 500, fontSize: "1.12rem", lineHeight: 1.64, opacity: .75, margin: "0 0 32px" }}>
+            Recursos, mini webs y materiales para aprender y enseñar español.
+            Clasificados por nivel, destreza y tipo de contenido.
+          </p>
+          <div className="fade-up" style={{ animationDelay: ".22s", display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <button className="hero-btn-primary" onClick={() => ir("curso")}>Explorar recursos →</button>
+            <button className="hero-btn-ghost">Para profesores (próx.)</button>
           </div>
         </div>
       </section>
 
-      {/* Journey */}
-      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
-            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Tu camino en la clínica</span>
-            <hr className="regla" style={{ flex: 1 }} />
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 22 }}>
-            {[
-              { n: "01", t: "Entras a consulta", d: "Describes tus objetivos, tu nivel y lo que necesitas del español." },
-              { n: "02", t: "Te diagnosticamos", d: "Evaluación inicial + plan de tratamiento lingüístico y cultural personalizado." },
-              { n: "03", t: "Aplicamos el tratamiento", d: "Cursos, tutorías, rutas culturales y herramientas de inmersión real en Granada." },
-            ].map(step => (
-              <div key={step.n} className="feature-card">
-                <div className="disp" style={{ fontSize: "2.1rem", fontWeight: 600, color: "var(--bermellon)", lineHeight: 1, marginBottom: 14 }}>{step.n}</div>
-                <div className="disp" style={{ fontSize: "1.08rem", fontWeight: 600, marginBottom: 9 }}>{step.t}</div>
-                <p style={{ fontSize: ".96rem", lineHeight: 1.6, color: "var(--tinta-suave)", margin: 0 }}>{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cursos */}
+      {/* Catálogo de recursos */}
       <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
-            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Cursos</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 26 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Catálogo de recursos</span>
             <hr className="regla" style={{ flex: 1 }} />
+            {hayFiltro && (
+              <button onClick={() => setFiltro({ nivel: null, destreza: null, tipo: null })} className="disp"
+                style={{ fontSize: ".68rem", letterSpacing: ".14em", textTransform: "uppercase", background: "none", border: "none", color: "var(--bermellon)", cursor: "pointer", padding: 0 }}>
+                Limpiar ×
+              </button>
+            )}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))", gap: 20 }}>
-            <button onClick={() => ir("curso")} className="cartela"
-              style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "28px", display: "flex", flexDirection: "column", gap: 12, fontFamily: "inherit" }}>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <Sello texto="C1 · Avanzado" color="var(--bermellon)" />
-                <Sello texto="Activo" color="var(--verde)" />
-              </div>
-              <div className="disp" style={{ fontSize: "1.22rem", fontWeight: 600, lineHeight: 1.18 }}>Arte y sociedad en la cultura hispánica</div>
-              <p style={{ fontSize: ".92rem", color: "var(--tinta-suave)", lineHeight: 1.58, margin: 0 }}>
-                Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.
-              </p>
-              <span className="disp" style={{ fontSize: ".73rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>12 sesiones → Entrar</span>
-            </button>
+
+          {/* Filtros */}
+          <div style={{ marginBottom: 28, padding: "16px 18px", background: "var(--papel-2)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              { t: "Escuela de Poetas", d: "Del Romancero a los poetas de la experiencia. Creación y análisis poético en español." },
-              { t: "Laboratorio de Cine", d: "El cine español como espejo de la historia. Buñuel, Almodóvar, Amenábar." },
-            ].map(c => (
-              <div key={c.t} className="course-card-soon">
-                <div style={{ marginBottom: 12 }}><Sello texto="Próximamente" color="var(--tinta-suave)" /></div>
-                <div className="disp" style={{ fontSize: "1.12rem", fontWeight: 600, lineHeight: 1.18, marginBottom: 10 }}>{c.t}</div>
-                <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.56, margin: 0 }}>{c.d}</p>
+              { label: "Nivel", campo: "nivel", opciones: NIVELES, color: "var(--azul)" },
+              { label: "Destreza", campo: "destreza", opciones: DESTREZAS, color: "var(--verde)" },
+              { label: "Tipo", campo: "tipo", opciones: TIPOS, color: "var(--bermellon)" },
+            ].map(({ label, campo, opciones, color }) => (
+              <div key={campo} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                <span className="disp" style={{ fontSize: ".63rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", minWidth: 60 }}>{label}</span>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {opciones.map(op => {
+                    const activo = filtro[campo] === op;
+                    return (
+                      <button key={op} onClick={() => toggleFiltro(campo, op)} className="disp"
+                        style={{ fontSize: ".68rem", letterSpacing: ".12em", textTransform: "uppercase", padding: "4px 11px", borderRadius: 20, border: `1px solid ${activo ? color : "rgba(28,24,20,.2)"}`, background: activo ? color : "transparent", color: activo ? "var(--papel)" : "var(--tinta-suave)", cursor: "pointer", transition: "all .18s" }}>
+                        {op}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Tarjetas de recursos */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 18 }}>
+            {filtrados.map(r => (
+              r.activo ? (
+                <button key={r.id} onClick={r.ir} className="cartela"
+                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "24px", display: "flex", flexDirection: "column", gap: 10, fontFamily: "inherit", minHeight: 180 }}>
+                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                    <Sello texto={r.nivel} color="var(--bermellon)" />
+                    <Sello texto={r.destreza} color="var(--azul)" />
+                    <Sello texto={r.tipo} color="var(--verde)" />
+                  </div>
+                  <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                  <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                  <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>
+                    {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
+                  </span>
+                </button>
+              ) : (
+                <div key={r.id} className="course-card-soon" style={{ minHeight: 180, display: "flex", flexDirection: "column", gap: 10 }}>
+                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                    <Sello texto={r.nivel} color="var(--tinta-suave)" />
+                    <Sello texto={r.destreza} color="var(--tinta-suave)" />
+                    <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                  </div>
+                  <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                  <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                  <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", opacity: .7 }}>Próximamente</span>
+                </div>
+              )
+            ))}
+            {filtrados.length === 0 && (
+              <div style={{ gridColumn: "1/-1", textAlign: "center", padding: "52px 20px", color: "var(--tinta-suave)", fontStyle: "italic" }}>
+                No hay recursos con estos filtros.
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Farmacia y herramientas */}
-      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
+      {/* Para profesores */}
+      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 34 }}>
-            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Farmacia lingüística y herramientas</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profesores</span>
             <hr className="regla" style={{ flex: 1 }} />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
             {[
-              { t: "Diagnóstico", d: "Test de nivel + entrevista clínica. Construimos tu plan personalizado con La Doctora." },
-              { t: "Farmacias", d: "Píldoras gramaticales, pomadas literarias y jarabes culturales dosificados a tu nivel." },
-              { t: "Seguro LC", d: "Tarjeta digital con descuentos en actividades y espacios culturales de Granada." },
-              { t: "Parejas lingüísticas", d: "¿Vives en Granada? Hazte mentor y acompaña a un estudiante internacional." },
+              { t: "Subir recursos", d: "Comparte tus materiales con la comunidad docente y clasifícalos por nivel y destreza." },
+              { t: "Dashboard", d: "Seguimiento de tus estudiantes: acceso, tiempo de lectura y resultados por sesión." },
+              { t: "Acceso con Magic Link", d: "Sin contraseñas. Tus alumnos entran con un enlace enviado a su correo." },
+              { t: "Herramientas IA", d: "Genera actividades, textos adaptados y fichas léxicas con inteligencia artificial." },
             ].map(f => (
-              <div key={f.t} className="feature-card" style={{ opacity: .65 }}>
-                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>Próximamente</div>
-                <div className="disp" style={{ fontSize: "1.02rem", fontWeight: 600, marginBottom: 8 }}>{f.t}</div>
-                <p style={{ fontSize: ".88rem", lineHeight: 1.56, color: "var(--tinta-suave)", margin: 0 }}>{f.d}</p>
+              <div key={f.t} className="feature-card" style={{ opacity: .6 }}>
+                <div className="disp" style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 9 }}>Próximamente</div>
+                <div className="disp" style={{ fontSize: "1rem", fontWeight: 600, marginBottom: 7 }}>{f.t}</div>
+                <p style={{ fontSize: ".87rem", lineHeight: 1.56, color: "var(--tinta-suave)", margin: 0 }}>{f.d}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Partners */}
-      <section style={{ padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
-          <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Con el respaldo de</span>
-          <hr className="regla" style={{ flex: 1, minWidth: 40 }} />
-          {["Universidad de Granada", "Centro de Lenguas Modernas", "Espacio V Centenario"].map(p => (
-            <span key={p} className="disp" style={{ fontSize: ".85rem", color: "var(--azul)", letterSpacing: ".03em" }}>{p}</span>
-          ))}
         </div>
       </section>
     </div>
@@ -910,18 +968,38 @@ function Inicio({ ir }) {
 }
 
 function Portada({ ir }) {
+  const [filtro, setFiltro] = useState({ materia: null, tipo: null });
+
+  const materias = [...new Set(Object.values(METADATA).flatMap(m => m.materia))].sort();
+  const tipos    = [...new Set(Object.values(METADATA).map(m => m.tipo))].sort();
+
+  const toggle = (campo, valor) =>
+    setFiltro(prev => ({ ...prev, [campo]: prev[campo] === valor ? null : valor }));
+
+  const hayFiltro = filtro.materia || filtro.tipo;
+
+  const sesionsFiltradas = SESIONES.filter(s => {
+    const m = METADATA[s.n] || {};
+    if (filtro.materia && !m.materia?.includes(filtro.materia)) return false;
+    if (filtro.tipo    && m.tipo !== filtro.tipo)               return false;
+    return true;
+  });
+
   return (
     <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)" }}>
       <div style={{ marginBottom: 24 }}>
         <button onClick={() => ir(null)} className="disp"
           style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".72rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
-          ← Clínica Cultural
+          ← blablaELE
         </button>
       </div>
-      <header className="fade-up" style={{ marginBottom: "clamp(36px,5vw,64px)" }}>
-        <div style={{ display: "flex", gap: 10, marginBottom: 22 }}>
+
+      <header className="fade-up" style={{ marginBottom: "clamp(28px,4vw,48px)" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
           <Sello texto="C1 · Avanzado" color="var(--bermellon)" />
-          <Sello texto="12 sesiones" color="var(--azul)" />
+          <Sello texto="Producción oral" color="var(--azul)" />
+          <Sello texto="Mini web" color="var(--verde)" />
+          <Sello texto="12 sesiones" color="var(--tinta-suave)" />
         </div>
         <h1 className="disp" style={{ fontWeight: 600, lineHeight: .98, margin: 0, fontSize: "clamp(2.6rem,7vw,5rem)", letterSpacing: "-.01em" }}>
           Arte y sociedad<br />
@@ -933,22 +1011,70 @@ function Portada({ ir }) {
         </p>
       </header>
 
-      <div className="fade-up" style={{ animationDelay: ".1s", display: "flex", alignItems: "center", gap: 16, marginBottom: 26 }}>
-        <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Índice del curso</span>
+      {/* Filtros de materia y tipo */}
+      <div className="fade-up" style={{ animationDelay: ".08s", marginBottom: 22, padding: "14px 16px", background: "var(--papel-2)", border: "1px solid rgba(28,24,20,.11)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 10 }}>
+        {[
+          { label: "Materia", campo: "materia", opciones: materias, color: "var(--azul)" },
+          { label: "Tipo",    campo: "tipo",    opciones: tipos,    color: "var(--bermellon)" },
+        ].map(({ label, campo, opciones, color }) => (
+          <div key={campo} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <span className="disp" style={{ fontSize: ".62rem", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--tinta-suave)", minWidth: 52 }}>{label}</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              {opciones.map(op => {
+                const activo = filtro[campo] === op;
+                return (
+                  <button key={op} onClick={() => toggle(campo, op)} className="disp"
+                    style={{ fontSize: ".67rem", letterSpacing: ".12em", textTransform: "uppercase", padding: "4px 11px", borderRadius: 20, border: `1px solid ${activo ? color : "rgba(28,24,20,.2)"}`, background: activo ? color : "transparent", color: activo ? "var(--papel)" : "var(--tinta-suave)", cursor: "pointer", transition: "all .18s" }}>
+                    {op}
+                  </button>
+                );
+              })}
+            </div>
+            {hayFiltro && campo === "tipo" && (
+              <button onClick={() => setFiltro({ materia: null, tipo: null })} className="disp"
+                style={{ fontSize: ".65rem", letterSpacing: ".14em", textTransform: "uppercase", background: "none", border: "none", color: "var(--bermellon)", cursor: "pointer", padding: 0, marginLeft: "auto" }}>
+                Limpiar ×
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="fade-up" style={{ animationDelay: ".1s", display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+        <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>
+          {hayFiltro ? `${sesionsFiltradas.length} sesiones` : "Índice del curso"}
+        </span>
         <hr className="regla" style={{ flex: 1 }} />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(248px,1fr))", gap: 18 }}>
-        {SESIONES.map((s, i) => (
-          <button key={s.n} onClick={() => ir(i)} className="cartela fade-up"
-            style={{ animationDelay: `${0.12 + i * 0.04}s`, textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.55)", border: "1px solid rgba(28,24,20,.18)", borderRadius: 6, padding: "20px 20px 22px", display: "flex", flexDirection: "column", gap: 10, minHeight: 168 }}>
-            <span className="cartela-num disp" style={{ fontSize: "2.1rem", fontWeight: 600, lineHeight: 1, color: "var(--tinta)", transition: "color .3s" }}>{String(s.n).padStart(2, "0")}</span>
-            <span className="disp" style={{ fontSize: "1.18rem", fontWeight: 600, lineHeight: 1.15 }}>{s.titulo}</span>
-            <span style={{ fontSize: ".82rem", color: "var(--tinta-suave)", fontStyle: "italic" }}>{s.obra}</span>
-            <span style={{ marginTop: "auto", fontSize: ".9rem", color: "var(--azul)", lineHeight: 1.35 }}>{s.nudo}</span>
-          </button>
-        ))}
-      </div>
+      {sesionsFiltradas.length === 0 ? (
+        <div style={{ textAlign: "center", padding: "48px 20px", color: "var(--tinta-suave)", fontStyle: "italic" }}>
+          No hay sesiones con estos filtros.
+        </div>
+      ) : (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(248px,1fr))", gap: 18 }}>
+          {sesionsFiltradas.map((s, i) => {
+            const meta = METADATA[s.n] || {};
+            return (
+              <button key={s.n} onClick={() => ir(s.n - 1)} className="cartela fade-up"
+                style={{ animationDelay: `${0.08 + i * 0.04}s`, textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.55)", border: "1px solid rgba(28,24,20,.18)", borderRadius: 6, padding: "20px 20px 22px", display: "flex", flexDirection: "column", gap: 9, minHeight: 180 }}>
+                <span className="cartela-num disp" style={{ fontSize: "2.1rem", fontWeight: 600, lineHeight: 1, color: "var(--tinta)", transition: "color .3s" }}>{String(s.n).padStart(2, "0")}</span>
+                <span className="disp" style={{ fontSize: "1.18rem", fontWeight: 600, lineHeight: 1.15 }}>{s.titulo}</span>
+                <span style={{ fontSize: ".82rem", color: "var(--tinta-suave)", fontStyle: "italic" }}>{s.obra}</span>
+                <span style={{ fontSize: ".9rem", color: "var(--azul)", lineHeight: 1.35 }}>{s.nudo}</span>
+                <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", gap: 5 }}>
+                  {(meta.materia || []).map(m => (
+                    <span key={m} style={{ fontSize: ".65rem", letterSpacing: ".1em", textTransform: "uppercase", padding: "2px 8px", borderRadius: 12, background: "rgba(39,56,75,.1)", color: "var(--azul)" }}>{m}</span>
+                  ))}
+                  {s.video && (
+                    <span style={{ fontSize: ".65rem", letterSpacing: ".1em", textTransform: "uppercase", padding: "2px 8px", borderRadius: 12, background: "rgba(178,58,34,.1)", color: "var(--bermellon)" }}>▶ Vídeo</span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -1231,10 +1357,10 @@ export default function App() {
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <span className="disp" style={{ fontSize: ".82rem", color: "var(--tinta-suave)" }}>Javier Benítez · Centro de Lenguas Modernas, UGR</span>
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .6 }}>Clínica Cultural y Lingüística</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <span className="disp" style={{ fontSize: ".95rem", color: "var(--bermellon)", letterSpacing: ".1em" }}>[|]</span>
-            <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .45 }}>BlablaELE</span>
+            <span className="disp" style={{ fontSize: ".8rem", fontStyle: "italic", fontWeight: 600, color: "var(--tinta-suave)", opacity: .7 }}>blablaELE</span>
+            <span className="disp" style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .45 }}>HABLAMOS ESPAÑOL</span>
           </div>
         </div>
       </footer>
