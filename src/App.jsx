@@ -648,11 +648,15 @@ const ESTILOS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root{
-  --papel:#F2EBDD;
-  --papel-2:#EAE0CC;
+  --papel:#F2EBDD;       /* crema — solo para el interior de recursos */
+  --papel-2:#EAE0CC;     /* crema más oscura — bordes interiores */
+  --fondo:#FFFFFF;       /* fondo general de la plataforma */
+  --fondo-alt:#F6F4F1;   /* secciones alternas de la plataforma */
   --tinta:#1C1814;
   --tinta-suave:#5A5043;
-  --bermellon:#B23A22;
+  --coral:#C8503C;       /* color del brushstroke del logo */
+  --coral-suave:#F5EAE7; /* tinte claro del coral */
+  --bermellon:#B23A22;   /* rojo oscuro para acentos en contenido */
   --azul:#27384B;
   --verde:#5A8C6E;
   --oro:#D4A574;
@@ -661,13 +665,11 @@ const ESTILOS = `
 .app-c1{
   font-family:'Spectral', Georgia, serif;
   color:var(--tinta);
-  background-color:#F2EBDD;
-  background-image:radial-gradient(rgba(28,24,20,.025) 1px, transparent 1px);
-  background-size:4px 4px;
+  background-color:var(--fondo);
   min-height:100vh;
 }
 .disp{ font-family:'Fraunces', Georgia, serif; }
-.app-c1 ::selection{ background:var(--bermellon); color:var(--papel); }
+.app-c1 ::selection{ background:var(--coral); color:#fff; }
 
 .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards; }
 @keyframes fadeUp{ to{ opacity:1; transform:none; } }
@@ -691,20 +693,20 @@ const ESTILOS = `
 .lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
 .lexico-chip--def:hover .lexico-chip{ background:var(--azul); color:var(--papel); }
 
-.plat-nav{ background:var(--papel); border-bottom:1px solid rgba(28,24,20,.12); position:sticky; top:0; z-index:200; }
-.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:56px; display:flex; align-items:center; }
-.plat-nav-brand{ cursor:pointer; background:none; border:none; padding:0; display:flex; align-items:center; }
-.plat-nav-brand img{ height:34px; width:auto; display:block; }
+.plat-nav{ background:#fff; border-bottom:1px solid rgba(28,24,20,.09); position:sticky; top:0; z-index:200; }
+.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:72px; display:flex; align-items:center; }
+.plat-nav-brand{ cursor:pointer; background:none; border:none; padding:0; display:flex; align-items:center; text-decoration:none; }
+.plat-nav-brand img{ height:56px; width:auto; display:block; mix-blend-mode:multiply; }
 .plat-nav-links{ display:flex; gap:18px; margin-left:0; flex:none; }
 .plat-nav-link{ font-family:'Fraunces',serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--tinta-suave); cursor:pointer; transition:color .2s; background:none; border:none; padding:0; opacity:.65; }
 .plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--tinta); opacity:1; }
 .plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.28; }
 .plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-suave); opacity:.4; }
-.feature-card{ background:rgba(255,253,247,.55); border:1px solid rgba(28,24,20,.16); border-radius:6px; padding:26px; }
-.course-card-soon{ background:rgba(242,235,221,.35); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
-.hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--bermellon); color:var(--papel); border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
-.hero-btn-primary:hover{ background:#8f2d1a; }
-.hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(242,235,221,.6); border:1px solid rgba(242,235,221,.28); padding:13px 24px; border-radius:4px; cursor:default; opacity:.55; }
+.feature-card{ background:#fff; border:1px solid rgba(28,24,20,.13); border-radius:6px; padding:26px; }
+.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
+.hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--tinta); color:#fff; border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
+.hero-btn-primary:hover{ background:var(--azul); }
+.hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(255,255,255,.65); border:1px solid rgba(255,255,255,.32); padding:13px 24px; border-radius:4px; cursor:default; opacity:.7; }
 `;
 
 function LexicoChip({ word, def }) {
@@ -839,18 +841,18 @@ function Inicio({ ir }) {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: "var(--azul)", color: "var(--papel)", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
+      <section style={{ background: "var(--coral)", color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div className="fade-up" style={{ marginBottom: 14 }}>
-            <Sello texto="Español A1–C2" color="var(--oro)" />
+            <Sello texto="Español A1–C2" color="rgba(255,255,255,.7)" />
           </div>
-          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(3rem,8vw,5.6rem)", fontWeight: 600, lineHeight: .95, margin: "0 0 10px", letterSpacing: "-.03em", fontStyle: "italic" }}>
+          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(3rem,8vw,5.6rem)", fontWeight: 600, lineHeight: .95, margin: "0 0 10px", letterSpacing: "-.03em", fontStyle: "italic", color: "#fff" }}>
             bla<em style={{ fontStyle: "normal" }}>bla</em>ELE
           </h1>
-          <p className="disp fade-up" style={{ animationDelay: ".1s", fontSize: "clamp(.9rem,2vw,1.1rem)", letterSpacing: ".28em", textTransform: "uppercase", color: "var(--oro)", margin: "0 0 26px", opacity: .9 }}>
+          <p className="disp fade-up" style={{ animationDelay: ".1s", fontSize: "clamp(.9rem,2vw,1.1rem)", letterSpacing: ".28em", textTransform: "uppercase", color: "rgba(255,255,255,.75)", margin: "0 0 26px" }}>
             HABLAMOS ESPAÑOL
           </p>
-          <p className="fade-up" style={{ animationDelay: ".16s", maxWidth: 500, fontSize: "1.12rem", lineHeight: 1.64, opacity: .75, margin: "0 0 32px" }}>
+          <p className="fade-up" style={{ animationDelay: ".16s", maxWidth: 500, fontSize: "1.12rem", lineHeight: 1.64, color: "rgba(255,255,255,.82)", margin: "0 0 32px" }}>
             Recursos, mini webs y materiales para aprender y enseñar español.
             Clasificados por nivel, destreza y tipo de contenido.
           </p>
@@ -876,7 +878,7 @@ function Inicio({ ir }) {
           </div>
 
           {/* Filtros */}
-          <div style={{ marginBottom: 28, padding: "16px 18px", background: "var(--papel-2)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ marginBottom: 28, padding: "16px 18px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 12 }}>
             {[
               { label: "Nivel", campo: "nivel", opciones: NIVELES, color: "var(--azul)" },
               { label: "Destreza", campo: "destreza", opciones: DESTREZAS, color: "var(--verde)" },
@@ -939,7 +941,7 @@ function Inicio({ ir }) {
       </section>
 
       {/* Para profesores */}
-      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--papel-2)" }}>
+      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--fondo-alt)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profesores</span>
@@ -984,7 +986,7 @@ function Portada({ ir }) {
   });
 
   return (
-    <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)" }}>
+    <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)", background: "var(--papel)" }}>
       <div style={{ marginBottom: 24 }}>
         <button onClick={() => ir(null)} className="disp"
           style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".72rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
@@ -1010,7 +1012,7 @@ function Portada({ ir }) {
       </header>
 
       {/* Filtros de materia y tipo */}
-      <div className="fade-up" style={{ animationDelay: ".08s", marginBottom: 22, padding: "14px 16px", background: "var(--papel-2)", border: "1px solid rgba(28,24,20,.11)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="fade-up" style={{ animationDelay: ".08s", marginBottom: 22, padding: "14px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 10 }}>
         {[
           { label: "Materia", campo: "materia", opciones: materias, color: "var(--azul)" },
           { label: "Tipo",    campo: "tipo",    opciones: tipos,    color: "var(--bermellon)" },
@@ -1231,7 +1233,7 @@ function Sesion({ idx, ir }) {
   useEffect(() => { window.scrollTo(0, 0); }, [idx]);
 
   return (
-    <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)" }}>
+    <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)", background: "var(--papel)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
         <button onClick={() => ir("curso")} className="disp"
           style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".78rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
