@@ -702,6 +702,26 @@ const ESTILOS = `
 .plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--tinta); opacity:1; }
 .plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.28; }
 .plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-suave); opacity:.4; }
+
+.plat-burger{ display:none; flex-direction:column; justify-content:center; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-right:-8px; }
+.plat-burger-line{ width:22px; height:2px; background:var(--tinta); border-radius:2px; transition:transform .25s cubic-bezier(.4,0,.2,1), opacity .2s; display:block; }
+.plat-burger--open .plat-burger-line:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.plat-burger--open .plat-burger-line:nth-child(2){ opacity:0; transform:scaleX(0); }
+.plat-burger--open .plat-burger-line:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.plat-mobile-menu{ position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid rgba(28,24,20,.1); z-index:199; box-shadow:0 8px 24px -8px rgba(28,24,20,.12); }
+.plat-mobile-link{ display:block; width:100%; text-align:left; font-family:'Fraunces',serif; font-size:.92rem; letter-spacing:.12em; text-transform:uppercase; padding:15px clamp(20px,4vw,48px); color:var(--tinta-suave); background:none; border:none; border-top:1px solid rgba(28,24,20,.07); cursor:pointer; transition:color .18s, background .18s; }
+.plat-mobile-link:first-child{ border-top:none; }
+.plat-mobile-link:hover,.plat-mobile-link.is-active{ color:var(--tinta); background:var(--fondo-alt); }
+.plat-mobile-link.is-dim{ opacity:.3; cursor:default; pointer-events:none; }
+
+@media(max-width:700px){
+  .plat-nav-links{ display:none; }
+  .plat-burger{ display:flex; }
+}
+@media(min-width:701px){
+  .plat-mobile-menu{ display:none !important; }
+}
 .feature-card{ background:#fff; border:1px solid rgba(28,24,20,.13); border-radius:6px; padding:26px; }
 .course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
 .hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--tinta); color:#fff; border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
@@ -785,22 +805,50 @@ function Sello({ texto, color }) {
 }
 
 function PlatformaHeader({ view, ir }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const isHome = view === null;
   const isCurso = view === "curso" || typeof view === "number";
+
+  function navIr(target) {
+    setMenuOpen(false);
+    ir(target);
+  }
+
   return (
-    <nav className="plat-nav">
+    <nav className="plat-nav" style={{ position: "relative" }}>
       <div className="plat-nav-inner">
-        <a href="/" className="plat-nav-brand" onClick={e => { e.preventDefault(); ir(null); }}>
+        <a href="/" className="plat-nav-brand" onClick={e => { e.preventDefault(); navIr(null); }}>
           <img src="/logo-blablaele.png" alt="blablaELE · HABLAMOS ESPAÑOL" />
         </a>
         <div style={{ flex: 1 }} />
+        {/* Desktop links */}
         <div className="plat-nav-links">
-          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => ir(null)}>Inicio</button>
-          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => ir("curso")}>Recursos</button>
+          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
           <span className="plat-nav-link is-dim">Profesores</span>
           <span className="plat-nav-link is-dim">Comunidad</span>
         </div>
+        {/* Hamburger */}
+        <button
+          className={`plat-burger${menuOpen ? " plat-burger--open" : ""}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuOpen}
+        >
+          <span className="plat-burger-line" />
+          <span className="plat-burger-line" />
+          <span className="plat-burger-line" />
+        </button>
       </div>
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="plat-mobile-menu">
+          <button className={`plat-mobile-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
+          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <span className="plat-mobile-link is-dim">Profesores</span>
+          <span className="plat-mobile-link is-dim">Comunidad</span>
+        </div>
+      )}
     </nav>
   );
 }
