@@ -909,7 +909,7 @@ function Inicio({ ir }) {
             Clasificados por nivel, destreza y tipo de contenido.
           </p>
           <div className="fade-up" style={{ animationDelay: ".22s", display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <button className="hero-btn-primary" onClick={() => ir("curso")}>Explorar recursos →</button>
+            <button className="hero-btn-primary" onClick={() => ir(null)}>Explorar recursos →</button>
             <button className="hero-btn-ghost">Para profesores (próx.)</button>
           </div>
         </div>
