@@ -135,6 +135,8 @@ Lorca tenía una teoría sobre esto. La llamó *el duende*. En una conferencia m
 
 En el Romance sonámbulo, el duende está en lo que no se explica. El color verde no es un color: es un deseo (*verde que te quiero verde*), una carne imposible, un pelo que no puede existir. Lorca practica la sinestesia —mezcla de sensaciones de distintos sentidos— y un surrealismo propio que no viene de los franceses sino de la tradición popular andaluza, del cante jondo, del romance medieval. Sus imágenes no pasan por la razón: van directamente a un lugar más hondo.
 
+Hay que detenerse en la decisión formal. El romance es la forma poética popular por excelencia en español: versos octosílabos, rima asonante en los pares, origen medieval, transmisión oral. Lorca la conoce desde niño; de hecho, el Romancero gitano nace de la convicción de que esa forma antigua puede cargar con contenido radicalmente moderno. El resultado es paradójico: una estructura que el lector reconoce de inmediato (el ritmo, la sonoridad) que transporta imágenes que la razón no puede resolver. La familiaridad de la forma hace más desconcertante la opacidad del contenido.
+
 El poema narra vagamente una historia de amor y tragedia: una muchacha que espera en su balcón, un hombre que llega herido demasiado tarde. Pero lo que nos llega no es la historia. Es esa atmósfera verde y plateada, esa luna gitana que hace que las cosas miren y que la muchacha no pueda mirarlas. No hay explicación para ese verso. Solo hay verdad.
 
 Lorca fue fusilado en agosto de 1936, al inicio de la Guerra Civil española, con 38 años. Su cuerpo no fue encontrado. El duende, al final, lo alcanzó a él también.`,
@@ -154,11 +156,11 @@ Lorca fue fusilado en agosto de 1936, al inicio de la Guerra Civil española, co
       "lo irracional": "Lo que escapa a la lógica y la razón.",
     },
     comentario: [
-      "«Verde que te quiero verde»: ¿qué tipo de figura retórica aparece aquí? ¿Qué efecto produce repetirlo varias veces?",
-      "El barco está «sobre la mar» y el caballo «en la montaña». ¿Hay algo extraño en estas imágenes? ¿Cómo las interpretas?",
-      "«Las cosas la están mirando / y ella no puede mirarlas». ¿Qué sabemos de la muchacha a través de estos dos versos?",
-      "¿Cuál es la diferencia entre entender un poema y sentirlo? ¿Has tenido esa experiencia con algún poema en cualquier lengua?",
-      "Lorca habla del duende como algo que no puede aprenderse. ¿Crees que hay cosas en el arte que no se pueden enseñar?",
+      "La palabra «verde» aparece cuatro veces en doce versos, pero en cada aparición cumple una función diferente: deseo («te quiero verde»), descripción corporal imposible («verde carne, pelo verde»), atmósfera («verde viento, verdes ramas») y, finalmente, contraste con «fría plata». Analiza esa progresión semántica: ¿en qué sentido el «verde» del primer verso y el del último no son el mismo? ¿Cómo convierte Lorca un color en un sistema de significados?",
+      "El Romance sonámbulo respeta la forma del romance medieval: octosílabos con rima asonante en los versos pares. Sin embargo, la primera línea («Verde que te quiero verde») no funciona como un verso narrativo sino como un conjuro o estribillo que regresa a lo largo del poema. ¿Cómo cambia la función de ese verso respecto al resto? Argumenta por qué Lorca elige mezclar una forma popular y accesible con un contenido deliberadamente hermético.",
+      "El Romancero gitano transforma el romance medieval —que era un género narrativo popular con personajes y acciones definidas— en poesía de imágenes opacas. La historia de amor y muerte que subyace en el Romance sonámbulo nunca se cuenta directamente; solo se intuye. ¿Qué indica esa decisión sobre el proyecto poético de Lorca? ¿Está conservando la tradición oral o subvirtiéndola desde dentro?",
+      "«Las cosas la están mirando / y ella no puede mirarlas». El uso de «están mirando» (acción en curso, agencia en las cosas) frente a «no puede mirarlas» (incapacidad, pasividad en la muchacha) crea una inversión del orden natural: el mundo inanimado actúa y el ser humano queda paralizado. Analiza qué informa cada construcción verbal sobre el estado de la muchacha y argumenta por qué Lorca no escribe simplemente «las cosas la miran y ella no las mira».",
+      "Lorca distingue el duende del ángel (la gracia técnica) y de la musa (la inspiración intelectual): el duende implica proximidad a la muerte y no puede invocarse voluntariamente. Si aplicamos ese criterio al Romance sonámbulo, ¿dónde localizas la presencia del duende: en el texto mismo, en determinadas imágenes concretas, o en el efecto que produce en quien lo lee? ¿O crees que el duende es una categoría crítica poco operativa para analizar un poema?",
     ],
     tarea: "Elige un color y conviértelo en una emoción, un recuerdo o una persona. Escribe un poema de 10 a 14 versos en el que ese color aparezca al menos tres veces, siempre significando algo diferente. Inspírate en la técnica de Lorca: no expliques nada, solo muestra.",
     debate: [
@@ -233,6 +235,8 @@ El Poema 20 es paradójico desde la primera línea: *puedo escribir los versos m
 
 El poema trabaja con una estructura circular: vuelve a las mismas frases, a las mismas imágenes, como una mente que no puede dejar de pensar en lo mismo. *La noche está estrellada. Ella no está conmigo.* La repetición no es pereza: es la forma en que funciona la memoria cuando ha perdido algo. Damos vueltas. Volvemos. Intentamos soltarlo y no podemos.
 
+La arquitectura temporal del poema es también reveladora. Neruda usa sistemáticamente el pretérito imperfecto para el pasado compartido («la quise», «la tuve», «me quería»), el presente para la constatación de la ausencia («no la tengo», «no está conmigo»), y el futuro inevitable para la entrega a otro («Será de otro»). Esos tres tiempos no son solo gramática: son tres estadios emocionales que el poema recorre. La clave está en que el paso de uno a otro no es limpio; los tiempos se interrumpen y se superponen, igual que los estados de ánimo.
+
 Y al final llega ese verso que se ha convertido en uno de los más citados en castellano: *Es tan corto el amor, y es tan largo el olvido.* La simetría es perfecta. Dos mitades, dos tiempos, dos verdades que se contradicen y se confirman al mismo tiempo. El amor cabe en una noche, en unos años, en unas estrofas. El olvido —que no es ausencia de recuerdo sino el trabajo doloroso de aprender a vivir sin— puede durar toda una vida.
 
 Neruda siguió escribiendo cincuenta años más. Ganó el Premio Nobel en 1971. Murió en Chile en 1973. Pero el chico de veinte años que escribió *es tan corto el amor* ya lo sabía todo sobre lo que iba a venir.`,
@@ -252,11 +256,11 @@ Neruda siguió escribiendo cincuenta años más. Ganó el Premio Nobel en 1971. 
       "la pérdida": "Privación de algo o alguien que se tenía.",
     },
     comentario: [
-      "«Puedo escribir los versos más tristes esta noche»: ¿por qué dice *puedo* y no *voy a escribir*? ¿Qué diferencia hace ese verbo modal?",
-      "El poema repite frases e imágenes varias veces. ¿Qué efecto produce esa repetición? ¿A qué se parece en la vida real?",
-      "«Ya no la quiero, es cierto, pero tal vez la quiero»: ¿es esto una contradicción o una descripción exacta de algo que has sentido?",
-      "«Es tan corto el amor, y es tan largo el olvido»: ¿estás de acuerdo? ¿El olvido es siempre más largo que el amor?",
-      "Neruda escribió este poema a los veinte años. ¿Crees que se puede escribir algo así tan joven, o hay experiencias que solo se pueden escribir con el tiempo?",
+      "El verbo modal «poder» en «Puedo escribir los versos más tristes esta noche» establece una distancia entre el poeta y el acto de escribir: no afirma que lo hará, sino que tiene la capacidad de hacerlo. ¿Qué implica esa distancia reflexiva para la relación entre el yo que sufre y el yo que escribe? Compara esta apertura con la de otro poema de duelo o pérdida que conozcas y analiza si la distancia reflexiva es un recurso habitual o excepcional.",
+      "El poema usa anáfora de manera sistemática: «Puedo escribir» reaparece tres veces, «Ya no la quiero, es cierto» se repite con variación. Analiza esa arquitectura: ¿tiene el poema una progresión hacia algún lugar, o es estrictamente circular? Localiza el verso o la estrofa en la que el tono cambia más claramente y argumenta qué señal lingüística indica ese giro.",
+      "«Y el verso cae al alma como al pasto el rocío» ha generado valoraciones muy distintas entre los críticos: algunos lo consideran la imagen más lograda del poema; otros, un exceso retórico juvenil. ¿Cuál es tu valoración razonada? Analiza el símil con precisión: ¿qué dice exactamente sobre la relación entre el poema y quien lo lee, y qué propiedades del rocío son relevantes para esa comparación?",
+      "El poema alterna sistemáticamente el pretérito imperfecto («la quise», «la tuve», «me quería»), el presente de constatación («no la tengo», «no está conmigo») y el futuro de entrega inevitable («Será de otro»). Explica ese sistema temporal y argumenta por qué esa estructura gramatical —con independencia del contenido— ya describe el estado emocional del hablante antes de que él lo nombre.",
+      "«Ya no la quiero, es cierto, pero tal vez la quiero»: el inciso «es cierto» funciona como autoconvencimiento. ¿Por qué el poeta necesita argumentar ante sí mismo algo tan básico como si quiere o no quiere a alguien? Analiza la función sintáctica y psicológica de ese inciso e identifica otros momentos del poema en los que el hablante parece hablar para convencerse a sí mismo más que para comunicarse con un lector.",
     ],
     tarea: "Piensa en algo que ya no tienes pero que todavía recuerdas: una persona, un lugar, un momento, una versión de ti mismo. Escribe un poema de 12 a 20 versos usando la técnica de la repetición: una frase o imagen central que vuelva al menos tres veces, cada vez con un pequeño matiz diferente. El objetivo no es contar lo que pasó, sino hacer que el lector sienta el peso del tiempo.",
     debate: [
@@ -309,6 +313,8 @@ Los heraldos negros (1919) empieza con esta frase que no es una pregunta sino un
 
 La imagen central es violenta y sagrada a la vez: *Golpes como del odio de Dios.* En una sola expresión, Vallejo vuelca la tradición religiosa de los Andes —la fe católica mezclada con el sufrimiento como forma de existencia— y la convierte en pregunta. ¿Por qué duele tanto a veces? ¿Hay alguien que lo decida? La blasfemia no es rechazo de Dios: es el grito de quien lo busca desesperadamente y no lo encuentra.
 
+Merece atención la puntuación del poema. Los puntos suspensivos, las exclamaciones en mitad del verso, las frases nominales sin verbo («Son pocos; pero son...») no son descuidos: son decisiones formales. Un soneto clásico organiza su puntuación con precisión retórica; cada pausa señala un argumento. En Vallejo, la puntuación rompe el argumento antes de que se complete. El lector tropieza, se queda sin suelo. El texto no explica el dolor: lo reproduce en quien lee.
+
 Vallejo inventa su propio idioma. En sus libros posteriores, Trilce (1922) y los Poemas humanos (póstumos, 1939), va más lejos todavía: rompe palabras, inventa giros gramaticales, mezcla lo popular con lo culto, lo andino con lo europeo. Escribe como si la lengua española fuera demasiado estrecha para lo que necesita decir, y entonces la ensancha a golpes.
 
 La última estrofa es devastadora en su sencillez: el hombre vuelve los ojos como si alguien lo hubiera llamado por el hombro, y lo que ve en su mirada es *un charco de culpa*. No de dolor. De culpa. Como si los golpes de la vida fueran siempre, de algún modo oscuro, algo que sentimos que merecemos.`,
@@ -328,11 +334,11 @@ La última estrofa es devastadora en su sencillez: el hombre vuelve los ojos com
       "el sufrimiento": "Estado de dolor físico o psíquico intenso.",
     },
     comentario: [
-      "«¡Yo no sé!» aparece al principio y al final del poema. ¿Por qué crees que Vallejo repite esta expresión? ¿Qué nos dice sobre el tema?",
-      "«Golpes como del odio de Dios»: ¿qué tipo de figura retórica es esta? ¿Qué tipo de dolor describe?",
-      "Vallejo usa puntos suspensivos, exclamaciones y frases incompletas. ¿Qué efecto produce esa puntuación irregular?",
-      "«Todo lo vivido / se empoza, como charco de culpa, en la mirada»: ¿por qué *culpa* y no *dolor*? ¿Qué diferencia hay?",
-      "¿Has recibido alguna vez uno de esos «golpes» que describe Vallejo? ¿Cómo los describirías tú?",
+      "«Golpes como del odio de Dios» invierte el principio teológico central del cristianismo (1 Juan 4:8: «Dios es amor»). Vallejo no elige «el olvido de Dios» ni «el castigo de Dios», sino específicamente «el odio». Analiza esa elección léxica: ¿qué diferencia semántica y emocional hay entre esas tres formulaciones posibles? ¿Es eso blasfemia en sentido estricto o algo semánticamente más complejo, más cercano al diálogo desesperado que al rechazo?",
+      "La puntuación del poema incluye puntos suspensivos, exclamaciones en mitad de verso y frases nominales sin verbo («Son pocos; pero son...»). Compara esa puntuación con la de un soneto renacentista —donde cada coma señala una pausa retórica calculada— y explica qué función cumplen las interrupciones de Vallejo. ¿Es una limitación expresiva o una estrategia formal para reproducir en el lector el efecto que describe?",
+      "En la tercera estrofa se mezclan referencias cristológicas («los Cristos del alma»), la fe «adorable» blasfemada por el Destino y la imagen doméstica del pan que se quema en el horno. ¿Qué tipo de experiencia religiosa describe esa combinación de lo sagrado y lo cotidiano? Relaciona esa mezcla con la tradición del catolicismo popular andino que Vallejo conocía desde la infancia, donde la devoción y el sufrimiento material son inseparables.",
+      "La imagen final establece que «todo lo vivido / se empoza, como charco de culpa, en la mirada». La elección de «culpa» frente a «dolor» es la decisión léxica más cargada del poema: el dolor es algo que te sucede, la culpa implica responsabilidad. Analiza esa implicación: ¿qué dice Vallejo sobre cómo los seres humanos interiorizamos el sufrimiento? ¿Por qué esa idea resulta más perturbadora que si hubiera escrito simplemente «charco de dolor»?",
+      "«¡Yo no sé!» abre y cierra el poema: una estructura en anillo que suele señalar que el problema planteado no ha sido resuelto, sino solo transitado. ¿Es el «¡Yo no sé!» del final el mismo que el del inicio, o algo ha cambiado en las estrofas intermedias que hace que esa misma frase suene de manera diferente? Justifica tu respuesta con referencias concretas al desarrollo argumental e imaginístico del poema.",
     ],
     tarea: "Piensa en un golpe de la vida —no tiene por qué ser catastrófico; puede ser una pérdida pequeña, una decepción, un momento de incomprensión. Escribe un poema de 10 a 16 versos sobre ese golpe sin nombrarlo directamente: descríbelo a través de imágenes físicas, de sensaciones, de comparaciones. No expliques; muestra.",
     debate: [
@@ -382,6 +388,8 @@ Los poemas de Pizarnik son breves. A veces tan breves que parecen fragmentos de 
 
 Eso es Pizarnik: la lengua empujada hasta el borde de lo que puede decir, y luego un paso más allá. Sus poemas hablan de la infancia perdida, del amor imposible, de la noche como territorio propio, del silencio como única forma de verdad. Pero sobre todo hablan de la relación entre el yo y la lengua: ¿quién habla cuando escribo? ¿Soy yo, o es algo que habita en mí y que usa mis palabras?
 
+Hay que atender también a lo visual. En El árbol de Diana, los poemas están separados por rayas (—) que no son solo puntuación: son silencios con presencia tipográfica. El espacio en blanco entre un poema y el siguiente es parte del texto, no el vacío que lo rodea. Pizarnik aprendió esto en parte de la poesía francesa que leyó en París —René Char, Antonin Artaud— y también de la tradición mística en la que el silencio no es ausencia sino el nombre más exacto de lo que no puede nombrarse.
+
 El silencio en Pizarnik no es el contrario de la palabra: es su origen. *Sólo la sed / el silencio / ningún encuentro.* Tres versos, seis palabras, algo muy preciso sobre la experiencia de estar radicalmente sola. Sus poemas funcionan como esos objetos pequeños que pesan mucho más de lo que parece posible por su tamaño.
 
 Leer a Pizarnik requiere algo diferente al análisis: requiere quedarse quieto un momento después de leerla. No buscar la traducción inmediata. Dejar que algo se asiente.`,
@@ -401,11 +409,11 @@ Leer a Pizarnik requiere algo diferente al análisis: requiere quedarse quieto u
       "el exilio": "Vivir fuera del lugar de origen. En Pizarnik: exilio también de la lengua y de sí misma.",
     },
     comentario: [
-      "«Explico con palabras de este mundo»: ¿qué quiere decir «de este mundo»? ¿Hay otras palabras?",
-      "«Partió de mí un barco llevándome»: ¿qué tipo de imagen es esta? ¿Qué describe con exactitud?",
-      "El poema dice «cuídate de mí amor mío». ¿Por qué habría que cuidarse de quien habla? ¿Qué describe la poeta de sí misma?",
-      "¿Qué tiene de especial la brevedad de estos poemas? ¿Qué se gana y qué se pierde en un poema muy corto?",
-      "¿Has sentido alguna vez que no tenías palabras para algo? ¿Qué hiciste con eso?",
+      "«Explico con palabras de este mundo» implica la existencia de palabras de otro mundo —un lenguaje diferente, más adecuado para lo que se quiere decir. Esta apertura funciona como declaración de imposibilidad: la poeta anuncia que usará instrumentos inadecuados. ¿Qué tradición hay detrás de esa idea de lo inefable? Relaciona este planteamiento con la mística clásica (donde Dios no puede ser nombrado) y argumenta si el problema de Pizarnik es de naturaleza religiosa, filosófica o estrictamente poética.",
+      "Los poemas de El árbol de Diana están separados por rayas (—) que funcionan como silencios visibles. El espacio en blanco entre fragmentos es tan parte del texto como las palabras. Lee el poema de esta sesión ignorando esas rayas, como si fuera un texto continuo. ¿Qué información aporta la separación visual que las palabras solas no pueden dar? ¿En qué sentido el silencio tipográfico es una herramienta expresiva?",
+      "«Cuídate de mí amor mío» produce un giro enunciativo: pasa de una voz que se describe en tercera persona («partió de mí un barco») a la segunda persona directa. Analiza ese cambio: ¿a quién se dirige la voz poética? ¿Por qué la poeta se presenta como una amenaza o un peligro para quien la ama, y qué dice esa autopresentación sobre la imagen que tiene de sí misma?",
+      "La brevedad extrema de Pizarnik no es solo un estilo: es una postura ante el lenguaje. Era contemporánea de Neruda y Octavio Paz, que escribían obras extensas con la convicción de que la poesía podía decirlo todo. Frente a esa poética de la plenitud, Pizarnik elige lo mínimo. ¿Qué dice esa decisión sobre su concepción de la capacidad del lenguaje? ¿Puede interpretarse como una respuesta crítica a la tradición de la abundancia poética latinoamericana?",
+      "El poema termina con «En el silencio mismo / (No en el silencio de las cosas)», estableciendo una distinción dentro del silencio. ¿Cuál es la diferencia entre esos dos silencios? Relaciona esta distinción con el tratamiento del silencio en al menos dos autores de este curso (Manrique: «tan callando»; Lorca: «ella no puede mirarlas»; Neruda: «Oír la noche inmensa»; Vallejo: los puntos suspensivos) y argumenta si el silencio de Pizarnik es ontológicamente distinto o si es el mismo silencio con un nombre diferente.",
     ],
     tarea: "Escribe el poema más corto que puedas sobre algo inmenso: el miedo, el amor, la soledad, la alegría, el tiempo. No puede superar los 6 versos. Cada palabra cuenta. Después, escribe un segundo poema sobre lo mismo, esta vez sin límite. Compara los dos: ¿cuál dice más?",
     debate: [
@@ -452,6 +460,8 @@ El slam poetry nació en Chicago en los años 80, como competición de poesía o
 
 Esto genera una tensión productiva. La poesía de página —la de Manrique, Lorca, Neruda, Vallejo, Pizarnik— está construida para ser leída en silencio, a solas, con tiempo de pausa y revisión. La poesía oral está construida para el cuerpo, para la voz, para el instante de la escucha colectiva. Sus herramientas son otras: el ritmo que empuja, la pausa que golpea, el volumen que sube y baja, la mirada al público en el momento exacto.
 
+Si miramos el texto de esta sesión con atención, vemos que usa herramientas retóricas muy antiguas: la paradoja («Soy el que no escribí»), la interrogación acumulada como arma retórica («¿Cuántos poemas caben en un minuto? / ¿Cuántos en un like?»), la gradación ascendente de tres elementos («Tiene voz. / Tiene temperatura. / Tiene el error que no se borra»). Son las mismas figuras que encontramos en Manrique o Lorca. Lo que cambia es el soporte y el objetivo: estas figuras están calibradas para el escenario, para producir un efecto en treinta segundos frente a una audiencia, no para ser meditadas en una página durante décadas.
+
 ¿Son lo mismo? Probablemente no. Pero tampoco son incompatibles. Los poetas medievales recitaban sus romances antes de escribirlos. Los griegos no distinguían entre poesía y música. Lo que llamamos «poesía» ha cambiado de soporte muchas veces, y cada cambio ha generado la misma pregunta: ¿esto es todavía poesía, o es otra cosa?
 
 Esta sesión termina donde empezaron todas las sesiones de la Escuela de Poetas: en tu voz. No en el papel, no en la pantalla. En la voz.`,
@@ -471,11 +481,11 @@ Esta sesión termina donde empezaron todas las sesiones de la Escuela de Poetas:
       "la accesibilidad": "Cualidad de lo que puede ser comprendido y disfrutado por un público amplio.",
     },
     comentario: [
-      "El texto de slam que hemos leído: ¿qué diferencias notas respecto a los poemas de Manrique o Pizarnik?",
-      "¿Qué gana un poema cuando se recita en voz alta que no tiene cuando se lee en silencio?",
-      "«El error que no se borra / porque ya lo escuchaste»: ¿qué dice esto sobre la diferencia entre lo escrito y lo oral?",
-      "¿Crees que la poesía en Instagram o TikTok es de peor calidad que la poesía en papel? ¿Por qué sí o por qué no?",
-      "A lo largo de estas seis sesiones has leído poemas de cinco siglos diferentes. ¿Cuál te ha llegado más? ¿Por qué?",
+      "El texto de slam de esta sesión usa paradoja («No soy el poema que escribí ayer. / Soy el que no escribí»), interrogación retórica acumulada y gradación («Tiene voz. / Tiene temperatura. / Tiene el error que no se borra»). Estas son figuras clásicas de la retórica que ya usaban Manrique y Lorca. ¿Qué concluyes de esa coincidencia? ¿La poesía oral contemporánea hereda y transforma las herramientas retóricas de la tradición escrita, o las redescubre de manera independiente?",
+      "«El error que no se borra / porque ya lo escuchaste» señala la irreversibilidad del habla frente a la escritura: en la escritura, el error puede corregirse antes de llegar al lector; en la voz, el error ya es parte de la experiencia del texto. ¿Qué consecuencias tiene esa diferencia para la relación entre el poema y su autor? ¿Cambia esa irreversibilidad quién tiene autoridad sobre lo que el poema «significa»: el poeta, el texto o cada oyente?",
+      "La tensión entre oralidad y escritura no es nueva: los romanceros que Lorca transformó eran originalmente orales; los aedos griegos recitaban la Ilíada antes de que existiera la escritura. Hay sin embargo una diferencia estructural entre la oralidad antigua —que existía porque no había escritura— y el slam poetry contemporáneo —que existe a pesar de que la escritura existe y domina. ¿Qué función específica cumple la voz en la poesía contemporánea que la escritura no puede cumplir?",
+      "Un argumento contra el slam es que favorece el impacto emocional inmediato sobre la densidad y la complejidad. Un argumento a favor es que conecta con audiencias que la poesía de página ha perdido. Usando los poemas de este curso como referencia, construye un argumento sobre qué características hacen que un poema funcione en los dos formatos —página y voz— y cuáles lo limitan a uno solo.",
+      "A lo largo del curso has leído a Manrique (s. XV), Lorca (s. XX temprano), Neruda (s. XX), Vallejo (s. XX), Pizarnik (s. XX tardío) y slam poetry contemporáneo. El sistema literario ha cambiado radicalmente: mecenazgo → mercado editorial → algoritmos. ¿Cuál de los poetas estudiados te parece más «contemporáneo» en su actitud hacia el lenguaje, independientemente del siglo en que vivió? Construye tu argumento con citas textuales concretas.",
     ],
     tarea: "Escribe tu propio poema de 10 a 20 versos sobre cualquier tema que hayas trabajado en estas sesiones: el tiempo, el color, el amor, el dolor, el silencio, la voz. Después, practícalo en voz alta. Cronométrate: ¿cuánto dura? ¿Dónde colocas las pausas? ¿Qué cambia cuando lo escuchas frente a cuando lo lees? Si puedes, grábate en audio o vídeo. Esta es tu presentación final de la Escuela de Poetas.",
     debate: [
