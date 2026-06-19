@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { SESIONES_POESIA } from "./sesionesPoesia.js";
 
 const SESIONES = [
   {
@@ -865,7 +866,7 @@ function Inicio({ ir }) {
       sesiones: 12, activo: true, img: "/course-arte-c1.png",
       ir: () => ir("curso"),
     },
-    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, escuchar y escribir poesía en español. Lorca, Neruda, Pizarnik: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", activo: false, img: "/course-poesia.png" },
+    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 6, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
     { id: "cine-b2", titulo: "Laboratorio de Cine", desc: "El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.", nivel: "B2", destreza: "Comprensión audiovisual", tipo: "Vídeo", activo: false, img: "/course-cine-film.png" },
     { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false, img: "/students-bar.png" },
     { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false, img: null },
@@ -1396,6 +1397,162 @@ function Sesion({ idx, ir }) {
   );
 }
 
+function PortadaPoesia({ ir }) {
+  return (
+    <div>
+      <section style={{ background: `linear-gradient(rgba(28,24,20,.78),rgba(28,24,20,.78)),url('/course-poesia.png') center/cover no-repeat`, padding: "clamp(40px,6vw,72px) clamp(20px,4vw,48px)", color: "#fff" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <button onClick={() => ir(null)} style={{ color: "rgba(255,255,255,.55)", border: "none", background: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 24 }}>← blablaELE</button>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+            {["C1", "Expresión escrita", "Mini web", "6 sesiones"].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
+          </div>
+          <h1 className="disp" style={{ fontSize: "clamp(2rem,5vw,3.4rem)", color: "#fff", margin: "0 0 12px", fontWeight: 600, lineHeight: 1.05 }}>Escuela de Poetas</h1>
+          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.</p>
+        </div>
+      </section>
+      <section style={{ padding: "clamp(36px,5vw,60px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 16 }}>
+            {SESIONES_POESIA.map(s => (
+              <button key={s.n} onClick={() => ir(`poe-${s.n}`)} className="cartela"
+                style={{ textAlign: "left", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, padding: "22px 24px", cursor: "pointer", fontFamily: "inherit" }}>
+                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 8 }}>
+                  Sesión {s.n} · {s.periodo}
+                </div>
+                <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2, marginBottom: 5 }}>{s.titulo}</div>
+                <div style={{ fontSize: ".87rem", color: "var(--tinta-suave)", marginBottom: 10 }}><em>{s.autor}</em></div>
+                <div style={{ fontSize: ".83rem", color: "var(--bermellon)", fontStyle: "italic", lineHeight: 1.45 }}>{s.nudo}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SesionPoesia({ idx, ir }) {
+  const sesion = SESIONES_POESIA[idx - 1];
+  const [palabraActiva, setPalabraActiva] = useState(null);
+  if (!sesion) return null;
+  const total = SESIONES_POESIA.length;
+
+  return (
+    <div style={{ background: "var(--papel)", minHeight: "100vh" }}>
+      <div style={{ background: "var(--tinta)", color: "#fff", padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <button onClick={() => ir("poesia")} style={{ color: "rgba(255,255,255,.5)", background: "none", border: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 20 }}>← Escuela de Poetas</button>
+          <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: 10 }}>Sesión {sesion.n} de {total} · {sesion.periodo}</div>
+          <h1 className="disp" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", margin: "0 0 6px", fontWeight: 600, lineHeight: 1.1 }}>{sesion.titulo}</h1>
+          <div style={{ fontSize: "1rem", color: "rgba(255,255,255,.6)", fontStyle: "italic", marginBottom: 14 }}>{sesion.autor}</div>
+          <div style={{ fontSize: ".97rem", color: "rgba(255,255,255,.75)", fontStyle: "italic" }}>«{sesion.nudo}»</div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 820, margin: "0 auto", padding: "clamp(32px,5vw,56px) clamp(20px,4vw,48px)" }}>
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>El poema</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(24px,4vw,40px)" }}>
+            <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>{sesion.poema.titulo}</div>
+            <div style={{ fontSize: ".8rem", color: "var(--tinta-suave)", fontStyle: "italic", marginBottom: 22, fontFamily: "'Spectral',serif" }}>{sesion.poema.nota}</div>
+            <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.1rem", lineHeight: 2.1, whiteSpace: "pre-wrap", color: "var(--tinta)" }}>{sesion.poema.texto}</div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para leer</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          {sesion.lectura.split("\n\n").map((p, i) => (
+            <p key={i} style={{ fontSize: "1.04rem", lineHeight: 1.78, color: "var(--tinta)", marginBottom: 18 }}
+               dangerouslySetInnerHTML={{ __html: p.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+          ))}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Léxico clave</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {sesion.lexico.map(p => (
+              <button key={p} onClick={() => setPalabraActiva(palabraActiva === p ? null : p)} className="disp"
+                style={{ fontSize: ".72rem", letterSpacing: ".1em", padding: "5px 12px", borderRadius: 20, border: `1px solid ${palabraActiva === p ? "var(--coral)" : "rgba(28,24,20,.25)"}`, background: palabraActiva === p ? "var(--coral)" : "transparent", color: palabraActiva === p ? "#fff" : "var(--tinta)", cursor: "pointer", transition: "all .18s" }}>
+                {p}
+              </button>
+            ))}
+          </div>
+          {palabraActiva && sesion.lexicoDefs[palabraActiva] && (
+            <div style={{ marginTop: 14, padding: "14px 18px", background: "var(--fondo-alt)", borderRadius: 4, border: "1px solid rgba(28,24,20,.1)" }}>
+              <strong className="disp" style={{ fontSize: ".78rem" }}>{palabraActiva}</strong>
+              <span style={{ fontSize: ".88rem", color: "var(--tinta-suave)", marginLeft: 8 }}>— {sesion.lexicoDefs[palabraActiva]}</span>
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Comprensión y análisis</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ol style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.comentario.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ol>
+        </section>
+
+        <section style={{ marginBottom: 44, background: "#fff", border: "1px solid rgba(200,80,60,.25)", borderRadius: 6, padding: "clamp(20px,3vw,32px)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--bermellon)" }}>Tarea de escritura</span>
+            <hr className="regla" style={{ flex: 1, borderColor: "rgba(200,80,60,.3)" }} />
+          </div>
+          <p style={{ fontSize: ".97rem", lineHeight: 1.72, color: "var(--tinta)", margin: 0 }}>{sesion.tarea}</p>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para debatir</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ul style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.debate.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profundizar</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {sesion.referencias.map((r, i) => (
+              <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", flexDirection: "column", gap: 3, padding: "12px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 4, textDecoration: "none" }}>
+                <span className="disp" style={{ fontSize: ".85rem", color: "var(--tinta)" }}>{r.titulo}</span>
+                <span style={{ fontSize: ".75rem", color: "var(--tinta-suave)" }}>{r.fuente}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 24, borderTop: "1px solid rgba(28,24,20,.12)" }}>
+          <button onClick={() => ir(idx > 1 ? `poe-${idx - 1}` : "poesia")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx > 1 ? `← Sesión ${idx - 1}` : "← Índice"}
+          </button>
+          <button onClick={() => ir(idx < total ? `poe-${idx + 1}` : "poesia")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx < total ? `Sesión ${idx + 1} →` : "Índice →"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [view, setView] = useState(null);
 
@@ -1412,7 +1569,11 @@ export default function App() {
         ? <Inicio ir={ir} />
         : view === "curso"
           ? <Portada ir={ir} />
-          : <Sesion idx={view} ir={ir} />
+          : view === "poesia"
+            ? <PortadaPoesia ir={ir} />
+            : typeof view === "string" && view.startsWith("poe-")
+              ? <SesionPoesia idx={parseInt(view.split("-")[1])} ir={ir} />
+              : <Sesion idx={view} ir={ir} />
       }
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
