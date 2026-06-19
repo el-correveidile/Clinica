@@ -6,8 +6,8 @@ export const SESIONES_POESIA = [
     periodo: "Poesía medieval · s. XV",
     nudo: "¿Puede un poema vencer al tiempo?",
     poema: {
-      titulo: "Coplas a la muerte de su padre (fragmento)",
-      nota: "Jorge Manrique, ca. 1476",
+      titulo: "Coplas a la muerte de su padre — estrofas 1, 3, 4 y 37 (de 40)",
+      nota: "Jorge Manrique, ca. 1476 · Las Coplas tienen 40 estrofas manriqueñas. La estrofa 37 pertenece al discurso que la Muerte dirige a Don Rodrigo.",
       texto: `Recuerde el alma dormida,
 avive el seso y despierte
    contemplando
@@ -21,6 +21,8 @@ cómo, a nuestro parecer,
 cualquier tiempo pasado
    fue mejor.
 
+                    · · ·
+
 Nuestras vidas son los ríos
 que van a dar en la mar,
    que es el morir;
@@ -32,7 +34,35 @@ allá los otros medianos
    y más chicos;
 allegados, son iguales
 los que viven por sus manos
-   y los ricos.`,
+   y los ricos.
+
+Este mundo es el camino
+para el otro, que es morada
+   sin pesar;
+mas cumple tener buen tino
+para andar esta jornada
+   sin errar.
+Partimos cuando nacemos,
+andamos mientras vivimos,
+   y llegamos
+al tiempo que fenecemos;
+así que cuando morimos
+   descansamos.
+
+                    · · ·
+
+No se os haga tan amarga
+la batalla temerosa
+   que esperáis,
+pues otra vida más larga
+de la fama glorïosa
+   acá dejáis.
+Aunque esta vida d'honor
+tampoco no es eternal
+   ni verdadera,
+mas con todo es muy mejor
+que la otra temporal,
+   perecedera.`,
     },
     lectura: `Jorge Manrique no quería ser famoso. Quería que su padre, el maestre Rodrigo de Manrique, no fuera olvidado. Escribió las Coplas hacia 1476, poco después de la muerte del maestre, y nadie imaginó que ese poema de circunstancias iba a sobrevivir cinco siglos. Pero el tiempo, que es el tema central de las Coplas, resultó ser más generoso con el hijo que con el padre.
 
@@ -57,11 +87,11 @@ Lo extraordinario de las Coplas es que no deprimen: consuelan. Saber que todo pa
       "contemplar": "Observar con atención y detenimiento; meditar sobre algo.",
     },
     comentario: [
-      "¿Qué sentido tiene el verbo «recuerde» al inicio del poema? ¿Por qué el alma necesita «despertar»?",
-      "¿Por qué la muerte llega «tan callando»? ¿Qué efecto produce ese silencio en el tono del poema?",
-      "Explica la metáfora de las vidas como ríos. ¿Qué simboliza el mar? ¿Qué iguala?",
-      "«Cualquier tiempo pasado fue mejor»: ¿crees que Manrique lo dice con convicción o como un lamento inevitable? ¿Puedes leerlo de las dos formas?",
-      "¿Por qué crees que este poema del siglo XV sigue siendo leído y recordado hoy?",
+      "El primer verso usa «recuerde», que en castellano medieval significaba «despertar». Analiza cómo ese doble significado —recordar / despertar— activa toda la lectura que sigue. ¿En qué medida el poema trata de la memoria y en qué medida trata del estado de vigilia?",
+      "«Cómo se viene la muerte / tan callando»: el gerundio *callando* convierte la muerte en un proceso continuo, casi cotidiano. ¿Qué diferencia semántica hay entre ese gerundio y una construcción equivalente como «la muerte llega en silencio»? ¿Por qué el gerundio es irreemplazable aquí?",
+      "La metáfora del río es heredada —aparece en Heráclito, Séneca y en varios textos bíblicos—, pero se considera que Manrique la «hace suya». Localiza en el texto los elementos concretos que son propios del poeta y argumenta qué añade Manrique a la imagen que no estaba en la tradición clásica.",
+      "«Allegados, son iguales / los que viven por sus manos / y los ricos»: ¿tiene este verso un sentido igualitario en términos modernos o la igualdad ante la muerte refuerza el orden social que describe sin cuestionarlo? Razona tu respuesta situándola en el contexto de la mentalidad estamental del siglo XV.",
+      "Las Coplas tienen una estructura tripartita: reflexión universal (estrofas 1–13), elogio de Don Rodrigo (14–24) y el discurso de la Muerte dirigido directamente al moribundo (25–40). ¿Por qué crees que Manrique necesita ese movimiento de lo universal a lo particular? ¿Qué perdería el poema —tanto retórica como emocionalmente— si comenzara directamente con el elogio a su padre?",
     ],
     tarea: "Elige algo que hayas perdido o que ya no existe — una persona, un lugar, una etapa de tu vida. Escribe entre 10 y 16 versos en los que eso que se fue siga vivo dentro del poema. Puedes seguir la estructura de Manrique (partir de una imagen del tiempo que pasa y llegar a algo concreto y personal) o encontrar tu propia forma. El único requisito: que al final del poema, lo que perdiste haya ganado algo.",
     debate: [
@@ -71,8 +101,9 @@ Lo extraordinario de las Coplas es que no deprimen: consuelan. Saber que todo pa
       "En tu lengua o cultura, ¿existe alguna forma poética o musical que cumpla la misma función que las Coplas?",
     ],
     referencias: [
-      { titulo: "Coplas a la muerte de su padre (texto completo)", fuente: "Biblioteca Virtual Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/coplas-a-la-muerte-de-su-padre--0/html/" },
-      { titulo: "Manrique: análisis y contexto histórico", fuente: "Centro Virtual Cervantes", url: "https://cvc.cervantes.es/literatura/escritores/manrique/" },
+      { titulo: "Coplas a la muerte de su padre — texto completo y anotado", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/coplas-a-la-muerte-de-su-padre--0/html/" },
+      { titulo: "Jorge Manrique — Diccionario Biográfico Español", fuente: "Real Academia de la Historia", url: "https://dbe.rah.es/biografias/8830/jorge-manrique" },
+      { titulo: "Portal Jorge Manrique: vida, obra y recepción", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/portales/jorge_manrique/" },
     ],
   },
 
