@@ -629,28 +629,47 @@ Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el esp
   },
 ];
 
+const METADATA = {
+  1:  { nivel: "C1", materia: ["Arte"],                tipo: "Pintura"     },
+  2:  { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  3:  { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  4:  { nivel: "C1", materia: ["Arte", "Identidad"],   tipo: "Pintura"     },
+  5:  { nivel: "C1", materia: ["Literatura"],          tipo: "Poesía"      },
+  6:  { nivel: "C1", materia: ["Literatura", "Música"],tipo: "Poesía"      },
+  7:  { nivel: "C1", materia: ["Música"],              tipo: "Música"      },
+  8:  { nivel: "C1", materia: ["Patrimonio", "Historia"], tipo: "Patrimonio" },
+  9:  { nivel: "C1", materia: ["Arte"],                tipo: "Arte urbano" },
+  10: { nivel: "C1", materia: ["Cine"],                tipo: "Cine"        },
+  11: { nivel: "C1", materia: ["Arte", "Tecnología"],  tipo: "Debate"      },
+  12: { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+};
+
 const ESTILOS = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root{
-  --papel:#F2EBDD;
-  --papel-2:#EAE0CC;
+  --papel:#F2EBDD;       /* crema — solo para el interior de recursos */
+  --papel-2:#EAE0CC;     /* crema más oscura — bordes interiores */
+  --fondo:#FFFFFF;       /* fondo general de la plataforma */
+  --fondo-alt:#F6F4F1;   /* secciones alternas de la plataforma */
   --tinta:#1C1814;
   --tinta-suave:#5A5043;
-  --bermellon:#B23A22;
+  --coral:#C8503C;       /* color del brushstroke del logo */
+  --coral-suave:#F5EAE7; /* tinte claro del coral */
+  --bermellon:#B23A22;   /* rojo oscuro para acentos en contenido */
   --azul:#27384B;
+  --verde:#5A8C6E;
+  --oro:#D4A574;
 }
 .app-c1 *{ box-sizing:border-box; }
 .app-c1{
   font-family:'Spectral', Georgia, serif;
   color:var(--tinta);
-  background-color:#F2EBDD;
-  background-image:radial-gradient(rgba(28,24,20,.025) 1px, transparent 1px);
-  background-size:4px 4px;
+  background-color:var(--fondo);
   min-height:100vh;
 }
 .disp{ font-family:'Fraunces', Georgia, serif; }
-.app-c1 ::selection{ background:var(--bermellon); color:var(--papel); }
+.app-c1 ::selection{ background:var(--coral); color:#fff; }
 
 .fade-up{ opacity:0; transform:translateY(14px); animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards; }
 @keyframes fadeUp{ to{ opacity:1; transform:none; } }
@@ -673,6 +692,41 @@ const ESTILOS = `
 
 .lexico-chip:hover{ background:var(--azul) !important; color:var(--papel) !important; border-color:var(--azul) !important; }
 .lexico-chip--def:hover .lexico-chip{ background:var(--azul); color:var(--papel); }
+
+.plat-nav{ background:#fff; border-bottom:1px solid rgba(28,24,20,.09); position:sticky; top:0; z-index:200; }
+.plat-nav-inner{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,48px); height:72px; display:flex; align-items:center; }
+.plat-nav-brand{ cursor:pointer; background:none; border:none; padding:0; display:flex; align-items:center; text-decoration:none; }
+.plat-nav-brand img{ height:56px; width:auto; display:block; mix-blend-mode:multiply; }
+.plat-nav-links{ display:flex; gap:18px; margin-left:0; flex:none; }
+.plat-nav-link{ font-family:'Fraunces',serif; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--tinta-suave); cursor:pointer; transition:color .2s; background:none; border:none; padding:0; opacity:.65; }
+.plat-nav-link:hover,.plat-nav-link.is-active{ color:var(--tinta); opacity:1; }
+.plat-nav-link.is-dim{ cursor:default; pointer-events:none; opacity:.28; }
+.plat-nav-tag{ font-family:'Fraunces',serif; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-suave); opacity:.4; }
+
+.plat-burger{ display:none; flex-direction:column; justify-content:center; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-right:-8px; }
+.plat-burger-line{ width:22px; height:2px; background:var(--tinta); border-radius:2px; transition:transform .25s cubic-bezier(.4,0,.2,1), opacity .2s; display:block; }
+.plat-burger--open .plat-burger-line:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.plat-burger--open .plat-burger-line:nth-child(2){ opacity:0; transform:scaleX(0); }
+.plat-burger--open .plat-burger-line:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.plat-mobile-menu{ position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid rgba(28,24,20,.1); z-index:199; box-shadow:0 8px 24px -8px rgba(28,24,20,.12); }
+.plat-mobile-link{ display:block; width:100%; text-align:left; font-family:'Fraunces',serif; font-size:.92rem; letter-spacing:.12em; text-transform:uppercase; padding:15px clamp(20px,4vw,48px); color:var(--tinta-suave); background:none; border:none; border-top:1px solid rgba(28,24,20,.07); cursor:pointer; transition:color .18s, background .18s; }
+.plat-mobile-link:first-child{ border-top:none; }
+.plat-mobile-link:hover,.plat-mobile-link.is-active{ color:var(--tinta); background:var(--fondo-alt); }
+.plat-mobile-link.is-dim{ opacity:.3; cursor:default; pointer-events:none; }
+
+@media(max-width:700px){
+  .plat-nav-links{ display:none; }
+  .plat-burger{ display:flex; }
+}
+@media(min-width:701px){
+  .plat-mobile-menu{ display:none !important; }
+}
+.feature-card{ background:#fff; border:1px solid rgba(28,24,20,.13); border-radius:6px; padding:26px; }
+.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
+.hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--tinta); color:#fff; border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
+.hero-btn-primary:hover{ background:var(--azul); }
+.hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(255,255,255,.65); border:1px solid rgba(255,255,255,.32); padding:13px 24px; border-radius:4px; cursor:default; opacity:.7; }
 `;
 
 function LexicoChip({ word, def }) {
@@ -750,13 +804,250 @@ function Sello({ texto, color }) {
   );
 }
 
-function Portada({ ir }) {
+function PlatformaHeader({ view, ir }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isHome = view === null;
+  const isCurso = view === "curso" || typeof view === "number";
+
+  function navIr(target) {
+    setMenuOpen(false);
+    ir(target);
+  }
+
   return (
-    <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)" }}>
-      <header className="fade-up" style={{ marginBottom: "clamp(36px,5vw,64px)" }}>
-        <div style={{ display: "flex", gap: 10, marginBottom: 22 }}>
+    <nav className="plat-nav" style={{ position: "relative" }}>
+      <div className="plat-nav-inner">
+        <a href="/" className="plat-nav-brand" onClick={e => { e.preventDefault(); navIr(null); }}>
+          <img src="/logo-blablaele.png" alt="blablaELE · HABLAMOS ESPAÑOL" />
+        </a>
+        <div style={{ flex: 1 }} />
+        {/* Desktop links */}
+        <div className="plat-nav-links">
+          <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <span className="plat-nav-link is-dim">Profesores</span>
+          <span className="plat-nav-link is-dim">Comunidad</span>
+        </div>
+        {/* Hamburger */}
+        <button
+          className={`plat-burger${menuOpen ? " plat-burger--open" : ""}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuOpen}
+        >
+          <span className="plat-burger-line" />
+          <span className="plat-burger-line" />
+          <span className="plat-burger-line" />
+        </button>
+      </div>
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="plat-mobile-menu">
+          <button className={`plat-mobile-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
+          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <span className="plat-mobile-link is-dim">Profesores</span>
+          <span className="plat-mobile-link is-dim">Comunidad</span>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+function Inicio({ ir }) {
+  const [filtro, setFiltro] = useState({ nivel: null, destreza: null, tipo: null });
+
+  const RECURSOS = [
+    {
+      id: "arte-c1",
+      titulo: "Arte y sociedad en la cultura hispánica",
+      desc: "Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.",
+      nivel: "C1", destreza: "Producción oral", tipo: "Mini web",
+      sesiones: 12, activo: true,
+      ir: () => ir("curso"),
+    },
+    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false },
+    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false },
+    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false },
+  ];
+
+  const NIVELES   = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const DESTREZAS = [...new Set(RECURSOS.map(r => r.destreza))];
+  const TIPOS     = [...new Set(RECURSOS.map(r => r.tipo))];
+
+  const toggleFiltro = (campo, valor) =>
+    setFiltro(prev => ({ ...prev, [campo]: prev[campo] === valor ? null : valor }));
+
+  const filtrados = RECURSOS.filter(r => {
+    if (filtro.nivel    && r.nivel    !== filtro.nivel)    return false;
+    if (filtro.destreza && r.destreza !== filtro.destreza) return false;
+    if (filtro.tipo     && r.tipo     !== filtro.tipo)     return false;
+    return true;
+  });
+
+  const hayFiltro = Object.values(filtro).some(Boolean);
+
+  return (
+    <div>
+      {/* Hero */}
+      <section style={{ background: "var(--coral)", color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div className="fade-up" style={{ marginBottom: 14 }}>
+            <Sello texto="Español A1–C2" color="rgba(255,255,255,.7)" />
+          </div>
+          <h1 className="disp fade-up" style={{ animationDelay: ".07s", fontSize: "clamp(3rem,8vw,5.6rem)", fontWeight: 600, lineHeight: .95, margin: "0 0 10px", letterSpacing: "-.03em", fontStyle: "italic", color: "#fff" }}>
+            bla<em style={{ fontStyle: "normal" }}>bla</em>ELE
+          </h1>
+          <p className="disp fade-up" style={{ animationDelay: ".1s", fontSize: "clamp(.9rem,2vw,1.1rem)", letterSpacing: ".28em", textTransform: "uppercase", color: "rgba(255,255,255,.75)", margin: "0 0 26px" }}>
+            HABLAMOS ESPAÑOL
+          </p>
+          <p className="fade-up" style={{ animationDelay: ".16s", maxWidth: 500, fontSize: "1.12rem", lineHeight: 1.64, color: "rgba(255,255,255,.82)", margin: "0 0 32px" }}>
+            Recursos, mini webs y materiales para aprender y enseñar español.
+            Clasificados por nivel, destreza y tipo de contenido.
+          </p>
+          <div className="fade-up" style={{ animationDelay: ".22s", display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <button className="hero-btn-primary" onClick={() => ir("curso")}>Explorar recursos →</button>
+            <button className="hero-btn-ghost">Para profesores (próx.)</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Catálogo de recursos */}
+      <section style={{ padding: "clamp(44px,6vw,76px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 26 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Catálogo de recursos</span>
+            <hr className="regla" style={{ flex: 1 }} />
+            {hayFiltro && (
+              <button onClick={() => setFiltro({ nivel: null, destreza: null, tipo: null })} className="disp"
+                style={{ fontSize: ".68rem", letterSpacing: ".14em", textTransform: "uppercase", background: "none", border: "none", color: "var(--bermellon)", cursor: "pointer", padding: 0 }}>
+                Limpiar ×
+              </button>
+            )}
+          </div>
+
+          {/* Filtros */}
+          <div style={{ marginBottom: 28, padding: "16px 18px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 12 }}>
+            {[
+              { label: "Nivel", campo: "nivel", opciones: NIVELES, color: "var(--azul)" },
+              { label: "Destreza", campo: "destreza", opciones: DESTREZAS, color: "var(--verde)" },
+              { label: "Tipo", campo: "tipo", opciones: TIPOS, color: "var(--bermellon)" },
+            ].map(({ label, campo, opciones, color }) => (
+              <div key={campo} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                <span className="disp" style={{ fontSize: ".63rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", minWidth: 60 }}>{label}</span>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {opciones.map(op => {
+                    const activo = filtro[campo] === op;
+                    return (
+                      <button key={op} onClick={() => toggleFiltro(campo, op)} className="disp"
+                        style={{ fontSize: ".68rem", letterSpacing: ".12em", textTransform: "uppercase", padding: "4px 11px", borderRadius: 20, border: `1px solid ${activo ? color : "rgba(28,24,20,.2)"}`, background: activo ? color : "transparent", color: activo ? "var(--papel)" : "var(--tinta-suave)", cursor: "pointer", transition: "all .18s" }}>
+                        {op}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Tarjetas de recursos */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 18 }}>
+            {filtrados.map(r => (
+              r.activo ? (
+                <button key={r.id} onClick={r.ir} className="cartela"
+                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "24px", display: "flex", flexDirection: "column", gap: 10, fontFamily: "inherit", minHeight: 180 }}>
+                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                    <Sello texto={r.nivel} color="var(--bermellon)" />
+                    <Sello texto={r.destreza} color="var(--azul)" />
+                    <Sello texto={r.tipo} color="var(--verde)" />
+                  </div>
+                  <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                  <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                  <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>
+                    {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
+                  </span>
+                </button>
+              ) : (
+                <div key={r.id} className="course-card-soon" style={{ minHeight: 180, display: "flex", flexDirection: "column", gap: 10 }}>
+                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                    <Sello texto={r.nivel} color="var(--tinta-suave)" />
+                    <Sello texto={r.destreza} color="var(--tinta-suave)" />
+                    <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                  </div>
+                  <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                  <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                  <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", opacity: .7 }}>Próximamente</span>
+                </div>
+              )
+            ))}
+            {filtrados.length === 0 && (
+              <div style={{ gridColumn: "1/-1", textAlign: "center", padding: "52px 20px", color: "var(--tinta-suave)", fontStyle: "italic" }}>
+                No hay recursos con estos filtros.
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Para profesores */}
+      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--fondo-alt)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
+            <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profesores</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
+            {[
+              { t: "Subir recursos", d: "Comparte tus materiales con la comunidad docente y clasifícalos por nivel y destreza." },
+              { t: "Dashboard", d: "Seguimiento de tus estudiantes: acceso, tiempo de lectura y resultados por sesión." },
+              { t: "Acceso con Magic Link", d: "Sin contraseñas. Tus alumnos entran con un enlace enviado a su correo." },
+              { t: "Herramientas IA", d: "Genera actividades, textos adaptados y fichas léxicas con inteligencia artificial." },
+            ].map(f => (
+              <div key={f.t} className="feature-card" style={{ opacity: .6 }}>
+                <div className="disp" style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 9 }}>Próximamente</div>
+                <div className="disp" style={{ fontSize: "1rem", fontWeight: 600, marginBottom: 7 }}>{f.t}</div>
+                <p style={{ fontSize: ".87rem", lineHeight: 1.56, color: "var(--tinta-suave)", margin: 0 }}>{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function Portada({ ir }) {
+  const [filtro, setFiltro] = useState({ materia: null, tipo: null });
+
+  const materias = [...new Set(Object.values(METADATA).flatMap(m => m.materia))].sort();
+  const tipos    = [...new Set(Object.values(METADATA).map(m => m.tipo))].sort();
+
+  const toggle = (campo, valor) =>
+    setFiltro(prev => ({ ...prev, [campo]: prev[campo] === valor ? null : valor }));
+
+  const hayFiltro = filtro.materia || filtro.tipo;
+
+  const sesionsFiltradas = SESIONES.filter(s => {
+    const m = METADATA[s.n] || {};
+    if (filtro.materia && !m.materia?.includes(filtro.materia)) return false;
+    if (filtro.tipo    && m.tipo !== filtro.tipo)               return false;
+    return true;
+  });
+
+  return (
+    <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vw,72px) clamp(20px,4vw,48px)", background: "var(--papel)" }}>
+      <div style={{ marginBottom: 24 }}>
+        <button onClick={() => ir(null)} className="disp"
+          style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".72rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
+          ← blablaELE
+        </button>
+      </div>
+
+      <header className="fade-up" style={{ marginBottom: "clamp(28px,4vw,48px)" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
           <Sello texto="C1 · Avanzado" color="var(--bermellon)" />
-          <Sello texto="12 sesiones" color="var(--azul)" />
+          <Sello texto="Producción oral" color="var(--azul)" />
+          <Sello texto="Mini web" color="var(--verde)" />
+          <Sello texto="12 sesiones" color="var(--tinta-suave)" />
         </div>
         <h1 className="disp" style={{ fontWeight: 600, lineHeight: .98, margin: 0, fontSize: "clamp(2.6rem,7vw,5rem)", letterSpacing: "-.01em" }}>
           Arte y sociedad<br />
@@ -768,22 +1059,70 @@ function Portada({ ir }) {
         </p>
       </header>
 
-      <div className="fade-up" style={{ animationDelay: ".1s", display: "flex", alignItems: "center", gap: 16, marginBottom: 26 }}>
-        <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Índice del curso</span>
+      {/* Filtros de materia y tipo */}
+      <div className="fade-up" style={{ animationDelay: ".08s", marginBottom: 22, padding: "14px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 6, display: "flex", flexDirection: "column", gap: 10 }}>
+        {[
+          { label: "Materia", campo: "materia", opciones: materias, color: "var(--azul)" },
+          { label: "Tipo",    campo: "tipo",    opciones: tipos,    color: "var(--bermellon)" },
+        ].map(({ label, campo, opciones, color }) => (
+          <div key={campo} style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <span className="disp" style={{ fontSize: ".62rem", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--tinta-suave)", minWidth: 52 }}>{label}</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              {opciones.map(op => {
+                const activo = filtro[campo] === op;
+                return (
+                  <button key={op} onClick={() => toggle(campo, op)} className="disp"
+                    style={{ fontSize: ".67rem", letterSpacing: ".12em", textTransform: "uppercase", padding: "4px 11px", borderRadius: 20, border: `1px solid ${activo ? color : "rgba(28,24,20,.2)"}`, background: activo ? color : "transparent", color: activo ? "var(--papel)" : "var(--tinta-suave)", cursor: "pointer", transition: "all .18s" }}>
+                    {op}
+                  </button>
+                );
+              })}
+            </div>
+            {hayFiltro && campo === "tipo" && (
+              <button onClick={() => setFiltro({ materia: null, tipo: null })} className="disp"
+                style={{ fontSize: ".65rem", letterSpacing: ".14em", textTransform: "uppercase", background: "none", border: "none", color: "var(--bermellon)", cursor: "pointer", padding: 0, marginLeft: "auto" }}>
+                Limpiar ×
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="fade-up" style={{ animationDelay: ".1s", display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+        <span className="disp" style={{ fontSize: ".72rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>
+          {hayFiltro ? `${sesionsFiltradas.length} sesiones` : "Índice del curso"}
+        </span>
         <hr className="regla" style={{ flex: 1 }} />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(248px,1fr))", gap: 18 }}>
-        {SESIONES.map((s, i) => (
-          <button key={s.n} onClick={() => ir(i)} className="cartela fade-up"
-            style={{ animationDelay: `${0.12 + i * 0.04}s`, textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.55)", border: "1px solid rgba(28,24,20,.18)", borderRadius: 6, padding: "20px 20px 22px", display: "flex", flexDirection: "column", gap: 10, minHeight: 168 }}>
-            <span className="cartela-num disp" style={{ fontSize: "2.1rem", fontWeight: 600, lineHeight: 1, color: "var(--tinta)", transition: "color .3s" }}>{String(s.n).padStart(2, "0")}</span>
-            <span className="disp" style={{ fontSize: "1.18rem", fontWeight: 600, lineHeight: 1.15 }}>{s.titulo}</span>
-            <span style={{ fontSize: ".82rem", color: "var(--tinta-suave)", fontStyle: "italic" }}>{s.obra}</span>
-            <span style={{ marginTop: "auto", fontSize: ".9rem", color: "var(--azul)", lineHeight: 1.35 }}>{s.nudo}</span>
-          </button>
-        ))}
-      </div>
+      {sesionsFiltradas.length === 0 ? (
+        <div style={{ textAlign: "center", padding: "48px 20px", color: "var(--tinta-suave)", fontStyle: "italic" }}>
+          No hay sesiones con estos filtros.
+        </div>
+      ) : (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(248px,1fr))", gap: 18 }}>
+          {sesionsFiltradas.map((s, i) => {
+            const meta = METADATA[s.n] || {};
+            return (
+              <button key={s.n} onClick={() => ir(s.n - 1)} className="cartela fade-up"
+                style={{ animationDelay: `${0.08 + i * 0.04}s`, textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.55)", border: "1px solid rgba(28,24,20,.18)", borderRadius: 6, padding: "20px 20px 22px", display: "flex", flexDirection: "column", gap: 9, minHeight: 180 }}>
+                <span className="cartela-num disp" style={{ fontSize: "2.1rem", fontWeight: 600, lineHeight: 1, color: "var(--tinta)", transition: "color .3s" }}>{String(s.n).padStart(2, "0")}</span>
+                <span className="disp" style={{ fontSize: "1.18rem", fontWeight: 600, lineHeight: 1.15 }}>{s.titulo}</span>
+                <span style={{ fontSize: ".82rem", color: "var(--tinta-suave)", fontStyle: "italic" }}>{s.obra}</span>
+                <span style={{ fontSize: ".9rem", color: "var(--azul)", lineHeight: 1.35 }}>{s.nudo}</span>
+                <div style={{ marginTop: "auto", display: "flex", flexWrap: "wrap", gap: 5 }}>
+                  {(meta.materia || []).map(m => (
+                    <span key={m} style={{ fontSize: ".65rem", letterSpacing: ".1em", textTransform: "uppercase", padding: "2px 8px", borderRadius: 12, background: "rgba(39,56,75,.1)", color: "var(--azul)" }}>{m}</span>
+                  ))}
+                  {s.video && (
+                    <span style={{ fontSize: ".65rem", letterSpacing: ".1em", textTransform: "uppercase", padding: "2px 8px", borderRadius: 12, background: "rgba(178,58,34,.1)", color: "var(--bermellon)" }}>▶ Vídeo</span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -942,9 +1281,9 @@ function Sesion({ idx, ir }) {
   useEffect(() => { window.scrollTo(0, 0); }, [idx]);
 
   return (
-    <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)" }}>
+    <div style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(22px,4vw,52px) clamp(20px,4vw,40px)", background: "var(--papel)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
-        <button onClick={() => ir(null)} className="disp"
+        <button onClick={() => ir("curso")} className="disp"
           style={{ background: "none", border: "none", cursor: "pointer", color: "var(--tinta-suave)", fontSize: ".78rem", letterSpacing: ".18em", textTransform: "uppercase", padding: 0 }}>
           ← Índice del curso
         </button>
@@ -1046,15 +1385,31 @@ function Sesion({ idx, ir }) {
 }
 
 export default function App() {
-  const [idx, setIdx] = useState(null);
+  const [view, setView] = useState(null);
+
+  function ir(target) {
+    window.scrollTo(0, 0);
+    setView(target);
+  }
+
   return (
     <div className="app-c1">
       <style>{ESTILOS}</style>
-      {idx === null ? <Portada ir={setIdx} /> : <Sesion idx={idx} ir={setIdx} />}
+      <PlatformaHeader view={view} ir={ir} />
+      {view === null
+        ? <Inicio ir={ir} />
+        : view === "curso"
+          ? <Portada ir={ir} />
+          : <Sesion idx={view} ir={ir} />
+      }
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <span className="disp" style={{ fontSize: ".82rem", color: "var(--tinta-suave)" }}>Javier Benítez · Centro de Lenguas Modernas, UGR</span>
-          <span className="disp" style={{ fontSize: ".95rem", color: "var(--bermellon)", letterSpacing: ".1em" }}>[|]</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <span className="disp" style={{ fontSize: ".95rem", color: "var(--bermellon)", letterSpacing: ".1em" }}>[|]</span>
+            <span className="disp" style={{ fontSize: ".8rem", fontStyle: "italic", fontWeight: 600, color: "var(--tinta-suave)", opacity: .7 }}>blablaELE</span>
+            <span className="disp" style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", opacity: .45 }}>HABLAMOS ESPAÑOL</span>
+          </div>
         </div>
       </footer>
     </div>
