@@ -101,9 +101,9 @@ Lo extraordinario de las Coplas es que no deprimen: consuelan. Saber que todo pa
       "En tu lengua o cultura, ¿existe alguna forma poética o musical que cumpla la misma función que las Coplas?",
     ],
     referencias: [
-      { titulo: "Coplas a la muerte de su padre — texto completo y anotado", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/coplas-a-la-muerte-de-su-padre--0/html/" },
-      { titulo: "Jorge Manrique — Diccionario Biográfico Español", fuente: "Real Academia de la Historia", url: "https://dbe.rah.es/biografias/8830/jorge-manrique" },
-      { titulo: "Portal Jorge Manrique: vida, obra y recepción", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/portales/jorge_manrique/" },
+      { titulo: "Coplas a la muerte de su padre — texto completo anotado", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/coplas-a-la-muerte-de-su-padre--0/html/" },
+      { titulo: "Jorge Manrique — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Jorge_Manrique" },
+      { titulo: "Coplas a la muerte de su padre — contexto y análisis", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Coplas_a_la_muerte_de_su_padre" },
     ],
   },
 
@@ -168,8 +168,9 @@ Lorca fue fusilado en agosto de 1936, al inicio de la Guerra Civil española, co
       "¿Existe el equivalente del duende en la música, el cine u otras artes que conoces?",
     ],
     referencias: [
-      { titulo: "Romancero gitano — texto completo", fuente: "Biblioteca Virtual Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/romancero-gitano--0/html/" },
-      { titulo: "Juego y teoría del duende (conferencia de Lorca)", fuente: "Fundación Federico García Lorca", url: "https://www.garcia-lorca.org" },
+      { titulo: "Romancero gitano — texto completo", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/romancero-gitano--0/html/" },
+      { titulo: "Federico García Lorca — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Federico_Garc%C3%ADa_Lorca" },
+      { titulo: "Romance sonámbulo — análisis y contexto", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Romance_son%C3%A1mbulo" },
     ],
   },
 
@@ -265,8 +266,9 @@ Neruda siguió escribiendo cincuenta años más. Ganó el Premio Nobel en 1971. 
       "¿Tiene sentido estudiar poesía en una clase de lengua? ¿Qué aprende un estudiante de español leyendo a Neruda?",
     ],
     referencias: [
-      { titulo: "Veinte poemas de amor (texto completo)", fuente: "Biblioteca Virtual Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/veinte-poemas-de-amor-y-una-cancion-desesperada--0/html/" },
-      { titulo: "Pablo Neruda: vida y obra", fuente: "Fundación Pablo Neruda", url: "https://www.fundacionneruda.org" },
+      { titulo: "Veinte poemas de amor y una canción desesperada — texto completo", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/veinte-poemas-de-amor-y-una-cancion-desesperada--0/html/" },
+      { titulo: "Pablo Neruda — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Pablo_Neruda" },
+      { titulo: "Veinte poemas de amor — contexto y recepción", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Veinte_poemas_de_amor_y_una_canci%C3%B3n_desesperada" },
     ],
   },
 
@@ -340,8 +342,9 @@ La última estrofa es devastadora en su sencillez: el hombre vuelve los ojos com
       "¿Existe poesía en tu lengua o cultura que describa el dolor de una manera que te parezca especialmente verdadera?",
     ],
     referencias: [
-      { titulo: "Los heraldos negros — texto completo", fuente: "Biblioteca Virtual Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/los-heraldos-negros--0/html/" },
-      { titulo: "César Vallejo: contexto y obra", fuente: "Centro Virtual Cervantes", url: "https://cvc.cervantes.es/literatura/escritores/vallejo/" },
+      { titulo: "Los heraldos negros — texto completo", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/los-heraldos-negros--0/html/" },
+      { titulo: "César Vallejo — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/C%C3%A9sar_Vallejo" },
+      { titulo: "Los heraldos negros — contexto y análisis", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Los_heraldos_negros" },
     ],
   },
 
@@ -412,8 +415,9 @@ Leer a Pizarnik requiere algo diferente al análisis: requiere quedarse quieto u
       "El silencio en Pizarnik es una presencia, no una ausencia. ¿Cómo funciona el silencio en la música o el cine que conoces?",
     ],
     referencias: [
-      { titulo: "Alejandra Pizarnik — portal de autor", fuente: "Biblioteca Virtual Cervantes", url: "https://www.cervantesvirtual.com/portales/alejandra_pizarnik/" },
-      { titulo: "Alejandra Pizarnik: la hija del insomnio", fuente: "El País Cultural", url: "https://elpais.com/cultura/2012/09/25/actualidad/1348562400_450812.html" },
+      { titulo: "Alejandra Pizarnik — portal de autora", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/portales/alejandra_pizarnik/" },
+      { titulo: "Alejandra Pizarnik — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Alejandra_Pizarnik" },
+      { titulo: "El árbol de Diana — contexto y recepción", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/El_%C3%A1rbol_de_Diana" },
     ],
   },
 
@@ -481,8 +485,9 @@ Esta sesión termina donde empezaron todas las sesiones de la Escuela de Poetas:
       "Después de estas seis sesiones: ¿qué es la poesía para ti ahora?",
     ],
     referencias: [
-      { titulo: "Slam poetry en España: la nueva poesía en vivo", fuente: "El País", url: "https://elpais.com/cultura/2019/02/07/actualidad/1549573207_684700.html" },
-      { titulo: "Elvira Sastre — poeta y voz de su generación", fuente: "RTVE Cultura", url: "https://www.rtve.es/cultura/poesia/elvira-sastre/" },
+      { titulo: "Slam poetry — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Slam_poetry" },
+      { titulo: "Elvira Sastre — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Elvira_Sastre" },
+      { titulo: "Poesía oral — tradición y formas contemporáneas", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Poes%C3%ADa_oral" },
     ],
   },
 ];
