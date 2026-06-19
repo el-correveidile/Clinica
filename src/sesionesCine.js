@@ -53,7 +53,7 @@ Para Buñuel, la caridad no salva a nadie. Viridiana cree que puede hacer el bie
       { titulo: "Viridiana — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Viridiana_(pel%C3%ADcula)" },
       { titulo: "Cine surrealista — contexto y tradición", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Cine_surrealista" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/R_4lBJ2FGsM", titulo: "Viridiana · La última cena (Luis Buñuel, 1961)" },
   },
 
   {
@@ -110,7 +110,7 @@ Erice solo ha realizado tres largometrajes en toda su carrera. El espíritu de l
       { titulo: "Víctor Erice — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/V%C3%ADctor_Erice" },
       { titulo: "Nuevo Cine Español — contexto histórico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Nuevo_Cine_Espa%C3%B1ol" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/FG6J6u5lQmI", titulo: "El espíritu de la colmena · Escena (Víctor Erice, 1973)" },
   },
 
   {
@@ -167,7 +167,7 @@ Saura fue uno de los primeros directores que habló de la familia franquista com
       { titulo: "Carlos Saura — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Carlos_Saura" },
       { titulo: "Transición española — contexto histórico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Transici%C3%B3n_espa%C3%B1ola" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/q8y-O4Wha1w", titulo: "«Porque te vas» · Ana Torrent en Cría cuervos (Carlos Saura, 1976)" },
   },
 
   {
@@ -224,7 +224,7 @@ La secuencia en la que Raimunda canta el tango «Volver» es uno de los momentos
       { titulo: "Pedro Almodóvar — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Pedro_Almod%C3%B3var" },
       { titulo: "La Movida madrileña — contexto cultural", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/La_movida_madrile%C3%B1a" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/JmkHnsbutp4", titulo: "«Volver» · Penélope Cruz en Volver (Pedro Almodóvar, 2006)" },
   },
 
   {
@@ -281,7 +281,7 @@ El uso de la fantasía para hablar de la guerra tiene una larga tradición en la
       { titulo: "Guillermo del Toro — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Guillermo_del_Toro" },
       { titulo: "Posguerra española — contexto histórico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Posguerra_espa%C3%B1ola" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/_z6InvrJGpQ", titulo: "El laberinto del fauno · Tráiler en español (Guillermo del Toro, 2006)" },
   },
 
   {
@@ -338,6 +338,6 @@ A lo largo de estas seis sesiones has visto el cine español de los años 60 has
       { titulo: "El hoyo — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/El_hoyo_(pel%C3%ADcula)" },
       { titulo: "Cine de España — panorama histórico y contemporáneo", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Cine_de_Espa%C3%B1a" },
     ],
-    video: null,
+    video: { src: "https://www.youtube.com/embed/l9tP4M8URhQ", titulo: "La sociedad de la nieve · Tráiler oficial Netflix (J.A. Bayona, 2023)" },
   },
 ];
