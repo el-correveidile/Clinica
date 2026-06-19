@@ -808,7 +808,7 @@ function Sello({ texto, color }) {
 function PlatformaHeader({ view, ir }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isHome = view === null;
-  const isCurso = view === "curso" || typeof view === "number";
+  const isCurso = view === "curso" || typeof view === "number" || view === "poesia" || (typeof view === "string" && view.startsWith("poe-"));
 
   function navIr(target) {
     setMenuOpen(false);
@@ -825,7 +825,7 @@ function PlatformaHeader({ view, ir }) {
         {/* Desktop links */}
         <div className="plat-nav-links">
           <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
-          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr(null)}>Recursos</button>
           <span className="plat-nav-link is-dim">Profesores</span>
           <span className="plat-nav-link is-dim">Comunidad</span>
         </div>
@@ -845,7 +845,7 @@ function PlatformaHeader({ view, ir }) {
       {menuOpen && (
         <div className="plat-mobile-menu">
           <button className={`plat-mobile-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
-          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr(null)}>Recursos</button>
           <span className="plat-mobile-link is-dim">Profesores</span>
           <span className="plat-mobile-link is-dim">Comunidad</span>
         </div>
