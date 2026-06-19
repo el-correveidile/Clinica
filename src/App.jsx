@@ -723,7 +723,7 @@ const ESTILOS = `
   .plat-mobile-menu{ display:none !important; }
 }
 .feature-card{ background:#fff; border:1px solid rgba(28,24,20,.13); border-radius:6px; padding:26px; }
-.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
+.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; overflow:hidden; opacity:.6; display:flex; flex-direction:column; }
 .hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--tinta); color:#fff; border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
 .hero-btn-primary:hover{ background:var(--azul); }
 .hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(255,255,255,.65); border:1px solid rgba(255,255,255,.32); padding:13px 24px; border-radius:4px; cursor:default; opacity:.7; }
@@ -862,12 +862,14 @@ function Inicio({ ir }) {
       titulo: "Arte y sociedad en la cultura hispánica",
       desc: "Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.",
       nivel: "C1", destreza: "Producción oral", tipo: "Mini web",
-      sesiones: 12, activo: true,
+      sesiones: 12, activo: true, img: "/course-arte-c1.png",
       ir: () => ir("curso"),
     },
-    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false },
-    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false },
-    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false },
+    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, escuchar y escribir poesía en español. Lorca, Neruda, Pizarnik: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", activo: false, img: "/course-poesia.png" },
+    { id: "cine-b2", titulo: "Laboratorio de Cine", desc: "El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.", nivel: "B2", destreza: "Comprensión audiovisual", tipo: "Vídeo", activo: false, img: "/course-cine-film.png" },
+    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false, img: "/students-bar.png" },
+    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false, img: null },
+    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false, img: null },
   ];
 
   const NIVELES   = ["A1", "A2", "B1", "B2", "C1", "C2"];
@@ -889,7 +891,7 @@ function Inicio({ ir }) {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: "var(--coral)", color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
+      <section style={{ background: `linear-gradient(rgba(200,80,60,.88),rgba(200,80,60,.88)),url('/hero-desk-notes.png') center/cover no-repeat`, color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div className="fade-up" style={{ marginBottom: 14 }}>
             <Sello texto="Español A1–C2" color="rgba(255,255,255,.7)" />
@@ -954,28 +956,38 @@ function Inicio({ ir }) {
             {filtrados.map(r => (
               r.activo ? (
                 <button key={r.id} onClick={r.ir} className="cartela"
-                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "24px", display: "flex", flexDirection: "column", gap: 10, fontFamily: "inherit", minHeight: 180 }}>
-                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-                    <Sello texto={r.nivel} color="var(--bermellon)" />
-                    <Sello texto={r.destreza} color="var(--azul)" />
-                    <Sello texto={r.tipo} color="var(--verde)" />
+                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: 0, display: "flex", flexDirection: "column", fontFamily: "inherit", overflow: "hidden" }}>
+                  {r.img && (
+                    <div style={{ height: 160, backgroundImage: `url(${r.img})`, backgroundSize: "cover", backgroundPosition: "center", flexShrink: 0 }} />
+                  )}
+                  <div style={{ padding: "20px 22px 22px", display: "flex", flexDirection: "column", gap: 9, flex: 1 }}>
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                      <Sello texto={r.nivel} color="var(--bermellon)" />
+                      <Sello texto={r.destreza} color="var(--azul)" />
+                      <Sello texto={r.tipo} color="var(--verde)" />
+                    </div>
+                    <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                    <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                    <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto", paddingTop: 6 }}>
+                      {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
+                    </span>
                   </div>
-                  <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
-                  <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
-                  <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>
-                    {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
-                  </span>
                 </button>
               ) : (
-                <div key={r.id} className="course-card-soon" style={{ minHeight: 180, display: "flex", flexDirection: "column", gap: 10 }}>
-                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-                    <Sello texto={r.nivel} color="var(--tinta-suave)" />
-                    <Sello texto={r.destreza} color="var(--tinta-suave)" />
-                    <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                <div key={r.id} className="course-card-soon" style={{ padding: 0, overflow: "hidden" }}>
+                  {r.img && (
+                    <div style={{ height: 140, backgroundImage: `url(${r.img})`, backgroundSize: "cover", backgroundPosition: "center", filter: "grayscale(60%)", opacity: .55, flexShrink: 0 }} />
+                  )}
+                  <div style={{ padding: "18px 20px 20px", display: "flex", flexDirection: "column", gap: 9 }}>
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                      <Sello texto={r.nivel} color="var(--tinta-suave)" />
+                      <Sello texto={r.destreza} color="var(--tinta-suave)" />
+                      <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                    </div>
+                    <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                    <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                    <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", paddingTop: 4, opacity: .7 }}>Próximamente</span>
                   </div>
-                  <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
-                  <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
-                  <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", opacity: .7 }}>Próximamente</span>
                 </div>
               )
             ))}
@@ -989,7 +1001,7 @@ function Inicio({ ir }) {
       </section>
 
       {/* Para profesores */}
-      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--fondo-alt)" }}>
+      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: `linear-gradient(rgba(246,244,241,.93),rgba(246,244,241,.93)),url('/library-wide.png') center/cover no-repeat` }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profesores</span>
