@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { SESIONES_POESIA } from "./sesionesPoesia.js";
+import { SESIONES_CINE } from "./sesionesCine.js";
 
 const SESIONES = [
   {
@@ -627,6 +629,54 @@ Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el esp
     },
     tarea: "Busca una imagen colocada en un espacio público de tu ciudad o país (un mural, un monumento, un cartel oficial o una gran campaña). En 200–250 palabras, descríbela y analiza qué mensaje transmite y a quién beneficia. ¿Te parece que educa, que conmemora o que adoctrina? Relaciónalo con el caso del muralismo mexicano.",
   },
+  {
+    n: 13,
+    titulo: "Almudena Grandes y la memoria",
+    obra: "Almudena Grandes · 2010–2021",
+    nudo: "¿Puede la literatura devolver lo que la historia oficial borra?",
+    lectura: `Cuando Almudena Grandes publicó en 2010 *Inés y la alegría*, el primer volumen de lo que sería una serie de seis novelas, no solo estaba escribiendo ficción: estaba construyendo un monumento literario a los que perdieron la Guerra Civil española. El proyecto, titulado *Episodios de una guerra interminable*, se concibió desde el principio como un homenaje a los republicanos que combatieron, sufrieron el exilio o sobrevivieron en silencio dentro de una España que los había borrado de su propia historia. El paralelo con los *Episodios Nacionales* de Benito Pérez Galdós era explícito y buscado: si Galdós narró el siglo XIX desde las guerras napoleónicas hasta la Restauración, Grandes quería narrar la posguerra y sus consecuencias para la gente corriente que nunca sale en los libros de texto.
+
+El mundo que Grandes construye en estas novelas no es el de los generales ni el de los héroes, sino el de los vencidos: las mujeres que criaron a sus hijos solas mientras los maridos estaban en la cárcel o en el exilio, los hombres que aprendieron a callar para sobrevivir, los jóvenes que no supieron jamás por qué su familia tenía miedo. La posguerra española duró, en cierto modo, hasta la muerte del dictador en 1975, y sus heridas se prolongaron más allá: la Transición pactó una amnesia colectiva por la que muchos crímenes nunca se nombraron ni se juzgaron. Escribir sobre ello, cuatro décadas después, era en sí mismo un acto político.
+
+La elección del género también importa. Grandes desconfía del ensayo para hablar de estas cosas porque el ensayo necesita documentos, nombres propios, fechas verificables. La novela, en cambio, puede meterse en las casas, en las cocinas, en las conversaciones que no quedaron escritas. Puede imaginar lo que sintió una mujer al ver pasar a su marido detenido, o lo que pensó un niño cuando le dijeron que su abuelo había muerto «de una enfermedad» que todos sabían que no era ninguna enfermedad. Ese espacio imaginado no es menos verdadero que el dato histórico: da voz a quienes los archivos no guardaron.
+
+En 2007, la Ley de Memoria Histórica reconoció por primera vez en España el derecho de las familias a conocer el paradero de sus desaparecidos y a recuperar los restos de quienes yacían en fosas comunes sin nombre. La ley llegó tarde y fue muy criticada por insuficiente. Pero abrió una grieta en el silencio oficial. Grandes pertenece a la generación que creció justo entre dos mundos: los que recordaban en voz baja y los que empezaban a exigir que se hablara en voz alta. Sus novelas se insertan en ese debate —y lo alimentan— con una pregunta que la literatura puede formular mejor que cualquier otro discurso: ¿qué le hacemos a una persona cuando le negamos su historia?
+
+Almudena Grandes murió en noviembre de 2021, con la serie incompleta. El sexto y último volumen quedó inacabado. Esa incompletitud final resulta, a su manera, coherente: la memoria histórica española tampoco está cerrada. Hay todavía miles de personas cuyos familiares siguen sin tener una tumba donde llorar, y hay una sociedad que sigue debatiendo si es necesario desenterrar el pasado o si es preferible, como decían sus enemigos, «pasar página». La obra de Grandes no pasa página. Se obstina en escribir sobre ella hasta el final.`,
+    lexico: ["la posguerra", "la memoria histórica", "el exilio", "los vencidos", "la represalia", "la fosa común", "la amnesia colectiva", "el paradero", "la Transición", "recuperar", "reivindicar", "la herida abierta"],
+    comentario: [
+      "El texto sostiene que el paralelo con los *Episodios Nacionales* de Galdós fue «explícito y buscado». Analiza qué efecto produce esa elección de referente sobre la legitimidad literaria y política del proyecto de Grandes: ¿qué hereda de la tradición galdosiana y qué transforma?",
+      "El párrafo tercero opone el «ensayo» a la «novela» como formas de acceder al pasado. ¿Qué epistemología implica esta distinción? Valora si el argumento del texto —que lo imaginado puede ser «tan verdadero» como el dato histórico— tiene validez crítica o entraña algún riesgo metodológico.",
+      "La Ley de Memoria Histórica se describe como «tardía» e «insuficiente» pero capaz de «abrir una grieta en el silencio oficial». Analiza la función argumentativa de la metáfora de la grieta y contraponla a la metáfora adversaria de «pasar página»: ¿qué modelo de relación con el pasado propone cada imagen?",
+      "Analiza la función narrativa y argumentativa de la incompletitud final de la serie: ¿cómo convierte el texto esa circunstancia biográfica en un argumento sobre el estado de la memoria histórica en España?",
+      "En este curso hemos visto a Goya colocarse «del lado de las víctimas» (sesión 2) y a los muralistas mexicanos narrar la historia desde abajo (sesión 12). ¿En qué se parece y en qué se diferencia el proyecto de Grandes de esas tradiciones? Construye un argumento que precise la especificidad de la narrativa literaria frente a la imagen visual como instrumento de memoria colectiva.",
+    ],
+    debate: [
+      "¿Es la novela un instrumento más eficaz que la ley o el juicio para reparar injusticias históricas?",
+      "La Transición española se basó en un pacto de silencio sobre el franquismo. ¿Fue ese silencio una necesidad pragmática o una traición a las víctimas?",
+      "¿Tiene sentido exhumar fosas comunes décadas después de los hechos, o es preferible no desenterrar el pasado? ¿Existe un límite temporal para la justicia?",
+      "¿Conoces en tu propio país un episodio histórico sobre el que exista un «silencio oficial»? ¿Cómo se habla de él en la literatura o en la cultura popular?",
+    ],
+    referencias: [
+      { titulo: "Almudena Grandes", fuente: "Wikipedia", url: "https://es.wikipedia.org/wiki/Almudena_Grandes" },
+      { titulo: "Episodios de una guerra interminable", fuente: "Wikipedia", url: "https://es.wikipedia.org/wiki/Episodios_de_una_guerra_interminable" },
+    ],
+    lexicoDefs: {
+      "la posguerra": "Período inmediatamente posterior a una guerra, marcado por la reconstrucción y las secuelas del conflicto.",
+      "la memoria histórica": "Recuperación y reconocimiento colectivo de hechos del pasado, especialmente de injusticias o crímenes no reconocidos oficialmente.",
+      "el exilio": "Separación de una persona de su patria, voluntaria o forzosa, por razones políticas.",
+      "los vencidos": "Quienes resultaron derrotados en un conflicto. En la posguerra española, los republicanos que perdieron la guerra.",
+      "la represalia": "Acción tomada en respuesta a un agravio, especialmente el castigo ejercido por el bando vencedor sobre el vencido.",
+      "la fosa común": "Enterramiento colectivo, generalmente sin identificar, de víctimas de guerras, epidemias o represiones.",
+      "la amnesia colectiva": "Olvido social compartido e impuesto sobre hechos del pasado, a menudo como estrategia política.",
+      "el paradero": "Lugar donde se encuentra o se sabe que estuvo una persona desaparecida.",
+      "la Transición": "En España, período de cambio político entre la dictadura franquista y la democracia (1975–1978).",
+      "recuperar": "Volver a tener algo que se había perdido. // Rescatar del olvido personas, hechos o valores.",
+      "reivindicar": "Reclamar el reconocimiento o la restitución de algo a lo que se tiene o se cree tener derecho.",
+      "la herida abierta": "Metáfora para referirse a un trauma colectivo no resuelto que sigue causando dolor social.",
+    },
+    tarea: "Piensa en un hecho histórico de tu país que haya sido silenciado, distorsionado o tardíamente reconocido. En 200–250 palabras, explica qué ocurrió, por qué crees que se silenció y si existe alguna obra literaria, cinematográfica o artística que lo haya recuperado. Si no conoces ninguna, reflexiona sobre por qué crees que ese silencio persiste. Relaciona tu análisis con la función que el texto le atribuye a la novela frente al ensayo o la ley.",
+  },
 ];
 
 const METADATA = {
@@ -642,6 +692,7 @@ const METADATA = {
   10: { nivel: "C1", materia: ["Cine"],                tipo: "Cine"        },
   11: { nivel: "C1", materia: ["Arte", "Tecnología"],  tipo: "Debate"      },
   12: { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  13: { nivel: "C1", materia: ["Literatura", "Historia"], tipo: "Narrativa" },
 };
 
 const ESTILOS = `
@@ -723,7 +774,7 @@ const ESTILOS = `
   .plat-mobile-menu{ display:none !important; }
 }
 .feature-card{ background:#fff; border:1px solid rgba(28,24,20,.13); border-radius:6px; padding:26px; }
-.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; padding:28px; opacity:.6; }
+.course-card-soon{ background:var(--fondo-alt); border:1px dashed rgba(28,24,20,.18); border-radius:6px; overflow:hidden; opacity:.6; display:flex; flex-direction:column; }
 .hero-btn-primary{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:var(--tinta); color:#fff; border:none; padding:13px 28px; border-radius:4px; cursor:pointer; transition:background .2s; }
 .hero-btn-primary:hover{ background:var(--azul); }
 .hero-btn-ghost{ font-family:'Fraunces',serif; font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; background:none; color:rgba(255,255,255,.65); border:1px solid rgba(255,255,255,.32); padding:13px 24px; border-radius:4px; cursor:default; opacity:.7; }
@@ -807,7 +858,7 @@ function Sello({ texto, color }) {
 function PlatformaHeader({ view, ir }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isHome = view === null;
-  const isCurso = view === "curso" || typeof view === "number";
+  const isCurso = view === "curso" || typeof view === "number" || view === "poesia" || view === "cine" || (typeof view === "string" && (view.startsWith("poe-") || view.startsWith("cine-")));
 
   function navIr(target) {
     setMenuOpen(false);
@@ -824,7 +875,7 @@ function PlatformaHeader({ view, ir }) {
         {/* Desktop links */}
         <div className="plat-nav-links">
           <button className={`plat-nav-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
-          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <button className={`plat-nav-link${isCurso ? " is-active" : ""}`} onClick={() => navIr(null)}>Recursos</button>
           <span className="plat-nav-link is-dim">Profesores</span>
           <span className="plat-nav-link is-dim">Comunidad</span>
         </div>
@@ -844,7 +895,7 @@ function PlatformaHeader({ view, ir }) {
       {menuOpen && (
         <div className="plat-mobile-menu">
           <button className={`plat-mobile-link${isHome ? " is-active" : ""}`} onClick={() => navIr(null)}>Inicio</button>
-          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr("curso")}>Recursos</button>
+          <button className={`plat-mobile-link${isCurso ? " is-active" : ""}`} onClick={() => navIr(null)}>Recursos</button>
           <span className="plat-mobile-link is-dim">Profesores</span>
           <span className="plat-mobile-link is-dim">Comunidad</span>
         </div>
@@ -860,14 +911,16 @@ function Inicio({ ir }) {
     {
       id: "arte-c1",
       titulo: "Arte y sociedad en la cultura hispánica",
-      desc: "Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.",
+      desc: "Trece sesiones para hablar, leer y debatir en español. De Las Meninas a Almudena Grandes, pasando por Goya, Kahlo y el tango.",
       nivel: "C1", destreza: "Producción oral", tipo: "Mini web",
-      sesiones: 12, activo: true,
+      sesiones: 13, activo: true, img: "/course-arte-c1.png",
       ir: () => ir("curso"),
     },
-    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false },
-    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false },
-    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false },
+    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 6, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
+    { id: "cine-b2", titulo: "Laboratorio de Cine", desc: "El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.", nivel: "B2", destreza: "Comprensión audiovisual", tipo: "Vídeo", sesiones: 6, activo: true, img: "/course-cine-film.png", ir: () => ir("cine") },
+    { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false, img: "/students-bar.png" },
+    { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false, img: null },
+    { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false, img: null },
   ];
 
   const NIVELES   = ["A1", "A2", "B1", "B2", "C1", "C2"];
@@ -889,7 +942,7 @@ function Inicio({ ir }) {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: "var(--coral)", color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
+      <section style={{ background: `linear-gradient(rgba(200,80,60,.88),rgba(200,80,60,.88)),url('/hero-desk-notes.png') center/cover no-repeat`, color: "#fff", padding: "clamp(52px,8vw,96px) clamp(20px,4vw,48px)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div className="fade-up" style={{ marginBottom: 14 }}>
             <Sello texto="Español A1–C2" color="rgba(255,255,255,.7)" />
@@ -905,7 +958,7 @@ function Inicio({ ir }) {
             Clasificados por nivel, destreza y tipo de contenido.
           </p>
           <div className="fade-up" style={{ animationDelay: ".22s", display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <button className="hero-btn-primary" onClick={() => ir("curso")}>Explorar recursos →</button>
+            <button className="hero-btn-primary" onClick={() => ir(null)}>Explorar recursos →</button>
             <button className="hero-btn-ghost">Para profesores (próx.)</button>
           </div>
         </div>
@@ -954,28 +1007,38 @@ function Inicio({ ir }) {
             {filtrados.map(r => (
               r.activo ? (
                 <button key={r.id} onClick={r.ir} className="cartela"
-                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: "24px", display: "flex", flexDirection: "column", gap: 10, fontFamily: "inherit", minHeight: 180 }}>
-                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-                    <Sello texto={r.nivel} color="var(--bermellon)" />
-                    <Sello texto={r.destreza} color="var(--azul)" />
-                    <Sello texto={r.tipo} color="var(--verde)" />
+                  style={{ textAlign: "left", cursor: "pointer", background: "rgba(255,253,247,.7)", border: "1px solid rgba(28,24,20,.2)", borderRadius: 6, padding: 0, display: "flex", flexDirection: "column", fontFamily: "inherit", overflow: "hidden" }}>
+                  {r.img && (
+                    <div style={{ height: 160, backgroundImage: `url(${r.img})`, backgroundSize: "cover", backgroundPosition: "center", flexShrink: 0 }} />
+                  )}
+                  <div style={{ padding: "20px 22px 22px", display: "flex", flexDirection: "column", gap: 9, flex: 1 }}>
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                      <Sello texto={r.nivel} color="var(--bermellon)" />
+                      <Sello texto={r.destreza} color="var(--azul)" />
+                      <Sello texto={r.tipo} color="var(--verde)" />
+                    </div>
+                    <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                    <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                    <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto", paddingTop: 6 }}>
+                      {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
+                    </span>
                   </div>
-                  <div className="disp" style={{ fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
-                  <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
-                  <span className="disp" style={{ fontSize: ".71rem", letterSpacing: ".14em", textTransform: "uppercase", color: "var(--bermellon)", marginTop: "auto" }}>
-                    {r.sesiones ? `${r.sesiones} sesiones → Entrar` : "Ver recurso →"}
-                  </span>
                 </button>
               ) : (
-                <div key={r.id} className="course-card-soon" style={{ minHeight: 180, display: "flex", flexDirection: "column", gap: 10 }}>
-                  <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-                    <Sello texto={r.nivel} color="var(--tinta-suave)" />
-                    <Sello texto={r.destreza} color="var(--tinta-suave)" />
-                    <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                <div key={r.id} className="course-card-soon" style={{ padding: 0, overflow: "hidden" }}>
+                  {r.img && (
+                    <div style={{ height: 140, backgroundImage: `url(${r.img})`, backgroundSize: "cover", backgroundPosition: "center", filter: "grayscale(60%)", opacity: .55, flexShrink: 0 }} />
+                  )}
+                  <div style={{ padding: "18px 20px 20px", display: "flex", flexDirection: "column", gap: 9 }}>
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+                      <Sello texto={r.nivel} color="var(--tinta-suave)" />
+                      <Sello texto={r.destreza} color="var(--tinta-suave)" />
+                      <Sello texto={r.tipo} color="var(--tinta-suave)" />
+                    </div>
+                    <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
+                    <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
+                    <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", paddingTop: 4, opacity: .7 }}>Próximamente</span>
                   </div>
-                  <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2 }}>{r.titulo}</div>
-                  <p style={{ fontSize: ".88rem", color: "var(--tinta-suave)", lineHeight: 1.55, margin: 0 }}>{r.desc}</p>
-                  <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginTop: "auto", opacity: .7 }}>Próximamente</span>
                 </div>
               )
             ))}
@@ -989,7 +1052,7 @@ function Inicio({ ir }) {
       </section>
 
       {/* Para profesores */}
-      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: "var(--fondo-alt)" }}>
+      <section style={{ padding: "clamp(40px,6vw,68px) clamp(20px,4vw,48px)", background: `linear-gradient(rgba(246,244,241,.93),rgba(246,244,241,.93)),url('/library-wide.png') center/cover no-repeat` }}>
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
             <span className="disp" style={{ fontSize: ".7rem", letterSpacing: ".26em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profesores</span>
@@ -1384,6 +1447,330 @@ function Sesion({ idx, ir }) {
   );
 }
 
+function PortadaCine({ ir }) {
+  return (
+    <div>
+      <section style={{ background: `linear-gradient(rgba(10,10,18,.82),rgba(10,10,18,.82)),url('/course-cine-film.png') center/cover no-repeat`, padding: "clamp(40px,6vw,72px) clamp(20px,4vw,48px)", color: "#fff" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <button onClick={() => ir(null)} style={{ color: "rgba(255,255,255,.55)", border: "none", background: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 24 }}>← blablaELE</button>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+            {["B2", "Comprensión audiovisual", "Vídeo", "6 sesiones"].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
+          </div>
+          <h1 className="disp" style={{ fontSize: "clamp(2rem,5vw,3.4rem)", color: "#fff", margin: "0 0 12px", fontWeight: 600, lineHeight: 1.05 }}>Laboratorio de Cine</h1>
+          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.</p>
+        </div>
+      </section>
+      <section style={{ padding: "clamp(36px,5vw,60px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 16 }}>
+            {SESIONES_CINE.map(s => (
+              <button key={s.n} onClick={() => ir(`cine-${s.n}`)} className="cartela"
+                style={{ textAlign: "left", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, padding: "22px 24px", cursor: "pointer", fontFamily: "inherit" }}>
+                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 8 }}>
+                  Sesión {s.n} · {s.periodo}
+                </div>
+                <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2, marginBottom: 5 }}>{s.titulo}</div>
+                <div style={{ fontSize: ".87rem", color: "var(--tinta-suave)", marginBottom: 10 }}><em>{s.director} · {s.pelicula} ({s.año})</em></div>
+                <div style={{ fontSize: ".83rem", color: "var(--bermellon)", fontStyle: "italic", lineHeight: 1.45 }}>{s.nudo}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SesionCine({ idx, ir }) {
+  const sesion = SESIONES_CINE[idx - 1];
+  const [palabraActiva, setPalabraActiva] = useState(null);
+  if (!sesion) return null;
+  const total = SESIONES_CINE.length;
+
+  return (
+    <div style={{ background: "var(--fondo)", minHeight: "100vh" }}>
+      <div style={{ background: "#0a0a12", color: "#fff", padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <button onClick={() => ir("cine")} style={{ color: "rgba(255,255,255,.5)", background: "none", border: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 20 }}>← Laboratorio de Cine</button>
+          <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: 10 }}>Sesión {sesion.n} de {total} · {sesion.periodo}</div>
+          <h1 className="disp" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", margin: "0 0 6px", fontWeight: 600, lineHeight: 1.1 }}>{sesion.titulo}</h1>
+          <div style={{ fontSize: "1rem", color: "rgba(255,255,255,.6)", fontStyle: "italic", marginBottom: 14 }}>{sesion.director} · <em>{sesion.pelicula}</em> ({sesion.año})</div>
+          <div style={{ fontSize: ".97rem", color: "rgba(255,255,255,.75)", fontStyle: "italic" }}>«{sesion.nudo}»</div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 820, margin: "0 auto", padding: "clamp(32px,5vw,56px) clamp(20px,4vw,48px)" }}>
+
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>La escena</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(24px,4vw,40px)" }}>
+            <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>{sesion.escena.titulo}</div>
+            <div style={{ fontSize: ".8rem", color: "var(--tinta-suave)", fontStyle: "italic", marginBottom: 18, fontFamily: "'Spectral',serif" }}>{sesion.escena.nota}</div>
+            <p style={{ fontFamily: "'Spectral',serif", fontSize: "1.05rem", lineHeight: 1.8, color: "var(--tinta)", margin: 0 }}>{sesion.escena.descripcion}</p>
+          </div>
+          {sesion.video && (
+            <div style={{ marginTop: 20 }}>
+              <div className="disp" style={{ fontSize: ".68rem", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>{sesion.video.titulo}</div>
+              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 6, overflow: "hidden", background: "#000" }}>
+                <iframe src={sesion.video.src} title={sesion.video.titulo}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }} />
+              </div>
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para leer</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          {sesion.lectura.split("\n\n").map((p, i) => (
+            <p key={i} style={{ fontSize: "1.04rem", lineHeight: 1.78, color: "var(--tinta)", marginBottom: 18 }}
+               dangerouslySetInnerHTML={{ __html: p.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+          ))}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Léxico clave</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {sesion.lexico.map(p => (
+              <button key={p} onClick={() => setPalabraActiva(palabraActiva === p ? null : p)} className="disp"
+                style={{ fontSize: ".72rem", letterSpacing: ".1em", padding: "5px 12px", borderRadius: 20, border: `1px solid ${palabraActiva === p ? "var(--coral)" : "rgba(28,24,20,.25)"}`, background: palabraActiva === p ? "var(--coral)" : "transparent", color: palabraActiva === p ? "#fff" : "var(--tinta)", cursor: "pointer", transition: "all .18s" }}>
+                {p}
+              </button>
+            ))}
+          </div>
+          {palabraActiva && sesion.lexicoDefs[palabraActiva] && (
+            <div style={{ marginTop: 14, padding: "14px 18px", background: "var(--fondo-alt)", borderRadius: 4, border: "1px solid rgba(28,24,20,.1)" }}>
+              <strong className="disp" style={{ fontSize: ".78rem" }}>{palabraActiva}</strong>
+              <span style={{ fontSize: ".88rem", color: "var(--tinta-suave)", marginLeft: 8 }}>— {sesion.lexicoDefs[palabraActiva]}</span>
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Comprensión y debate</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ol style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.comentario.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ol>
+        </section>
+
+        <section style={{ marginBottom: 44, background: "#fff", border: "1px solid rgba(200,80,60,.25)", borderRadius: 6, padding: "clamp(20px,3vw,32px)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--bermellon)" }}>Tarea de producción</span>
+            <hr className="regla" style={{ flex: 1, borderColor: "rgba(200,80,60,.3)" }} />
+          </div>
+          <p style={{ fontSize: ".97rem", lineHeight: 1.72, color: "var(--tinta)", margin: 0 }}>{sesion.tarea}</p>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para debatir</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ul style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.debate.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profundizar</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {sesion.referencias.map((r, i) => (
+              <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", flexDirection: "column", gap: 3, padding: "12px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 4, textDecoration: "none" }}>
+                <span className="disp" style={{ fontSize: ".85rem", color: "var(--tinta)" }}>{r.titulo}</span>
+                <span style={{ fontSize: ".75rem", color: "var(--tinta-suave)" }}>{r.fuente}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 24, borderTop: "1px solid rgba(28,24,20,.12)" }}>
+          <button onClick={() => ir(idx > 1 ? `cine-${idx - 1}` : "cine")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx > 1 ? `← Sesión ${idx - 1}` : "← Índice"}
+          </button>
+          <button onClick={() => ir(idx < total ? `cine-${idx + 1}` : "cine")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx < total ? `Sesión ${idx + 1} →` : "Índice →"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PortadaPoesia({ ir }) {
+  return (
+    <div>
+      <section style={{ background: `linear-gradient(rgba(28,24,20,.78),rgba(28,24,20,.78)),url('/course-poesia.png') center/cover no-repeat`, padding: "clamp(40px,6vw,72px) clamp(20px,4vw,48px)", color: "#fff" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <button onClick={() => ir(null)} style={{ color: "rgba(255,255,255,.55)", border: "none", background: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 24 }}>← blablaELE</button>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+            {["C1", "Expresión escrita", "Mini web", "6 sesiones"].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
+          </div>
+          <h1 className="disp" style={{ fontSize: "clamp(2rem,5vw,3.4rem)", color: "#fff", margin: "0 0 12px", fontWeight: 600, lineHeight: 1.05 }}>Escuela de Poetas</h1>
+          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.</p>
+        </div>
+      </section>
+      <section style={{ padding: "clamp(36px,5vw,60px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 16 }}>
+            {SESIONES_POESIA.map(s => (
+              <button key={s.n} onClick={() => ir(`poe-${s.n}`)} className="cartela"
+                style={{ textAlign: "left", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, padding: "22px 24px", cursor: "pointer", fontFamily: "inherit" }}>
+                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 8 }}>
+                  Sesión {s.n} · {s.periodo}
+                </div>
+                <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2, marginBottom: 5 }}>{s.titulo}</div>
+                <div style={{ fontSize: ".87rem", color: "var(--tinta-suave)", marginBottom: 10 }}><em>{s.autor}</em></div>
+                <div style={{ fontSize: ".83rem", color: "var(--bermellon)", fontStyle: "italic", lineHeight: 1.45 }}>{s.nudo}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SesionPoesia({ idx, ir }) {
+  const sesion = SESIONES_POESIA[idx - 1];
+  const [palabraActiva, setPalabraActiva] = useState(null);
+  if (!sesion) return null;
+  const total = SESIONES_POESIA.length;
+
+  return (
+    <div style={{ background: "var(--papel)", minHeight: "100vh" }}>
+      <div style={{ background: "var(--tinta)", color: "#fff", padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <button onClick={() => ir("poesia")} style={{ color: "rgba(255,255,255,.5)", background: "none", border: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 20 }}>← Escuela de Poetas</button>
+          <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: 10 }}>Sesión {sesion.n} de {total} · {sesion.periodo}</div>
+          <h1 className="disp" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", margin: "0 0 6px", fontWeight: 600, lineHeight: 1.1 }}>{sesion.titulo}</h1>
+          <div style={{ fontSize: "1rem", color: "rgba(255,255,255,.6)", fontStyle: "italic", marginBottom: 14 }}>{sesion.autor}</div>
+          <div style={{ fontSize: ".97rem", color: "rgba(255,255,255,.75)", fontStyle: "italic" }}>«{sesion.nudo}»</div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 820, margin: "0 auto", padding: "clamp(32px,5vw,56px) clamp(20px,4vw,48px)" }}>
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>El poema</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(24px,4vw,40px)" }}>
+            <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 10 }}>{sesion.poema.titulo}</div>
+            <div style={{ fontSize: ".8rem", color: "var(--tinta-suave)", fontStyle: "italic", marginBottom: 22, fontFamily: "'Spectral',serif" }}>{sesion.poema.nota}</div>
+            <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.1rem", lineHeight: 2.1, whiteSpace: "pre-wrap", color: "var(--tinta)" }}>{sesion.poema.texto}</div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para leer</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          {sesion.lectura.split("\n\n").map((p, i) => (
+            <p key={i} style={{ fontSize: "1.04rem", lineHeight: 1.78, color: "var(--tinta)", marginBottom: 18 }}
+               dangerouslySetInnerHTML={{ __html: p.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+          ))}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Léxico clave</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {sesion.lexico.map(p => (
+              <button key={p} onClick={() => setPalabraActiva(palabraActiva === p ? null : p)} className="disp"
+                style={{ fontSize: ".72rem", letterSpacing: ".1em", padding: "5px 12px", borderRadius: 20, border: `1px solid ${palabraActiva === p ? "var(--coral)" : "rgba(28,24,20,.25)"}`, background: palabraActiva === p ? "var(--coral)" : "transparent", color: palabraActiva === p ? "#fff" : "var(--tinta)", cursor: "pointer", transition: "all .18s" }}>
+                {p}
+              </button>
+            ))}
+          </div>
+          {palabraActiva && sesion.lexicoDefs[palabraActiva] && (
+            <div style={{ marginTop: 14, padding: "14px 18px", background: "var(--fondo-alt)", borderRadius: 4, border: "1px solid rgba(28,24,20,.1)" }}>
+              <strong className="disp" style={{ fontSize: ".78rem" }}>{palabraActiva}</strong>
+              <span style={{ fontSize: ".88rem", color: "var(--tinta-suave)", marginLeft: 8 }}>— {sesion.lexicoDefs[palabraActiva]}</span>
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Comprensión y análisis</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ol style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.comentario.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ol>
+        </section>
+
+        <section style={{ marginBottom: 44, background: "#fff", border: "1px solid rgba(200,80,60,.25)", borderRadius: 6, padding: "clamp(20px,3vw,32px)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--bermellon)" }}>Tarea de escritura</span>
+            <hr className="regla" style={{ flex: 1, borderColor: "rgba(200,80,60,.3)" }} />
+          </div>
+          <p style={{ fontSize: ".97rem", lineHeight: 1.72, color: "var(--tinta)", margin: 0 }}>{sesion.tarea}</p>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para debatir</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <ul style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            {sesion.debate.map((q, i) => <li key={i} style={{ fontSize: ".97rem", lineHeight: 1.65, color: "var(--tinta)" }}>{q}</li>)}
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profundizar</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {sesion.referencias.map((r, i) => (
+              <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", flexDirection: "column", gap: 3, padding: "12px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 4, textDecoration: "none" }}>
+                <span className="disp" style={{ fontSize: ".85rem", color: "var(--tinta)" }}>{r.titulo}</span>
+                <span style={{ fontSize: ".75rem", color: "var(--tinta-suave)" }}>{r.fuente}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 24, borderTop: "1px solid rgba(28,24,20,.12)" }}>
+          <button onClick={() => ir(idx > 1 ? `poe-${idx - 1}` : "poesia")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx > 1 ? `← Sesión ${idx - 1}` : "← Índice"}
+          </button>
+          <button onClick={() => ir(idx < total ? `poe-${idx + 1}` : "poesia")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx < total ? `Sesión ${idx + 1} →` : "Índice →"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [view, setView] = useState(null);
 
@@ -1400,7 +1787,15 @@ export default function App() {
         ? <Inicio ir={ir} />
         : view === "curso"
           ? <Portada ir={ir} />
-          : <Sesion idx={view} ir={ir} />
+          : view === "poesia"
+            ? <PortadaPoesia ir={ir} />
+            : view === "cine"
+              ? <PortadaCine ir={ir} />
+              : typeof view === "string" && view.startsWith("poe-")
+                ? <SesionPoesia idx={parseInt(view.split("-")[1])} ir={ir} />
+                : typeof view === "string" && view.startsWith("cine-")
+                  ? <SesionCine idx={parseInt(view.split("-")[1])} ir={ir} />
+                  : <Sesion idx={view} ir={ir} />
       }
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
