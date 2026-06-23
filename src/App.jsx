@@ -629,6 +629,54 @@ Hoy seguimos rodeados de imágenes que el poder o las empresas colocan en el esp
     },
     tarea: "Busca una imagen colocada en un espacio público de tu ciudad o país (un mural, un monumento, un cartel oficial o una gran campaña). En 200–250 palabras, descríbela y analiza qué mensaje transmite y a quién beneficia. ¿Te parece que educa, que conmemora o que adoctrina? Relaciónalo con el caso del muralismo mexicano.",
   },
+  {
+    n: 13,
+    titulo: "Almudena Grandes y la memoria",
+    obra: "Almudena Grandes · 2010–2021",
+    nudo: "¿Puede la literatura devolver lo que la historia oficial borra?",
+    lectura: `Cuando Almudena Grandes publicó en 2010 *Inés y la alegría*, el primer volumen de lo que sería una serie de seis novelas, no solo estaba escribiendo ficción: estaba construyendo un monumento literario a los que perdieron la Guerra Civil española. El proyecto, titulado *Episodios de una guerra interminable*, se concibió desde el principio como un homenaje a los republicanos que combatieron, sufrieron el exilio o sobrevivieron en silencio dentro de una España que los había borrado de su propia historia. El paralelo con los *Episodios Nacionales* de Benito Pérez Galdós era explícito y buscado: si Galdós narró el siglo XIX desde las guerras napoleónicas hasta la Restauración, Grandes quería narrar la posguerra y sus consecuencias para la gente corriente que nunca sale en los libros de texto.
+
+El mundo que Grandes construye en estas novelas no es el de los generales ni el de los héroes, sino el de los vencidos: las mujeres que criaron a sus hijos solas mientras los maridos estaban en la cárcel o en el exilio, los hombres que aprendieron a callar para sobrevivir, los jóvenes que no supieron jamás por qué su familia tenía miedo. La posguerra española duró, en cierto modo, hasta la muerte del dictador en 1975, y sus heridas se prolongaron más allá: la Transición pactó una amnesia colectiva por la que muchos crímenes nunca se nombraron ni se juzgaron. Escribir sobre ello, cuatro décadas después, era en sí mismo un acto político.
+
+La elección del género también importa. Grandes desconfía del ensayo para hablar de estas cosas porque el ensayo necesita documentos, nombres propios, fechas verificables. La novela, en cambio, puede meterse en las casas, en las cocinas, en las conversaciones que no quedaron escritas. Puede imaginar lo que sintió una mujer al ver pasar a su marido detenido, o lo que pensó un niño cuando le dijeron que su abuelo había muerto «de una enfermedad» que todos sabían que no era ninguna enfermedad. Ese espacio imaginado no es menos verdadero que el dato histórico: da voz a quienes los archivos no guardaron.
+
+En 2007, la Ley de Memoria Histórica reconoció por primera vez en España el derecho de las familias a conocer el paradero de sus desaparecidos y a recuperar los restos de quienes yacían en fosas comunes sin nombre. La ley llegó tarde y fue muy criticada por insuficiente. Pero abrió una grieta en el silencio oficial. Grandes pertenece a la generación que creció justo entre dos mundos: los que recordaban en voz baja y los que empezaban a exigir que se hablara en voz alta. Sus novelas se insertan en ese debate —y lo alimentan— con una pregunta que la literatura puede formular mejor que cualquier otro discurso: ¿qué le hacemos a una persona cuando le negamos su historia?
+
+Almudena Grandes murió en noviembre de 2021, con la serie incompleta. El sexto y último volumen quedó inacabado. Esa incompletitud final resulta, a su manera, coherente: la memoria histórica española tampoco está cerrada. Hay todavía miles de personas cuyos familiares siguen sin tener una tumba donde llorar, y hay una sociedad que sigue debatiendo si es necesario desenterrar el pasado o si es preferible, como decían sus enemigos, «pasar página». La obra de Grandes no pasa página. Se obstina en escribir sobre ella hasta el final.`,
+    lexico: ["la posguerra", "la memoria histórica", "el exilio", "los vencidos", "la represalia", "la fosa común", "la amnesia colectiva", "el paradero", "la Transición", "recuperar", "reivindicar", "la herida abierta"],
+    comentario: [
+      "El texto sostiene que el paralelo con los *Episodios Nacionales* de Galdós fue «explícito y buscado». Analiza qué efecto produce esa elección de referente sobre la legitimidad literaria y política del proyecto de Grandes: ¿qué hereda de la tradición galdosiana y qué transforma?",
+      "El párrafo tercero opone el «ensayo» a la «novela» como formas de acceder al pasado. ¿Qué epistemología implica esta distinción? Valora si el argumento del texto —que lo imaginado puede ser «tan verdadero» como el dato histórico— tiene validez crítica o entraña algún riesgo metodológico.",
+      "La Ley de Memoria Histórica se describe como «tardía» e «insuficiente» pero capaz de «abrir una grieta en el silencio oficial». Analiza la función argumentativa de la metáfora de la grieta y contraponla a la metáfora adversaria de «pasar página»: ¿qué modelo de relación con el pasado propone cada imagen?",
+      "Analiza la función narrativa y argumentativa de la incompletitud final de la serie: ¿cómo convierte el texto esa circunstancia biográfica en un argumento sobre el estado de la memoria histórica en España?",
+      "En este curso hemos visto a Goya colocarse «del lado de las víctimas» (sesión 2) y a los muralistas mexicanos narrar la historia desde abajo (sesión 12). ¿En qué se parece y en qué se diferencia el proyecto de Grandes de esas tradiciones? Construye un argumento que precise la especificidad de la narrativa literaria frente a la imagen visual como instrumento de memoria colectiva.",
+    ],
+    debate: [
+      "¿Es la novela un instrumento más eficaz que la ley o el juicio para reparar injusticias históricas?",
+      "La Transición española se basó en un pacto de silencio sobre el franquismo. ¿Fue ese silencio una necesidad pragmática o una traición a las víctimas?",
+      "¿Tiene sentido exhumar fosas comunes décadas después de los hechos, o es preferible no desenterrar el pasado? ¿Existe un límite temporal para la justicia?",
+      "¿Conoces en tu propio país un episodio histórico sobre el que exista un «silencio oficial»? ¿Cómo se habla de él en la literatura o en la cultura popular?",
+    ],
+    referencias: [
+      { titulo: "Almudena Grandes", fuente: "Wikipedia", url: "https://es.wikipedia.org/wiki/Almudena_Grandes" },
+      { titulo: "Episodios de una guerra interminable", fuente: "Wikipedia", url: "https://es.wikipedia.org/wiki/Episodios_de_una_guerra_interminable" },
+    ],
+    lexicoDefs: {
+      "la posguerra": "Período inmediatamente posterior a una guerra, marcado por la reconstrucción y las secuelas del conflicto.",
+      "la memoria histórica": "Recuperación y reconocimiento colectivo de hechos del pasado, especialmente de injusticias o crímenes no reconocidos oficialmente.",
+      "el exilio": "Separación de una persona de su patria, voluntaria o forzosa, por razones políticas.",
+      "los vencidos": "Quienes resultaron derrotados en un conflicto. En la posguerra española, los republicanos que perdieron la guerra.",
+      "la represalia": "Acción tomada en respuesta a un agravio, especialmente el castigo ejercido por el bando vencedor sobre el vencido.",
+      "la fosa común": "Enterramiento colectivo, generalmente sin identificar, de víctimas de guerras, epidemias o represiones.",
+      "la amnesia colectiva": "Olvido social compartido e impuesto sobre hechos del pasado, a menudo como estrategia política.",
+      "el paradero": "Lugar donde se encuentra o se sabe que estuvo una persona desaparecida.",
+      "la Transición": "En España, período de cambio político entre la dictadura franquista y la democracia (1975–1978).",
+      "recuperar": "Volver a tener algo que se había perdido. // Rescatar del olvido personas, hechos o valores.",
+      "reivindicar": "Reclamar el reconocimiento o la restitución de algo a lo que se tiene o se cree tener derecho.",
+      "la herida abierta": "Metáfora para referirse a un trauma colectivo no resuelto que sigue causando dolor social.",
+    },
+    tarea: "Piensa en un hecho histórico de tu país que haya sido silenciado, distorsionado o tardíamente reconocido. En 200–250 palabras, explica qué ocurrió, por qué crees que se silenció y si existe alguna obra literaria, cinematográfica o artística que lo haya recuperado. Si no conoces ninguna, reflexiona sobre por qué crees que ese silencio persiste. Relaciona tu análisis con la función que el texto le atribuye a la novela frente al ensayo o la ley.",
+  },
 ];
 
 const METADATA = {
@@ -644,6 +692,7 @@ const METADATA = {
   10: { nivel: "C1", materia: ["Cine"],                tipo: "Cine"        },
   11: { nivel: "C1", materia: ["Arte", "Tecnología"],  tipo: "Debate"      },
   12: { nivel: "C1", materia: ["Arte", "Historia"],    tipo: "Pintura"     },
+  13: { nivel: "C1", materia: ["Literatura", "Historia"], tipo: "Narrativa" },
 };
 
 const ESTILOS = `
@@ -862,9 +911,9 @@ function Inicio({ ir }) {
     {
       id: "arte-c1",
       titulo: "Arte y sociedad en la cultura hispánica",
-      desc: "Doce sesiones para hablar, leer y debatir en español. De Las Meninas al algoritmo, pasando por Goya, Kahlo y el tango.",
+      desc: "Trece sesiones para hablar, leer y debatir en español. De Las Meninas a Almudena Grandes, pasando por Goya, Kahlo y el tango.",
       nivel: "C1", destreza: "Producción oral", tipo: "Mini web",
-      sesiones: 12, activo: true, img: "/course-arte-c1.png",
+      sesiones: 13, activo: true, img: "/course-arte-c1.png",
       ir: () => ir("curso"),
     },
     { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 6, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
