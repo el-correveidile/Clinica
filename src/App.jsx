@@ -1622,10 +1622,10 @@ function PortadaPoesia({ ir }) {
         <div style={{ maxWidth: 1120, margin: "0 auto" }}>
           <button onClick={() => ir(null)} style={{ color: "rgba(255,255,255,.55)", border: "none", background: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 24 }}>← blablaELE</button>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-            {["C1", "Expresión escrita", "Mini web", "6 sesiones"].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
+            {["C1", "Expresión escrita", "Mini web", "7 sesiones"].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
           </div>
           <h1 className="disp" style={{ fontSize: "clamp(2rem,5vw,3.4rem)", color: "#fff", margin: "0 0 12px", fontWeight: 600, lineHeight: 1.05 }}>Escuela de Poetas</h1>
-          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.</p>
+          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>Leer, analizar y escribir poesía en español. De Manrique a Machado, pasando por Lorca, Neruda y el slam.</p>
         </div>
       </section>
       <section style={{ padding: "clamp(36px,5vw,60px) clamp(20px,4vw,48px)" }}>
