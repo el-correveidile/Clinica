@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { SESIONES_POESIA } from "./sesionesPoesia.js";
 import { SESIONES_CINE } from "./sesionesCine.js";
+import { SESIONES_TALLER } from "./sesionesTaller.js";
 
 const SESIONES = [
   {
@@ -858,7 +859,7 @@ function Sello({ texto, color }) {
 function PlatformaHeader({ view, ir }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isHome = view === null;
-  const isCurso = view === "curso" || typeof view === "number" || view === "poesia" || view === "cine" || (typeof view === "string" && (view.startsWith("poe-") || view.startsWith("cine-")));
+  const isCurso = view === "curso" || typeof view === "number" || view === "poesia" || view === "cine" || view === "taller" || (typeof view === "string" && (view.startsWith("poe-") || view.startsWith("cine-") || view.startsWith("taller-")));
 
   function navIr(target) {
     setMenuOpen(false);
@@ -918,6 +919,7 @@ function Inicio({ ir }) {
     },
     { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique a Machado, pasando por Lorca, Neruda y el slam.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 7, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
     { id: "cine-b2", titulo: "Laboratorio de Cine", desc: "El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.", nivel: "B2", destreza: "Comprensión audiovisual", tipo: "Vídeo", sesiones: 6, activo: true, img: "/course-cine-film.png", ir: () => ir("cine") },
+    { id: "taller-c2", titulo: "Taller de Gramática", desc: "Gramática española en profundidad. Subjuntivo, concesivas, conectores del discurso y construcciones avanzadas del nivel C2.", nivel: "C2", destreza: "Expresión escrita", tipo: "Gramática", sesiones: 1, activo: true, img: "/texture-paper.png", ir: () => ir("taller") },
     { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false, img: "/students-bar.png" },
     { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false, img: null },
     { id: "lec-a2", titulo: "Relatos breves de viaje", desc: "Textos cortos de escritores viajeros por España e Hispanoamérica.", nivel: "A2", destreza: "Comprensión lectora", tipo: "Texto", activo: false, img: null },
@@ -1784,6 +1786,276 @@ function SesionPoesia({ idx, ir }) {
   );
 }
 
+function PortadaTaller({ ir }) {
+  return (
+    <div>
+      <section style={{ background: `linear-gradient(rgba(28,24,20,.80),rgba(28,24,20,.80)),url('/texture-paper.png') center/cover no-repeat`, padding: "clamp(40px,6vw,72px) clamp(20px,4vw,48px)", color: "#fff" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <button onClick={() => ir(null)} style={{ color: "rgba(255,255,255,.55)", border: "none", background: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 24 }}>← blablaELE</button>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+            {["C2", "Expresión escrita", "Gramática", `${SESIONES_TALLER.length} sesiones`].map(t => <Sello key={t} texto={t} color="rgba(255,255,255,.6)" />)}
+          </div>
+          <h1 className="disp" style={{ fontSize: "clamp(2rem,5vw,3.4rem)", color: "#fff", margin: "0 0 12px", fontWeight: 600, lineHeight: 1.05 }}>Taller de Gramática</h1>
+          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,.72)", maxWidth: 520, lineHeight: 1.6 }}>Gramática española en profundidad. Subjuntivo, concesivas, conectores y construcciones avanzadas del nivel C2.</p>
+        </div>
+      </section>
+      <section style={{ padding: "clamp(36px,5vw,60px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 16 }}>
+            {SESIONES_TALLER.map(s => (
+              <button key={s.n} onClick={() => ir(`taller-${s.n}`)} className="cartela"
+                style={{ textAlign: "left", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.12)", borderRadius: 6, padding: "22px 24px", cursor: "pointer", fontFamily: "inherit" }}>
+                <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 8 }}>
+                  Sesión {s.n} · {s.nivel}
+                </div>
+                <div className="disp" style={{ fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.2, marginBottom: 5 }}>{s.titulo}</div>
+                <div style={{ fontSize: ".87rem", color: "var(--tinta-suave)", marginBottom: 10 }}><em>{s.subtitulo}</em></div>
+                <div style={{ fontSize: ".83rem", color: "var(--bermellon)", fontStyle: "italic", lineHeight: 1.45 }}>{s.nudo}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SesionTaller({ idx, ir }) {
+  const sesion = SESIONES_TALLER[idx - 1];
+  const [mostrar, setMostrar] = useState({});
+  const [seleccion, setSeleccion] = useState({});
+  if (!sesion) return null;
+  const total = SESIONES_TALLER.length;
+
+  const toggleMostrar = (key) => setMostrar(prev => ({ ...prev, [key]: !prev[key] }));
+  const elegir = (ejId, itemId, opIdx) => {
+    setSeleccion(prev => ({ ...prev, [`${ejId}-${itemId}`]: opIdx }));
+    setMostrar(prev => ({ ...prev, [`${ejId}-${itemId}`]: true }));
+  };
+
+  return (
+    <div style={{ background: "var(--papel)", minHeight: "100vh" }}>
+      {/* Header */}
+      <div style={{ background: "var(--tinta)", color: "#fff", padding: "clamp(28px,4vw,48px) clamp(20px,4vw,48px)" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <button onClick={() => ir("taller")} style={{ color: "rgba(255,255,255,.5)", background: "none", border: "none", cursor: "pointer", fontFamily: "'Fraunces',serif", fontSize: ".78rem", letterSpacing: ".14em", textTransform: "uppercase", padding: 0, marginBottom: 20 }}>← Taller de Gramática</button>
+          <div className="disp" style={{ fontSize: ".62rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: 10 }}>Sesión {sesion.n} de {total} · {sesion.nivel}</div>
+          <h1 className="disp" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", margin: "0 0 6px", fontWeight: 600, lineHeight: 1.1 }}>{sesion.titulo}</h1>
+          <div style={{ fontSize: ".9rem", color: "rgba(255,255,255,.5)", marginBottom: 10 }}>{sesion.subtitulo}</div>
+          <div style={{ fontSize: ".97rem", color: "rgba(255,255,255,.75)", fontStyle: "italic" }}>«{sesion.nudo}»</div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 820, margin: "0 auto", padding: "clamp(32px,5vw,56px) clamp(20px,4vw,48px)" }}>
+
+        {/* Introducción */}
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Introducción</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          {sesion.introduccion.split("\n\n").map((p, i) => (
+            <p key={i} style={{ fontSize: "1.04rem", lineHeight: 1.78, color: "var(--tinta)", marginBottom: 18 }}
+               dangerouslySetInnerHTML={{ __html: p.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+          ))}
+        </section>
+
+        {/* Teoría */}
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Gramática</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            {sesion.teoria.map((bloque, bi) => (
+              <div key={bi} style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(20px,3vw,32px)" }}>
+                <div className="disp" style={{ fontSize: ".72rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--azul)", marginBottom: 14, fontWeight: 600 }}>{bloque.titulo}</div>
+                <div style={{ fontSize: ".97rem", lineHeight: 1.72, color: "var(--tinta)", marginBottom: bloque.ejemplos.length ? 18 : 0 }}
+                     dangerouslySetInnerHTML={{ __html: bloque.contenido.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+                {bloque.ejemplos.length > 0 && (
+                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                    {bloque.ejemplos.map((ej, ei) => (
+                      <div key={ei} style={{ padding: "10px 16px", background: "var(--fondo-alt)", borderRadius: 4, borderLeft: "3px solid var(--azul)" }}>
+                        <div style={{ fontFamily: "'Spectral',serif", fontSize: ".97rem", color: "var(--tinta)", fontStyle: "italic" }}
+                             dangerouslySetInnerHTML={{ __html: ej.frase.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+                        {ej.nota && <div style={{ fontSize: ".78rem", color: "var(--tinta-suave)", marginTop: 4 }}>{ej.nota}</div>}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Texto */}
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Texto para analizar</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(24px,4vw,40px)", marginBottom: 16 }}>
+            <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--tinta-suave)", marginBottom: 6 }}>{sesion.texto.titulo}</div>
+            <div style={{ fontSize: ".75rem", color: "var(--tinta-suave)", fontStyle: "italic", marginBottom: 20 }}>{sesion.texto.fuente}</div>
+            <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.05rem", lineHeight: 1.82, color: "var(--tinta)" }}
+                 dangerouslySetInnerHTML={{ __html: sesion.texto.cuerpo.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+          </div>
+          <div style={{ padding: "14px 18px", background: "var(--fondo-alt)", borderRadius: 4, border: "1px solid rgba(28,24,20,.1)", fontSize: ".9rem", lineHeight: 1.65, color: "var(--tinta-suave)" }}>
+            <strong style={{ color: "var(--tinta)" }}>Para observar: </strong>{sesion.texto.observaciones}
+          </div>
+        </section>
+
+        {/* Ejercicios */}
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Ejercicios</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+            {sesion.ejercicios.map((ej) => (
+              <div key={ej.id}>
+                <div className="disp" style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--bermellon)", marginBottom: 6, fontWeight: 600 }}>{ej.titulo}</div>
+                <p style={{ fontSize: ".9rem", color: "var(--tinta-suave)", marginBottom: 16, fontStyle: "italic" }}>{ej.instruccion}</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                  {ej.items.map((item, ii) => {
+                    const key = `${ej.id}-${item.id}`;
+                    const visible = mostrar[key];
+                    const sel = seleccion[key];
+                    return (
+                      <div key={item.id} style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "18px 20px" }}>
+                        <div style={{ fontSize: ".9rem", color: "var(--tinta-suave)", marginBottom: 2 }}>{ii + 1}.</div>
+                        <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.02rem", lineHeight: 1.65, color: "var(--tinta)", marginBottom: 14 }}
+                             dangerouslySetInnerHTML={{ __html: item.enunciado.replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/«(.*?)»/g, "«$1»") }} />
+
+                        {ej.tipo === "modo" && (
+                          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+                            {item.opciones.map((op, oi) => {
+                              const esCorrecta = item.correctas.includes(oi);
+                              const elegida = sel === oi;
+                              const mostrarFeedback = visible && elegida;
+                              return (
+                                <button key={oi} onClick={() => elegir(ej.id, item.id, oi)}
+                                  style={{ padding: "7px 14px", borderRadius: 4, border: `1px solid ${mostrarFeedback ? (esCorrecta ? "var(--verde)" : "var(--bermellon)") : "rgba(28,24,20,.25)"}`, background: mostrarFeedback ? (esCorrecta ? "rgba(90,140,110,.12)" : "rgba(200,80,60,.08)") : "transparent", color: "var(--tinta)", fontSize: ".88rem", cursor: "pointer", transition: "all .18s", fontFamily: "'Spectral',serif" }}>
+                                  {op}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
+
+                        {(ej.tipo === "correccion" || ej.tipo === "transformacion") && (
+                          <button onClick={() => toggleMostrar(key)} className="disp"
+                            style={{ fontSize: ".72rem", letterSpacing: ".12em", textTransform: "uppercase", padding: "6px 14px", border: "1px solid rgba(28,24,20,.25)", borderRadius: 4, background: "transparent", color: "var(--tinta-suave)", cursor: "pointer", marginBottom: 12 }}>
+                            {visible ? "Ocultar" : "Ver respuesta"}
+                          </button>
+                        )}
+
+                        {visible && (
+                          <div style={{ padding: "12px 16px", background: "rgba(90,140,110,.1)", border: "1px solid rgba(90,140,110,.3)", borderRadius: 4 }}>
+                            {ej.tipo === "correccion" && (
+                              <div style={{ fontSize: ".88rem", marginBottom: 8 }}>
+                                <span style={{ color: "var(--verde)", fontWeight: 600 }}>✓ </span>
+                                <span style={{ fontFamily: "'Spectral',serif", fontStyle: "italic" }}>{item.correccion}</span>
+                              </div>
+                            )}
+                            {ej.tipo === "transformacion" && (
+                              <div style={{ fontSize: ".88rem", marginBottom: 8 }}>
+                                <span style={{ color: "var(--verde)", fontWeight: 600 }}>→ </span>
+                                <span style={{ fontFamily: "'Spectral',serif", fontStyle: "italic" }}>{item.respuesta}</span>
+                              </div>
+                            )}
+                            <div style={{ fontSize: ".83rem", color: "var(--tinta-suave)", lineHeight: 1.6 }}
+                                 dangerouslySetInnerHTML={{ __html: item.explicacion.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+                          </div>
+                        )}
+
+                        {ej.tipo === "modo" && visible && (
+                          <div style={{ padding: "12px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 4, marginTop: 4 }}>
+                            <div style={{ fontSize: ".83rem", color: "var(--tinta-suave)", lineHeight: 1.6 }}
+                                 dangerouslySetInnerHTML={{ __html: item.explicacion.replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Interferencias */}
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Interferencias frecuentes</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          {sesion.interferencias.map((bloque, bi) => (
+            <div key={bi} style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "clamp(18px,3vw,28px)", marginBottom: 16 }}>
+              <div className="disp" style={{ fontSize: ".68rem", letterSpacing: ".2em", textTransform: "uppercase", color: "var(--oro)", marginBottom: 8, fontWeight: 600 }}>Hablantes de {bloque.lengua}</div>
+              <p style={{ fontSize: ".92rem", color: "var(--tinta-suave)", lineHeight: 1.65, marginBottom: 16 }}>{bloque.descripcion}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {bloque.errores.map((err, ei) => (
+                  <div key={ei} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                    <div style={{ padding: "10px 14px", background: "rgba(200,80,60,.07)", border: "1px solid rgba(200,80,60,.2)", borderRadius: 4 }}>
+                      <div style={{ fontSize: ".68rem", color: "var(--bermellon)", fontFamily: "'Fraunces',serif", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 4 }}>✗ Incorrecto</div>
+                      <div style={{ fontFamily: "'Spectral',serif", fontSize: ".92rem", fontStyle: "italic", color: "var(--tinta)" }}>{err.incorrecto}</div>
+                    </div>
+                    <div style={{ padding: "10px 14px", background: "rgba(90,140,110,.08)", border: "1px solid rgba(90,140,110,.25)", borderRadius: 4 }}>
+                      <div style={{ fontSize: ".68rem", color: "var(--verde)", fontFamily: "'Fraunces',serif", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 4 }}>✓ Correcto</div>
+                      <div style={{ fontFamily: "'Spectral',serif", fontSize: ".92rem", fontStyle: "italic", color: "var(--tinta)" }}>{err.correcto}</div>
+                    </div>
+                    {err.nota && <div style={{ gridColumn: "1/-1", fontSize: ".8rem", color: "var(--tinta-suave)", lineHeight: 1.55, padding: "0 4px" }}>{err.nota}</div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Tarea */}
+        <section style={{ marginBottom: 44, background: "#fff", border: "1px solid rgba(200,80,60,.25)", borderRadius: 6, padding: "clamp(20px,3vw,32px)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--bermellon)" }}>Tarea de producción</span>
+            <hr className="regla" style={{ flex: 1, borderColor: "rgba(200,80,60,.3)" }} />
+          </div>
+          <p style={{ fontSize: ".97rem", lineHeight: 1.72, color: "var(--tinta)", margin: 0 }}>{sesion.tarea}</p>
+        </section>
+
+        {/* Referencias */}
+        <section style={{ marginBottom: 44 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+            <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Para profundizar</span>
+            <hr className="regla" style={{ flex: 1 }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {sesion.referencias.map((r, i) => (
+              <a key={i} href={r.url} target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", flexDirection: "column", gap: 3, padding: "12px 16px", background: "var(--fondo-alt)", border: "1px solid rgba(28,24,20,.1)", borderRadius: 4, textDecoration: "none" }}>
+                <span className="disp" style={{ fontSize: ".85rem", color: "var(--tinta)" }}>{r.titulo}</span>
+                <span style={{ fontSize: ".75rem", color: "var(--tinta-suave)" }}>{r.fuente}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Navegación */}
+        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 24, borderTop: "1px solid rgba(28,24,20,.12)" }}>
+          <button onClick={() => ir(idx > 1 ? `taller-${idx - 1}` : "taller")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx > 1 ? `← Sesión ${idx - 1}` : "← Índice"}
+          </button>
+          <button onClick={() => ir(idx < total ? `taller-${idx + 1}` : "taller")} className="disp"
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--tinta-suave)", padding: 0 }}>
+            {idx < total ? `Sesión ${idx + 1} →` : "Índice →"}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [view, setView] = useState(null);
 
@@ -1808,7 +2080,11 @@ export default function App() {
                 ? <SesionPoesia idx={parseInt(view.split("-")[1])} ir={ir} />
                 : typeof view === "string" && view.startsWith("cine-")
                   ? <SesionCine idx={parseInt(view.split("-")[1])} ir={ir} />
-                  : <Sesion idx={view} ir={ir} />
+                  : view === "taller"
+                    ? <PortadaTaller ir={ir} />
+                    : typeof view === "string" && view.startsWith("taller-")
+                      ? <SesionTaller idx={parseInt(view.split("-")[1])} ir={ir} />
+                      : <Sesion idx={view} ir={ir} />
       }
       <footer style={{ borderTop: "1px solid rgba(28,24,20,.14)", marginTop: 20 }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "20px clamp(20px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
