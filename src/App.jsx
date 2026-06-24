@@ -1925,7 +1925,10 @@ function SesionTaller({ idx, ir }) {
                       <div key={item.id} style={{ background: "#fff", border: "1px solid var(--papel-2)", borderRadius: 6, padding: "18px 20px" }}>
                         <div style={{ fontSize: ".9rem", color: "var(--tinta-suave)", marginBottom: 2 }}>{ii + 1}.</div>
                         <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.02rem", lineHeight: 1.65, color: "var(--tinta)", marginBottom: 14 }}
-                             dangerouslySetInnerHTML={{ __html: item.enunciado.replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/«(.*?)»/g, "«$1»") }} />
+                             dangerouslySetInnerHTML={{ __html: (ej.tipo === "correccion" ? item.frase : ej.tipo === "transformacion" ? item.original : item.enunciado).replace(/\*(.*?)\*/g, "<em>$1</em>") }} />
+                        {ej.tipo === "transformacion" && (
+                          <div style={{ fontSize: ".85rem", color: "var(--azul)", fontStyle: "italic", marginBottom: 12 }}>{item.instruccion}</div>
+                        )}
 
                         {ej.tipo === "modo" && (
                           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
