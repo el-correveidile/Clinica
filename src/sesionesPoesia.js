@@ -500,4 +500,68 @@ Esta sesión termina donde empezaron todas las sesiones de la Escuela de Poetas:
       { titulo: "Poesía oral — tradición y formas contemporáneas", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Poes%C3%ADa_oral" },
     ],
   },
+  {
+    n: 7,
+    titulo: "Antonio Machado, poeta nacional",
+    autor: "Antonio Machado · 1875–1939",
+    periodo: "Generación del 98",
+    nudo: "¿Puede un poeta hablar por un pueblo entero?",
+    poema: {
+      titulo: "Caminante, son tus huellas (Proverbios y cantares, XXIX)",
+      nota: "De Campos de Castilla (1912). Este poema fue musicalizado en 1969 por Joan Manuel Serrat en el álbum Dedicado a Antonio Machado, poeta.",
+      texto: `Caminante, son tus huellas
+el camino y nada más;
+caminante, no hay camino,
+se hace camino al andar.
+Al andar se hace camino
+y al volver la vista atrás
+se ve la senda que nunca
+se ha de volver a pisar.
+Caminante, no hay camino,
+sino estelas en la mar.`,
+    },
+    lectura: `Antonio Machado pertenece a la Generación del 98, el grupo de escritores que reflexionó sobre la identidad española tras el desastre de 1898: la pérdida de Cuba, Puerto Rico y Filipinas, las últimas colonias, cerró un ciclo histórico y abrió una herida. Frente a esa crisis, los escritores del 98 miraron hacia Castilla —su paisaje árido, sus pueblos vaciados, sus nombres medievales— como si en ese territorio pudiera encontrarse algo verdadero, algo que quedara después de la derrota. Machado hizo ese viaje. Vivió en Soria, enseñó francés en un instituto, se casó allí con Leonor, que murió joven, y escribió *Campos de Castilla* (1912), el libro en que el paisaje deja de ser decorado para convertirse en estado de ánimo.
+
+El poema que leemos pertenece a *Proverbios y cantares*, una serie de piezas breves que funcionan como aforismos. Su filosofía de fondo es radical: no existe ningún camino previo, ningún destino marcado. El camino nace del propio acto de andar. Con eso, Machado anticipa —sin vocabulario técnico— un pensamiento que la filosofía existencialista del siglo XX formalizará décadas después: la existencia precede a la esencia, el ser humano se construye en el hacer, no en el ser dado. La última imagen —«sino estelas en la mar»— convierte la huella en algo que desaparece: lo que hiciste ya no puede rehacerse. El tiempo no vuelve.
+
+Machado murió en Collioure, Francia, el 22 de febrero de 1939, tres días después de cruzar la frontera a pie junto a su madre anciana, en la desbandada de los republicanos tras la caída de Barcelona. En su bolsillo encontraron un papel con un verso incompleto. Era la última anotación de un poeta que había cruzado el mismo umbral que él describía en sus poemas: el del no retorno. Su muerte en el exilio lo convirtió en símbolo. Pero ¿de qué? De la República para unos; del espíritu de Castilla para otros. El régimen franquista intentó apropiarse de su figura —su amor al paisaje castellano, ciertas imágenes religiosas, la austeridad— mientras silenciaba su militancia republicana. Un poeta puede ser más útil muerto que vivo si se le puede recortar.
+
+En 1969, el cantautor catalán Joan Manuel Serrat publicó *Dedicado a Antonio Machado, poeta*, un álbum íntegro con poemas del sevillano puestos en música. El gesto fue político sin necesidad de serlo explícitamente: bajo la dictadura franquista, un artista de lengua catalana rescataba a un poeta republicano para un público masivo. «Cantares» se convirtió en algo cercano a un himno, una canción que cualquiera podía tararear sin parecer subversivo, pero que decía, bien escuchada, que ningún camino está trazado de antemano. A veces la resistencia cultural habla en voz baja.
+
+La pregunta que el propio título de esta sesión plantea —«poeta nacional»— no tiene una respuesta cómoda. Los textos de Machado son lo bastante abiertos para que cualquiera los reclame: el caminante puede ser el exiliado, el emigrante interior, el ciudadano de a pie que avanza sin brújula. Esa universalidad es también una vulnerabilidad: el texto que puede significar todo corre el riesgo de que alguien lo use para significar cualquier cosa. Lo que sí es cierto es que pocas frases del español moderno han llegado tan lejos como «se hace camino al andar». Y que la pregunta de si eso basta para llamar a alguien poeta de un pueblo entero no la responden los poetas: la responden los lectores.`,
+    lexico: ["el caminante", "la huella", "la senda", "las estelas", "la Generación del 98", "el exilio", "el canon literario", "el paisaje interior", "lo efímero", "la apropiación", "cantar a alguien", "la resistencia cultural"],
+    lexicoDefs: {
+      "el caminante": "Persona que camina, que está de paso. En la tradición literaria, figura del ser humano como viajero en la vida.",
+      "la huella": "Señal que deja el pie al caminar. // Marca o rastro que algo o alguien deja tras de sí.",
+      "la senda": "Camino estrecho formado por el paso continuo de personas o animales.",
+      "las estelas": "Rastro visible que deja un barco al navegar. // Huella efímera que se borra con el tiempo.",
+      "la Generación del 98": "Grupo de escritores españoles que reflexionaron sobre la identidad y crisis de España tras la pérdida de sus últimas colonias en 1898.",
+      "el exilio": "Separación forzada de la propia patria, generalmente por razones políticas.",
+      "el canon literario": "Conjunto de obras y autores considerados modelos o referentes de una tradición cultural.",
+      "el paisaje interior": "Uso del paisaje externo —especialmente el castellano— como proyección del estado de ánimo del poeta.",
+      "lo efímero": "Lo que dura muy poco tiempo; lo pasajero e irrecuperable.",
+      "la apropiación": "Acto de hacer propio algo creado por otro, a veces desvirtuando su sentido original.",
+      "cantar a alguien": "Musicalizar y difundir la obra de un poeta; rendir homenaje cantado.",
+      "la resistencia cultural": "Uso de la cultura —música, literatura, arte— como forma de oposición a un régimen político opresivo.",
+    },
+    comentario: [
+      "En el poema, la palabra «camino» funciona a la vez como sustantivo negado («no hay camino») y como proceso afirmado («se hace camino al andar»). Analiza esta doble operación semántica: ¿qué modelo de existencia implica y en qué se diferencia de una visión del destino como algo dado?",
+      "Compara la metáfora de los ríos en Manrique («Nuestras vidas son los ríos / que van a dar en la mar») con la imagen de las «estelas en la mar» en Machado. ¿Qué visión del tiempo y de la experiencia humana transmite cada una? ¿En qué divergen filosóficamente?",
+      "El texto señala que Machado fue reclamado tanto por la República como por el franquismo. ¿Qué condiciones textuales del poema hacen posible esa doble apropiación? ¿Es esa ambigüedad una virtud literaria o una debilidad política?",
+      "Analiza la función de la anáfora «Caminante...» en el poema: ¿qué efecto produce sobre el tono y sobre la relación entre el poeta y el lector? ¿A quién se dirige exactamente ese apóstrofe?",
+      "En 1969 Serrat eligió musicalizar a Machado bajo la dictadura franquista. ¿En qué medida ese gesto puede leerse como acto de resistencia cultural? ¿Qué diferencia existe entre «homenajear» la obra de un poeta y «utilizar» esa obra para un fin extraliterario?",
+    ],
+    tarea: "El último verso del poema dice que el camino no existe «sino estelas en la mar». Piensa en un momento de tu vida en que hayas tenido que avanzar sin saber adónde ibas, sin modelo ni camino trazado de antemano. En 200–250 palabras, narra ese momento y relaciónalo con la idea de Machado: ¿qué huella dejaste?, ¿qué aprendiste «al volver la vista atrás»? Usa al menos tres palabras del léxico de esta sesión.",
+    debate: [
+      "¿Existe realmente el «poeta nacional»? ¿Puede un poema hablar por un pueblo entero, o eso es siempre una proyección de quien lo lee?",
+      "Machado fue expulsado de España y murió en el exilio. ¿Tiene sentido que el Estado que lo expulsó lo convirtiera después en icono cultural?",
+      "¿Puede la música popular rescatar a un poeta del olvido más eficazmente que los programas educativos o las ediciones críticas?",
+      "¿Hay en tu lengua materna un poeta que cumpla una función parecida a la de Machado: alguien con quien todo el mundo se identifica, cuyas frases son casi proverbios?",
+    ],
+    referencias: [
+      { titulo: "Antonio Machado — artículo enciclopédico", fuente: "Wikipedia en español", url: "https://es.wikipedia.org/wiki/Antonio_Machado" },
+      { titulo: "Campos de Castilla (texto completo)", fuente: "Biblioteca Virtual Miguel de Cervantes", url: "https://www.cervantesvirtual.com/obra-visor/campos-de-castilla--0/html/" },
+    ],
+    video: { src: "https://www.youtube.com/embed/gjmFiMVHxVU", titulo: "«Cantares» · Joan Manuel Serrat canta a Antonio Machado (Álbum 1969)" },
+  },
 ];

@@ -916,7 +916,7 @@ function Inicio({ ir }) {
       sesiones: 13, activo: true, img: "/course-arte-c1.png",
       ir: () => ir("curso"),
     },
-    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique al slam poetry: la lengua como materia viva.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 6, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
+    { id: "poesia-c1", titulo: "Escuela de Poetas", desc: "Leer, analizar y escribir poesía en español. De Manrique a Machado, pasando por Lorca, Neruda y el slam.", nivel: "C1", destreza: "Expresión escrita", tipo: "Mini web", sesiones: 7, activo: true, img: "/course-poesia.png", ir: () => ir("poesia") },
     { id: "cine-b2", titulo: "Laboratorio de Cine", desc: "El español a través del cine: análisis, debate y producción. Almodóvar, Buñuel, Saura y el cine contemporáneo.", nivel: "B2", destreza: "Comprensión audiovisual", tipo: "Vídeo", sesiones: 6, activo: true, img: "/course-cine-film.png", ir: () => ir("cine") },
     { id: "pron-b2", titulo: "Pronunciación y entonación", desc: "Patrones de acento, ritmo y entonación del español peninsular.", nivel: "B2", destreza: "Pronunciación", tipo: "Vídeo", activo: false, img: "/students-bar.png" },
     { id: "gram-b1", titulo: "Subjuntivo en contexto", desc: "El modo subjuntivo explicado a través de situaciones reales.", nivel: "B1", destreza: "Gramática", tipo: "Ficha", activo: false, img: null },
@@ -1679,6 +1679,19 @@ function SesionPoesia({ idx, ir }) {
             <div style={{ fontFamily: "'Spectral',serif", fontSize: "1.1rem", lineHeight: 2.1, whiteSpace: "pre-wrap", color: "var(--tinta)" }}>{sesion.poema.texto}</div>
           </div>
         </section>
+
+        {sesion.video && (
+          <section style={{ marginBottom: 44 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+              <span className="disp" style={{ fontSize: ".68rem", letterSpacing: ".22em", textTransform: "uppercase", color: "var(--tinta-suave)" }}>Escúchalo</span>
+              <hr className="regla" style={{ flex: 1 }} />
+            </div>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 6, overflow: "hidden", background: "#000" }}>
+              <iframe src={sesion.video.src} title={sesion.video.titulo} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} />
+            </div>
+            <div style={{ fontSize: ".78rem", color: "var(--tinta-suave)", marginTop: 8, fontStyle: "italic" }}>{sesion.video.titulo}</div>
+          </section>
+        )}
 
         <section style={{ marginBottom: 44 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
