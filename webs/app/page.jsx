@@ -13,8 +13,9 @@ export default function Home() {
           <p className="kicker">blablaELE — Hablamos español</p>
           <h1>Tres caminos, un mismo proyecto</h1>
           <p className="lead">
-            Enseñanza del español, tecnología al servicio del aula y creación cultural.
-            Elige por dónde quieres empezar.
+            Enseñanza del español y tecnología al servicio del aula, digitalización
+            aplicada al sector productivo, y cultura y creación. Elige por dónde
+            quieres empezar.
           </p>
         </div>
       </header>
