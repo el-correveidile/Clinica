@@ -18,6 +18,15 @@ export const AREAS = [
     proyectos: [
       {
         titulo: "blablaELE",
+        pslug: "blablaele",
+        detalle:
+          "Plataforma de recursos culturales para aprender y enseñar español como lengua extranjera. Su lema lo dice todo: HABLAMOS ESPAÑOL.",
+        puntos: [
+          "Arte y Sociedad en la cultura hispánica · C1 · 13 sesiones: de Las Meninas a Almudena Grandes, pasando por Goya, Frida Kahlo, el tango o el muralismo mexicano.",
+          "Escuela de Poetas · C1 · 7 sesiones: poesía hispánica de Manrique al slam contemporáneo.",
+          "Laboratorio de Cine · B2 · 6 sesiones: Buñuel, Erice, Saura, Almodóvar, Del Toro y el cine del siglo XXI.",
+          "Cada sesión incluye lectura analítica, léxico con definiciones, preguntas de comentario, tarea de escritura y debate.",
+        ],
         url: "https://www.blablaele.com",
         embed: true,
         descripcion:
@@ -25,6 +34,15 @@ export const AREAS = [
       },
       {
         titulo: "Clínica Cultural",
+        pslug: "clinica-cultural",
+        detalle:
+          "La clínica cultural y lingüística de español: un espacio que aplica el modelo clínico al aprendizaje — diagnóstico inicial, plan personalizado y tratamiento a través de la lengua y la cultura.",
+        puntos: [
+          "Diagnóstico lingüístico individualizado con prueba de nivel y entrevista.",
+          "Clínicas de conversación, Terapia escrita y Farmacia poética.",
+          "Inmersión cultural: Consultas Culinarias, Clínica del Sabor, safaris fotográficos.",
+          "Pensada para estudiantes internacionales y profesores visitantes.",
+        ],
         embed: false,
         color: "#B23A22",
         url: "https://www.clinicacultural.com",
@@ -33,6 +51,15 @@ export const AREAS = [
       },
       {
         titulo: "Lectoralium",
+        pslug: "lectoralium",
+        detalle:
+          "Plataforma de comprensión lectora para las Illes Balears que aplica el Programa de Reforç de la Competència Lectora con lecturas y actividades interactivas.",
+        puntos: [
+          "Para alumnado desde infantil hasta la ESO y la FP básica.",
+          "Lecturas breves con actividades de comprensión autocorregibles.",
+          "Ejes: aprender a leer, leer para aprender y leer por placer.",
+          "Bilingüe castellano / català.",
+        ],
         embed: false,
         color: "#0e6b6b",
         url: "https://www.lectoralium.com",
@@ -40,6 +67,14 @@ export const AREAS = [
       },
       {
         titulo: "Cognoscencia · Producción Escrita",
+        pslug: "cognoscencia",
+        detalle:
+          "Taller digital de producción escrita para niveles altos (C2): escribir mejor, con criterio y con oficio.",
+        puntos: [
+          "Tareas de escritura guiada con modelos y rúbricas.",
+          "Trabajo sobre géneros discursivos reales.",
+          "Retroalimentación orientada al perfeccionamiento estilístico.",
+        ],
         embed: false,
         color: "#27384B",
         url: "https://www.cognoscencia.com",
@@ -47,6 +82,14 @@ export const AREAS = [
       },
       {
         titulo: "PIO8 · Producción e Interacción Orales",
+        pslug: "pio8",
+        detalle:
+          "Plataforma de práctica de producción e interacción orales: hablar español en situaciones reales, con estructura y seguimiento.",
+        puntos: [
+          "Actividades de producción oral individual y de interacción.",
+          "Simulaciones de situaciones comunicativas cotidianas y profesionales.",
+          "Complemento ideal de las clínicas de conversación.",
+        ],
         embed: false,
         color: "#5A8C6E",
         url: "https://pio8.cognoscencia.com",
@@ -142,4 +185,12 @@ export const AREAS = [
 
 export function getArea(slug) {
   return AREAS.find((a) => a.slug === slug);
+}
+
+export function getProyectos() {
+  return AREAS.flatMap((a) => a.proyectos ?? []);
+}
+
+export function getProyecto(pslug) {
+  return getProyectos().find((p) => p.pslug === pslug);
 }

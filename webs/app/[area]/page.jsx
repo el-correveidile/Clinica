@@ -55,28 +55,21 @@ export default async function AreaPage({ params }) {
                       <h3>{p.titulo}</h3>
                       <p>{p.descripcion}</p>
                     </div>
-                    <a
-                      className="btn btn-primary"
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Abrir web ↗
-                    </a>
+                    <Link className="btn btn-primary" href={`/proyectos/${p.pslug}`}>
+                      Conocer el proyecto →
+                    </Link>
                   </div>
                   {p.embed ? (
                     <iframe src={p.url} title={p.titulo} loading="lazy" />
                   ) : (
-                    <a
+                    <Link
                       className="proyecto-pantalla"
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/proyectos/${p.pslug}`}
                       style={{ background: p.color || "var(--tinta)" }}
                     >
                       <span>{p.titulo.split("·")[0].trim()}</span>
                       <small>{p.url.replace("https://", "")}</small>
-                    </a>
+                    </Link>
                   )}
                 </article>
               ))}
