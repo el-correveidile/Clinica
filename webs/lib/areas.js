@@ -12,7 +12,7 @@ export const AREAS = [
     heroTitulo: "Aprende español como en una clínica: con diagnóstico y tratamiento",
     heroTexto:
       "Presencial en Estepona y online desde cualquier lugar. Evaluamos tus necesidades lingüísticas y culturales y diseñamos tu plan a medida.",
-    cierre: "Empecemos por el diagnóstico",
+    cierre: "",
     intro:
       "Aquí se recogen los proyectos educativos que he desarrollado, tanto propios como creados para otros docentes e instituciones. Cada uno es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
     proyectos: [
@@ -57,20 +57,6 @@ export const AREAS = [
         titulo: "Clases por videoconferencia",
         texto:
           "Aulas virtuales con seguimiento continuo: clases en directo por Zoom, materiales digitales y tareas fuera del aula que fomentan tu autonomía.",
-        tags: [],
-      },
-      {
-        etiqueta: "Diagnóstico",
-        titulo: "Diagnóstico lingüístico individualizado",
-        texto:
-          "Prueba de nivel y entrevista personalizada para identificar fortalezas, áreas de mejora y objetivos, y diseñar tu plan de aprendizaje.",
-        tags: [],
-      },
-      {
-        etiqueta: "Conversación",
-        titulo: "Clínicas de conversación",
-        texto:
-          "Práctica oral intensiva y simulaciones en contextos reales y profesionales, para que el español que aprendes sea el que de verdad se habla.",
         tags: [],
       },
     ],
