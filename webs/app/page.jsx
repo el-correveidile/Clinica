@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AREAS } from "../lib/areas";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -35,13 +36,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" style={{ paddingTop: 0, textAlign: "center" }}>
-        <div className="wrap">
+      <section id="contacto" style={{ paddingTop: 0 }}>
+        <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">Contacto</span>
           <h2>¿Hablamos?</h2>
-          <a className="btn btn-primary" href="mailto:javier@blablaele.com">
-            Escríbeme · javier@blablaele.com
-          </a>
+          <p className="sub">
+            Cuéntame qué necesitas y te respondo lo antes posible.
+          </p>
+          <ContactForm />
         </div>
       </section>
     </>

@@ -20,7 +20,7 @@ export const metadata = {
   title: "blablaELE · Webs y servicios",
   description:
     "El escaparate de blablaELE: educación, IA y desarrollo web, y cultura y creación literaria.",
-  icons: { icon: "https://www.blablaele.com/logo-blablaele.png" },
+  icons: { icon: "/logo-blablaele.png" },
   openGraph: {
     title: "blablaELE · Webs y servicios",
     description: "Educación · IA y desarrollo web · Cultura y creación literaria",
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <nav className="top">
           <div className="nav-in">
             <Link className="nav-brand" href="/">
-              <img src="https://www.blablaele.com/logo-blablaele.png" alt="blablaELE" />
+              <img src="/logo-blablaele.png" alt="blablaELE" />
               <span>blablaELE</span>
             </Link>
             <div className="nav-links">
@@ -52,8 +52,6 @@ export default function RootLayout({ children }) {
             <span>© blablaELE · Javier Benítez Láinez</span>
             <span>
               <a href="https://www.blablaele.com">blablaele.com</a>
-              {" · "}
-              <a href="https://www.clasesporzoom.com">clasesporzoom.com</a>
             </span>
           </div>
         </footer>

@@ -24,7 +24,7 @@ export const AREAS = [
         titulo: "Clases por videoconferencia",
         texto:
           "Aulas virtuales con seguimiento continuo: clases en directo por Zoom, materiales digitales y tareas fuera del aula que fomentan tu autonomía.",
-        tags: ["clasesporzoom.com"],
+        tags: [],
       },
       {
         etiqueta: "Diagnóstico",

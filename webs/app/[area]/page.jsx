@@ -63,9 +63,9 @@ export default async function AreaPage({ params }) {
       <section style={{ paddingTop: 0, textAlign: "center" }}>
         <div className="wrap">
           <h2>{area.cierre}</h2>
-          <a className="btn btn-primary" href="mailto:javier@blablaele.com">
-            Escríbeme · javier@blablaele.com
-          </a>
+          <Link className="btn btn-primary" href="/#contacto">
+            Ir al formulario de contacto
+          </Link>
         </div>
       </section>
     </>
