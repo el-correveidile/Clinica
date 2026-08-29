@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <header
         className="hero"
-        style={{ background: "linear-gradient(rgba(200,80,60,.92),rgba(168,62,45,.94)), #C8503C" }}
+        style={{ background: "linear-gradient(rgba(200,80,60,.82),rgba(168,62,45,.88)), url('/hero-library.jpg') center/cover no-repeat, #C8503C" }}
       >
         <div className="wrap">
           <p className="kicker">blablaELE — Hablamos español</p>
