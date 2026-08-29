@@ -43,7 +43,7 @@ export const AREAS = [
           "Inmersión cultural: Consultas Culinarias, Clínica del Sabor, safaris fotográficos.",
           "Pensada para estudiantes internacionales y profesores visitantes.",
         ],
-        embed: false,
+        embed: true,
         color: "#B23A22",
         url: "https://www.clinicacultural.com",
         descripcion:
