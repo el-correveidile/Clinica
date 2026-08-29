@@ -1,9 +1,0 @@
-{
-  "framework": null,
-  "buildCommand": null,
-  "installCommand": null,
-  "outputDirectory": null,
-  "redirects": [
-    { "source": "/olimpo-estepona", "destination": "/", "permanent": false }
-  ]
-}
