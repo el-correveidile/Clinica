@@ -25,7 +25,14 @@ export default async function AreaPage({ params }) {
 
   return (
     <>
-      <header className="hero" style={{ background: area.gradiente }}>
+      <header
+        className="hero"
+        style={{
+          background: area.imagen
+            ? `${area.velo}, url('${area.imagen}') center/cover no-repeat, ${area.gradiente}`
+            : area.gradiente,
+        }}
+      >
         <div className="wrap">
           <Link className="volver" href="/">← Todas las áreas</Link>
           <p className="kicker">{area.titulo}</p>

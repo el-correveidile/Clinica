@@ -5,6 +5,8 @@ export const AREAS = [
     titulo: "Educación",
     corto: "Educación",
     gradiente: "linear-gradient(160deg,#C8503C,#A83E2D)",
+    imagen: "/hero-educacion.jpg",
+    velo: "linear-gradient(rgba(200,80,60,.82),rgba(168,62,45,.88))",
     resumen:
       "Clases de español en Estepona y online, diagnóstico lingüístico personalizado, clínicas de conversación y formación.",
     heroTitulo: "Aprende español como en una clínica: con diagnóstico y tratamiento",
@@ -48,6 +50,8 @@ export const AREAS = [
     titulo: "IA y desarrollo web",
     corto: "IA y desarrollo web",
     gradiente: "linear-gradient(160deg,#27384B,#1C2735)",
+    imagen: "/hero-ia.jpg",
+    velo: "linear-gradient(rgba(39,56,75,.85),rgba(28,39,53,.9))",
     resumen:
       "Webs y mini webs para proyectos y negocios, e inteligencia artificial aplicada a la enseñanza.",
     heroTitulo: "Tecnología con acento humano",
@@ -84,6 +88,8 @@ export const AREAS = [
     titulo: "Cultura y creación literaria",
     corto: "Cultura y creación",
     gradiente: "linear-gradient(160deg,#5A8C6E,#41684F)",
+    imagen: "/hero-cultura.jpg",
+    velo: "linear-gradient(rgba(90,140,110,.84),rgba(65,104,79,.9))",
     resumen:
       "Talleres de escritura, inmersión cultural, producción audiovisual y cursos de arte, poesía y cine.",
     heroTitulo: "La lengua es la puerta; la cultura, la casa",
