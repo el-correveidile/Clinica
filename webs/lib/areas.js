@@ -304,6 +304,22 @@ export const AREAS = [
           "Tú, como personaje de tu propia novela: un retrato literario y un camino de lecturas a tu medida.",
       },
       {
+        titulo: "VersoVivo",
+        pslug: "versovivo",
+        detalle:
+          "Poesía que cobra vida: una experiencia inmersiva de videopoemas que combina el texto, la recitación y la música generada con IA. Libros de poesía que se leen, se escuchan y se ven.",
+        puntos: [
+          "Lectura inmersiva: el poema con su texto original y versiones traducidas.",
+          "Poema musicado: convertido en canción con videoclip.",
+          "Versión recitada: leída por su autor, locutores, actores u otros poetas.",
+        ],
+        url: "https://www.versovivo.ai",
+        embed: true,
+        color: "#1C1814",
+        descripcion:
+          "Poesía que cobra vida: videopoemas con texto, recitación y música generada por IA.",
+      },
+      {
         titulo: "Tu mente artificial",
         pslug: "tu-mente-artificial",
         detalle:
