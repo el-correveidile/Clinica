@@ -64,12 +64,20 @@ export default async function AreaPage({ params }) {
                       Abrir web ↗
                     </a>
                   </div>
-                  <iframe
-                    src={p.url}
-                    title={p.titulo}
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
+                  {p.embed ? (
+                    <iframe src={p.url} title={p.titulo} loading="lazy" />
+                  ) : (
+                    <a
+                      className="proyecto-pantalla"
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ background: p.color || "var(--tinta)" }}
+                    >
+                      <span>{p.titulo.split("·")[0].trim()}</span>
+                      <small>{p.url.replace("https://", "")}</small>
+                    </a>
+                  )}
                 </article>
               ))}
             </div>
@@ -77,6 +85,7 @@ export default async function AreaPage({ params }) {
         </section>
       )}
 
+      {area.servicios?.length > 0 && (
       <section>
         <div className="wrap">
           <span className="eyebrow">Servicios destacados</span>
@@ -102,6 +111,7 @@ export default async function AreaPage({ params }) {
           </div>
         </div>
       </section>
+      )}
 
       {area.cierre && (
         <section style={{ paddingTop: 0, textAlign: "center" }}>

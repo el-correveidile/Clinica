@@ -19,47 +19,41 @@ export const AREAS = [
       {
         titulo: "blablaELE",
         url: "https://www.blablaele.com",
+        embed: true,
         descripcion:
           "Plataforma de recursos culturales para aprender y enseñar español: Arte y Sociedad (C1), Escuela de Poetas (C1) y Laboratorio de Cine (B2).",
       },
       {
         titulo: "Clínica Cultural",
+        embed: false,
+        color: "#B23A22",
         url: "https://www.clinicacultural.com",
         descripcion:
           "La clínica cultural y lingüística de español: diagnóstico, tratamiento e inmersión.",
       },
       {
         titulo: "Lectoralium",
+        embed: false,
+        color: "#0e6b6b",
         url: "https://www.lectoralium.com",
         descripcion: "Proyecto de lectura y comprensión lectora en español.",
       },
       {
         titulo: "Cognoscencia · Producción Escrita",
+        embed: false,
+        color: "#27384B",
         url: "https://www.cognoscencia.com",
         descripcion: "Taller de producción escrita para niveles altos (C2).",
       },
       {
         titulo: "PIO8 · Producción e Interacción Orales",
+        embed: false,
+        color: "#5A8C6E",
         url: "https://pio8.cognoscencia.com",
         descripcion: "Práctica de producción e interacción orales.",
       },
     ],
-    servicios: [
-      {
-        etiqueta: "Presencial",
-        titulo: "Clases de español en Estepona",
-        texto:
-          "Grupos reducidos y clases particulares en el Aula Lingüístico-Cultural Olimpo, en el Centro Cultural Padre Manuel. Todos los niveles, del A1 al C2.",
-        tags: ["Aula Olimpo", "Todos los niveles"],
-      },
-      {
-        etiqueta: "Online",
-        titulo: "Clases por videoconferencia",
-        texto:
-          "Aulas virtuales con seguimiento continuo: clases en directo por Zoom, materiales digitales y tareas fuera del aula que fomentan tu autonomía.",
-        tags: [],
-      },
-    ],
+    servicios: [],
   },
   {
     slug: "ia-y-desarrollo-web",

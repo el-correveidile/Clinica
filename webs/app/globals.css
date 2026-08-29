@@ -72,6 +72,14 @@ a.caja .caja-cta{ font-family:var(--font-disp); font-size:.78rem; letter-spacing
 .proyecto-cabecera p{ margin:0; color:var(--tinta-suave); font-size:.88rem; }
 .proyecto-cabecera .btn{ align-self:flex-start; padding:9px 16px; font-size:.7rem; margin-top:4px; }
 .proyecto iframe{ display:block; width:100%; aspect-ratio:4/3; border:none; border-top:1px solid rgba(28,24,20,.09); background:var(--papel-2); }
+.proyecto-pantalla{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  aspect-ratio:4/3; text-decoration:none; color:#fff; text-align:center; padding:20px;
+  border-top:1px solid rgba(28,24,20,.09); transition:filter .25s;
+}
+.proyecto-pantalla:hover{ filter:brightness(1.12); }
+.proyecto-pantalla span{ font-family:var(--font-disp); font-style:italic; font-weight:600; font-size:clamp(1.4rem,2.5vw,2rem); line-height:1.1; }
+.proyecto-pantalla small{ font-size:.8rem; letter-spacing:.08em; opacity:.8; }
 
 .volver{ font-family:var(--font-disp); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.75); display:inline-block; margin-bottom:22px; }
 .volver:hover{ color:#fff; }
