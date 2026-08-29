@@ -13,6 +13,9 @@ export const AREAS = [
     heroTexto:
       "Presencial en Estepona y online desde cualquier lugar. Evaluamos tus necesidades lingüísticas y culturales y diseñamos tu plan a medida.",
     cierre: "",
+    proyectosEyebrow: "Proyectos educativos",
+    proyectosTitulo: "Webs y plataformas",
+    etiquetaProyecto: "Proyecto educativo",
     intro:
       "Aquí se recogen los proyectos educativos que he desarrollado, tanto propios como creados para otros docentes e instituciones. Cada uno es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
     proyectos: [
@@ -112,29 +115,157 @@ export const AREAS = [
     heroTexto:
       "Webs que cuentan historias e inteligencia artificial que ayuda a enseñar mejor. Del aula al navegador.",
     cierre: "¿Tienes un proyecto en mente?",
-    servicios: [
+    proyectosEyebrow: "IA y desarrollo web",
+    proyectosTitulo: "Webs, apps y formación",
+    etiquetaProyecto: "Proyecto digital",
+    intro:
+      "Aquí se recogen las webs y aplicaciones que he desarrollado para negocios, profesionales y otros proyectos, junto con la formación en inteligencia artificial que imparto. Cada una es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
+    proyectos: [
       {
-        etiqueta: "Desarrollo",
-        titulo: "Webs y mini webs",
-        texto:
-          "Sitios ligeros, rápidos y con identidad propia para negocios locales, proyectos culturales y educativos: de la portada al despliegue.",
-        tags: [],
+        titulo: "Por 2 Duros",
+        pslug: "por-2-duros",
+        detalle:
+          "Por 2 Duros es mi agencia de desarrollo web de bajo coste y entrega ultrarrápida: webs profesionales, rápidas y con identidad propia, listas en 48 horas y con pago único, sin cuotas ni sorpresas.",
+        puntos: [
+          "Landing pages, MVPs, e-commerce y aplicaciones a medida.",
+          "Entrega en 48 horas con pago único desde 299 €.",
+          "Del diseño al despliegue: la web sale andando.",
+        ],
+        url: "https://www.por2duros.com",
+        embed: true,
+        color: "#C8503C",
+        descripcion:
+          "Agencia de desarrollo web de bajo coste y entrega ultrarrápida: tu web lista en 48 horas.",
       },
       {
-        etiqueta: "IA + ELE",
-        titulo: "IA aplicada a la enseñanza",
-        texto:
-          "Formación para profesores de idiomas: cómo usar la inteligencia artificial para preparar clases, crear materiales y evaluar sin perder el criterio pedagógico.",
-        tags: [],
+        titulo: "PlanTurnos",
+        pslug: "planturnos",
+        detalle:
+          "PlanTurnos genera los cuadrantes de turnos de un equipo en segundos, cumpliendo el convenio del sector. Es mi apuesta por la digitalización aplicada al sector productivo: menos hojas de cálculo y más tiempo para el negocio.",
+        puntos: [
+          "Cuadrantes generados en segundos, con las reglas del convenio.",
+          "Acceso sin contraseñas: entrada con correo o móvil.",
+          "Cada organización trabaja en su propio espacio.",
+        ],
+        url: "https://alhendin.planturnos.com",
+        embed: true,
+        color: "#27384B",
+        descripcion:
+          "Cuadrantes de turnos para tu equipo, cumpliendo el convenio: digitalización del sector productivo.",
       },
       {
-        etiqueta: "Aulas digitales",
-        titulo: "Aulas virtuales y contenidos digitales",
-        texto:
-          "Diseño de aulas virtuales, mini webs didácticas y materiales interactivos para llevar tus cursos a internet.",
-        tags: [],
+        titulo: "Grupo Reinaldo",
+        pslug: "grupo-reinaldo",
+        detalle:
+          "Web corporativa desarrollada para el Grupo Reinaldo, un referente de la hostelería de Estepona desde 1981, bajo el lema «Donde siempre todo ha sucedido».",
+        puntos: [
+          "Un referente de la hostelería de Estepona desde 1981.",
+          "Presenta sus tres locales: Reinaldo, Reinaldo Centro y La Casa del Rey.",
+          "Diseño ligero y directo, pensado para el cliente que decide desde el móvil.",
+        ],
+        url: "https://www.reinaldo.group",
+        embed: false,
+        color: "#8C4A2F",
+        descripcion:
+          "Web corporativa del grupo hostelero de Estepona: Reinaldo, Reinaldo Centro y La Casa del Rey.",
+      },
+      {
+        titulo: "ambenit",
+        pslug: "ambenit",
+        detalle:
+          "Portfolio desarrollado para el fotógrafo Antonio Maldonado Benítez (ambenit): fotografía de recitales y directos con luz natural nocturna. «La noche bien contada, disparo a disparo».",
+        puntos: [
+          "Galería de fotografía nocturna de conciertos y recitales.",
+          "Selección y edición artística del propio autor.",
+          "Diseño pensado para que la imagen mande.",
+        ],
+        url: "https://www.ambenit.com",
+        embed: true,
+        color: "#1C1814",
+        descripcion:
+          "Portfolio del fotógrafo Antonio Maldonado Benítez: fotografía nocturna de recitales y directos.",
+      },
+      {
+        titulo: "Crónicas Kentukianas",
+        pslug: "cronicas-kentukianas",
+        detalle:
+          "Web desarrollada para Jorge, un profesor de español que cambió Menorca por Kentucky: sus crónicas de ida y vuelta, entre el aula y la batería.",
+        puntos: [
+          "Crónicas de ida y vuelta entre Menorca y Kentucky.",
+          "Una web pensada para leer, con la voz del autor por delante.",
+        ],
+        url: "https://www.laskentukianas.com",
+        embed: true,
+        color: "#0e6b6b",
+        descripcion:
+          "De Menorca a Kentucky: las crónicas de Jorge, un profe de español lanzado a la aventura.",
+      },
+      {
+        titulo: "Costa Companion",
+        pslug: "costa-companion",
+        detalle:
+          "Costa Companion conecta a residentes y visitantes extranjeros de la Costa del Sol con acompañantes lingüísticos para sus gestiones cotidianas. «A tu lado, en tu idioma».",
+        puntos: [
+          "Búsqueda de acompañantes por idioma, tipo de gestión y zona.",
+          "Pensada para la comunidad internacional de la Costa del Sol.",
+          "Del médico al banco: ayuda real en situaciones reales.",
+        ],
+        url: "https://www.costacompanion.com",
+        embed: true,
+        color: "#2F6F8F",
+        descripcion:
+          "Plataforma de acompañamiento lingüístico para residentes y visitantes de la Costa del Sol.",
+      },
+      {
+        titulo: "Espanias",
+        pslug: "espanias",
+        detalle:
+          "Espanias reúne proyectos reales donde la creatividad española y la inteligencia artificial se encuentran: formación, consultoría y herramientas de IA a medida para empresas y personas.",
+        puntos: [
+          "Catálogo de proyectos hechos con inteligencia artificial.",
+          "Formación y consultoría para empresas y particulares.",
+          "Herramientas de IA a medida.",
+        ],
+        url: "https://www.espanias.com",
+        embed: false,
+        color: "#A83E2D",
+        descripcion:
+          "Proyectos, formación y consultoría con IA: la España de la era de las inteligencias artificiales.",
+      },
+      {
+        titulo: "Auditoría de Procesos de IA",
+        pslug: "auditoria-ia",
+        detalle:
+          "Curso online sobre auditoría de procesos de inteligencia artificial: marcos regulatorios, gobernanza, ciclo de vida y práctica auditora. Impartido por mí en La Clase Digital.",
+        puntos: [
+          "Marcos regulatorios y gobernanza de la IA.",
+          "Ciclo de vida de los sistemas de IA y práctica auditora.",
+          "Cuatro sesiones online (septiembre de 2026).",
+        ],
+        url: "https://auditoria.laclasedigital.com",
+        embed: false,
+        color: "#3E4C63",
+        descripcion:
+          "Curso online de auditoría de sistemas de inteligencia artificial, en La Clase Digital.",
+      },
+      {
+        titulo: "Claude para la enseñanza",
+        pslug: "curso-claude",
+        detalle:
+          "Formación para docentes sobre Claude: cómo usar la inteligencia artificial para preparar clases, crear materiales y evaluar sin perder el criterio pedagógico. En La Clase Digital.",
+        puntos: [
+          "Pensado para profesores, con casos reales de aula.",
+          "De la preparación de clases a la creación de materiales.",
+          "La IA como ayudante del docente, no como sustituto.",
+        ],
+        url: "https://claude.laclasedigital.com",
+        embed: true,
+        color: "#5A8C6E",
+        descripcion:
+          "Curso de formación docente: domina Claude como herramienta para preparar y dar clase.",
       },
     ],
+    servicios: [],
   },
   {
     slug: "cultura-y-creacion-literaria",
@@ -193,4 +324,8 @@ export function getProyectos() {
 
 export function getProyecto(pslug) {
   return getProyectos().find((p) => p.pslug === pslug);
+}
+
+export function getAreaDeProyecto(pslug) {
+  return AREAS.find((a) => a.proyectos?.some((p) => p.pslug === pslug));
 }

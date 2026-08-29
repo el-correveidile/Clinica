@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProyectos, getProyecto } from "../../../lib/areas";
+import { getProyectos, getProyecto, getAreaDeProyecto } from "../../../lib/areas";
 
 export function generateStaticParams() {
   return getProyectos().map((p) => ({ proyecto: p.pslug }));
@@ -22,6 +22,7 @@ export default async function ProyectoPage({ params }) {
   const { proyecto: pslug } = await params;
   const p = getProyecto(pslug);
   if (!p) notFound();
+  const area = getAreaDeProyecto(pslug);
 
   return (
     <>
@@ -30,8 +31,8 @@ export default async function ProyectoPage({ params }) {
         style={{ background: p.color || "linear-gradient(160deg,#C8503C,#A83E2D)" }}
       >
         <div className="wrap">
-          <Link className="volver" href="/educacion">← Proyectos educativos</Link>
-          <p className="kicker">Proyecto educativo</p>
+          <Link className="volver" href={`/${area.slug}`}>← {area.titulo}</Link>
+          <p className="kicker">{area.etiquetaProyecto || "Proyecto"}</p>
           <h1>{p.titulo}</h1>
           <p className="lead">{p.descripcion}</p>
         </div>

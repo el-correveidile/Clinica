@@ -44,8 +44,8 @@ export default async function AreaPage({ params }) {
       {area.proyectos && (
         <section>
           <div className="wrap">
-            <span className="eyebrow">Proyectos educativos</span>
-            <h2>Webs y plataformas</h2>
+            <span className="eyebrow">{area.proyectosEyebrow || "Proyectos"}</span>
+            <h2>{area.proyectosTitulo || "Webs y plataformas"}</h2>
             <p className="sub">{area.intro}</p>
             <div className="proyectos">
               {area.proyectos.map((p) => (
