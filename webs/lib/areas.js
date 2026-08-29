@@ -281,36 +281,110 @@ export const AREAS = [
     heroTexto:
       "Talleres, rutas, cursos y proyectos donde el español se aprende creando: escribiendo, mirando, saboreando y rodando.",
     cierre: "¿Creamos algo juntos?",
-    servicios: [
+    proyectosEyebrow: "Cultura y creación literaria",
+    proyectosTitulo: "Proyectos y publicaciones",
+    etiquetaProyecto: "Proyecto cultural",
+    intro:
+      "Aquí se recogen los proyectos culturales y literarios en los que participo: revistas, exposiciones, experimentos de creación y jardines digitales. Cada uno es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
+    proyectos: [
       {
-        etiqueta: "Escritura",
-        titulo: "Talleres de escritura creativa",
-        texto:
-          "De la Terapia escrita a la Farmacia poética: talleres donde la escritura es a la vez ejercicio de lengua y experiencia creativa.",
-        tags: [],
+        titulo: "Quijotesco",
+        pslug: "quijotesco",
+        detalle:
+          "Quijotesco te convierte en personaje: un retrato literario (ficción declarada) hecho a tu medida y un camino de literatura española adaptado a tus temas. Un puente entre la lectura y la Clínica Cultural.",
+        puntos: [
+          "Un retrato quijotesco: tú, como personaje de tu propia novela.",
+          "Itinerarios de literatura española a la medida de tus temas.",
+          "Ficción declarada: ni análisis psicológico ni diagnóstico.",
+        ],
+        url: "https://quijotesco.com",
+        embed: true,
+        color: "#8C5A2B",
+        descripcion:
+          "Tú, como personaje de tu propia novela: un retrato literario y un camino de lecturas a tu medida.",
       },
       {
-        etiqueta: "Inmersión",
-        titulo: "Inmersión cultural",
-        texto:
-          "Rutas gastronómicas (las Consultas Culinarias, la Clínica del Sabor), safaris fotográficos con códigos QR y visitas a lugares emblemáticos.",
-        tags: [],
+        titulo: "Tu mente artificial",
+        pslug: "tu-mente-artificial",
+        detalle:
+          "Un experimento de creación asistida: explorar la inteligencia artificial como aliada para escribir, componer y pintar, y como recurso de primer orden para la enseñanza.",
+        puntos: [
+          "Escritores: la sección ya activa.",
+          "Música, pintura y enseñanza, en camino.",
+          "Creación con IA sin renunciar al criterio propio.",
+        ],
+        url: "https://www.tumenteartificial.com",
+        embed: true,
+        color: "#27384B",
+        descripcion:
+          "La IA como aliada de la creación —escritura, música, pintura— y como recurso para la enseñanza.",
       },
       {
-        etiqueta: "Audiovisual",
-        titulo: "Producción audiovisual",
-        texto:
-          "Escribe, graba y monta una miniserie web con tu grupo: guion, storyboard, interpretación y montaje como proyecto colaborativo.",
-        tags: [],
+        titulo: "Diario de un Instante",
+        pslug: "diario-de-un-instante",
+        detalle:
+          "Un diario público en forma de jardín digital: instantes fechados que capturan pensamientos y acciones para cultivar un año más consciente y con propósito.",
+        puntos: [
+          "Instantes fechados, archivo y buscador.",
+          "Un cuaderno vivo que crece día a día.",
+          "Disponible también por RSS.",
+        ],
+        url: "https://www.diariodeuninstante.com",
+        embed: true,
+        color: "#5A8C6E",
+        descripcion:
+          "Un jardín digital para cultivar un año más consciente: pensamientos y acciones, un instante a la vez.",
       },
       {
-        etiqueta: "Cursos",
-        titulo: "Cursos culturales",
-        texto:
-          "Arte, poesía y cine en español en blablaele.com: Arte y Sociedad (C1), Escuela de Poetas (C1) y Laboratorio de Cine (B2).",
-        tags: ["blablaele.com"],
+        titulo: "Mariano Maresca",
+        pslug: "mariano-maresca",
+        detalle:
+          "Web conmemorativa de la exposición homenaje a Mariano Maresca (Granada, 1945–2023), editor de Olvidos de Granada, celebrada en la Biblioteca de la Facultad de Derecho. Un proyecto de la Asociación Olvidos de Granada.",
+        puntos: [
+          "Memoria viva de una figura clave de la cultura granadina.",
+          "Recorrido por la exposición homenaje.",
+          "Editada por la Asociación Olvidos de Granada.",
+        ],
+        url: "https://www.marianomaresca.com",
+        embed: true,
+        color: "#B23A22",
+        descripcion:
+          "Exposición homenaje a Mariano Maresca, memoria viva de la cultura granadina.",
+      },
+      {
+        titulo: "Borja Satrústegui",
+        pslug: "borja-satrustegui",
+        detalle:
+          "Galería virtual del pintor Borja Satrústegui (San Sebastián, 1943), afincado en Granada: realismo social y expresionismo en dos salas —obra antigua y obra nueva— con consulta de obra disponible.",
+        puntos: [
+          "Dos salas: obra antigua y obra nueva.",
+          "Consulta de obra disponible y contacto.",
+          "Realismo social y expresionismo desde Granada.",
+        ],
+        url: "https://www.borjasatrustegui.online",
+        embed: false,
+        color: "#1C1814",
+        descripcion:
+          "Obra pictórica de Borja Satrústegui: realismo social y expresionismo desde Granada.",
+      },
+      {
+        titulo: "Olvidos de Granada",
+        pslug: "olvidos-de-granada",
+        detalle:
+          "Web de Olvidos de Granada, revista de acciones culturales editada por la Asociación Cultural Olvidos de Granada: literatura, pensamiento y memoria cultural granadina desde 1981.",
+        puntos: [
+          "Editoriales, Palabras, Piezas y Procesos, Apostillas y Soneto500.",
+          "Hemeroteca de la revista impresa.",
+          "Área de socios de la Asociación.",
+        ],
+        url: "https://www.olvidos.es",
+        embed: false,
+        color: "#6E3B5C",
+        descripcion:
+          "Revista de acciones culturales: literatura, pensamiento y memoria cultural granadina desde 1981.",
       },
     ],
+    servicios: [],
   },
 ];
 
