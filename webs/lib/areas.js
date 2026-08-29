@@ -13,6 +13,37 @@ export const AREAS = [
     heroTexto:
       "Presencial en Estepona y online desde cualquier lugar. Evaluamos tus necesidades lingüísticas y culturales y diseñamos tu plan a medida.",
     cierre: "Empecemos por el diagnóstico",
+    intro:
+      "Aquí se recogen los proyectos educativos que he desarrollado, tanto propios como creados para otros docentes e instituciones. Cada uno es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
+    proyectos: [
+      {
+        titulo: "blablaELE",
+        url: "https://www.blablaele.com",
+        descripcion:
+          "Plataforma de recursos culturales para aprender y enseñar español: Arte y Sociedad (C1), Escuela de Poetas (C1) y Laboratorio de Cine (B2).",
+      },
+      {
+        titulo: "Clínica Cultural",
+        url: "https://www.clinicacultural.com",
+        descripcion:
+          "La clínica cultural y lingüística de español: diagnóstico, tratamiento e inmersión.",
+      },
+      {
+        titulo: "Lectoralium",
+        url: "https://www.lectoralium.com",
+        descripcion: "Proyecto de lectura y comprensión lectora en español.",
+      },
+      {
+        titulo: "Cognoscencia · Producción Escrita",
+        url: "https://www.cognoscencia.com",
+        descripcion: "Taller de producción escrita para niveles altos (C2).",
+      },
+      {
+        titulo: "PIO8 · Producción e Interacción Orales",
+        url: "https://pio8.cognoscencia.com",
+        descripcion: "Práctica de producción e interacción orales.",
+      },
+    ],
     servicios: [
       {
         etiqueta: "Presencial",

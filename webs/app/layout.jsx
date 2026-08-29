@@ -36,8 +36,7 @@ export default function RootLayout({ children }) {
         <nav className="top">
           <div className="nav-in">
             <Link className="nav-brand" href="/">
-              <img src="/logo-blablaele.png" alt="blablaELE" />
-              <span>blablaELE</span>
+              <img src="/logo-blablaele-marca.png" alt="blablaELE · Hablamos español" />
             </Link>
             <div className="nav-links">
               <Link href="/educacion">Educación</Link>

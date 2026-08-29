@@ -41,6 +41,42 @@ export default async function AreaPage({ params }) {
         </div>
       </header>
 
+      {area.proyectos && (
+        <section>
+          <div className="wrap">
+            <span className="eyebrow">Proyectos educativos</span>
+            <h2>Webs y plataformas</h2>
+            <p className="sub">{area.intro}</p>
+            <div className="proyectos">
+              {area.proyectos.map((p) => (
+                <article className="proyecto" key={p.url}>
+                  <div className="proyecto-cabecera">
+                    <div>
+                      <h3>{p.titulo}</h3>
+                      <p>{p.descripcion}</p>
+                    </div>
+                    <a
+                      className="btn btn-primary"
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Abrir web ↗
+                    </a>
+                  </div>
+                  <iframe
+                    src={p.url}
+                    title={p.titulo}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section>
         <div className="wrap">
           <span className="eyebrow">Servicios destacados</span>

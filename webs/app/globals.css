@@ -20,10 +20,9 @@ img{ max-width:100%; }
 .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,4vw,48px); }
 
 nav.top{ position:sticky; top:0; z-index:20; background:rgba(242,235,221,.92); backdrop-filter:blur(8px); border-bottom:1px solid rgba(28,24,20,.08); }
-.nav-in{ display:flex; align-items:center; justify-content:space-between; padding:12px clamp(20px,4vw,48px); max-width:1080px; margin:0 auto; }
-.nav-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--tinta); }
-.nav-brand img{ height:36px; width:auto; }
-.nav-brand span{ font-family:var(--font-disp); font-style:italic; font-weight:600; font-size:1.05rem; }
+.nav-in{ display:flex; align-items:center; justify-content:space-between; padding:10px clamp(20px,4vw,48px); max-width:1080px; margin:0 auto; }
+.nav-brand{ display:flex; align-items:center; text-decoration:none; }
+.nav-brand img{ height:56px; width:auto; }
 .nav-links{ display:flex; gap:22px; }
 .nav-links a{ font-family:var(--font-disp); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--tinta-suave); text-decoration:none; }
 .nav-links a:hover, .nav-links a.is-active{ color:var(--bermellon); }
@@ -65,6 +64,13 @@ a.caja .caja-num{ font-family:var(--font-disp); font-style:italic; font-weight:6
 a.caja h3{ font-family:var(--font-disp); font-weight:600; font-size:clamp(1.5rem,3vw,2rem); line-height:1.12; margin:14px 0 10px; }
 a.caja p{ margin:0 0 22px; opacity:.9; font-size:.98rem; }
 a.caja .caja-cta{ font-family:var(--font-disp); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; opacity:.95; }
+
+.proyectos{ display:flex; flex-direction:column; gap:34px; }
+.proyecto{ background:#fff; border:1px solid rgba(28,24,20,.09); border-radius:10px; overflow:hidden; }
+.proyecto-cabecera{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:20px 24px; flex-wrap:wrap; }
+.proyecto-cabecera h3{ font-family:var(--font-disp); font-weight:600; font-size:1.35rem; margin:0 0 4px; }
+.proyecto-cabecera p{ margin:0; color:var(--tinta-suave); font-size:.95rem; max-width:640px; }
+.proyecto iframe{ display:block; width:100%; aspect-ratio:16/9; border:none; border-top:1px solid rgba(28,24,20,.09); background:var(--papel-2); }
 
 .volver{ font-family:var(--font-disp); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:rgba(255,255,255,.75); display:inline-block; margin-bottom:22px; }
 .volver:hover{ color:#fff; }
