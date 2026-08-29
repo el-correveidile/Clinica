@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/olimpo-estepona", "destination": "/", "permanent": false }
+  ]
+}
