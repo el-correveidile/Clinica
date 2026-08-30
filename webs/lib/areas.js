@@ -138,6 +138,23 @@ export const AREAS = [
           "Agencia de desarrollo web de bajo coste y entrega ultrarrápida: tu web lista en 48 horas.",
       },
       {
+        titulo: "WordNext",
+        pslug: "wordnext",
+        detalle:
+          "WordNext migra webs hechas en WordPress a Next.js: la misma página, hasta diez veces más rápida, con garantía SEO y precio cerrado. De un CMS pesado a una web moderna sin perder ni una posición en Google.",
+        puntos: [
+          "De WordPress a Next.js en 4 pasos.",
+          "Garantía SEO: no pierdes ni una posición en Google.",
+          "Precio cerrado, sin sorpresas.",
+          "Comparativa en vivo: la misma página, dos tecnologías.",
+        ],
+        url: "https://www.wordnext.tech",
+        embed: false,
+        color: "#2D3A8C",
+        descripcion:
+          "Migramos tu WordPress a Next.js: la misma web, hasta 10× más rápida.",
+      },
+      {
         titulo: "PlanTurnos",
         pslug: "planturnos",
         detalle:
