@@ -134,7 +134,7 @@ export const AREAS = [
           "Comparativa en vivo: la misma página, dos tecnologías.",
         ],
         url: "https://www.wordnext.tech",
-        embed: false,
+        embed: true,
         color: "#2D3A8C",
         descripcion:
           "Migramos tu WordPress a Next.js: la misma web, hasta 10× más rápida.",
