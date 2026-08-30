@@ -122,23 +122,8 @@ export const AREAS = [
       "Aquí se recogen las webs y aplicaciones que he desarrollado para negocios, profesionales y otros proyectos, junto con la formación en inteligencia artificial que imparto. Cada una es una web viva: explórala aquí mismo o ábrela en su propia pestaña.",
     proyectos: [
       {
-        titulo: "Por 2 Duros",
-        pslug: "por-2-duros",
-        detalle:
-          "Por 2 Duros es mi agencia de desarrollo web de bajo coste y entrega ultrarrápida: webs profesionales, rápidas y con identidad propia, listas en 48 horas y con pago único, sin cuotas ni sorpresas.",
-        puntos: [
-          "Landing pages, MVPs, e-commerce y aplicaciones a medida.",
-          "Entrega en 48 horas con pago único desde 299 €.",
-          "Del diseño al despliegue: la web sale andando.",
-        ],
-        url: "https://www.por2duros.com",
-        embed: true,
-        color: "#C8503C",
-        descripcion:
-          "Agencia de desarrollo web de bajo coste y entrega ultrarrápida: tu web lista en 48 horas.",
-      },
-      {
         titulo: "WordNext",
+        destacado: true,
         pslug: "wordnext",
         detalle:
           "WordNext migra webs hechas en WordPress a Next.js: la misma página, hasta diez veces más rápida, con garantía SEO y precio cerrado. De un CMS pesado a una web moderna sin perder ni una posición en Google.",
@@ -153,6 +138,22 @@ export const AREAS = [
         color: "#2D3A8C",
         descripcion:
           "Migramos tu WordPress a Next.js: la misma web, hasta 10× más rápida.",
+      },
+      {
+        titulo: "Por 2 Duros",
+        pslug: "por-2-duros",
+        detalle:
+          "Por 2 Duros es mi agencia de desarrollo web de bajo coste y entrega ultrarrápida: webs profesionales, rápidas y con identidad propia, listas en 48 horas y con pago único, sin cuotas ni sorpresas.",
+        puntos: [
+          "Landing pages, MVPs, e-commerce y aplicaciones a medida.",
+          "Entrega en 48 horas con pago único desde 299 €.",
+          "Del diseño al despliegue: la web sale andando.",
+        ],
+        url: "https://www.por2duros.com",
+        embed: true,
+        color: "#C8503C",
+        descripcion:
+          "Agencia de desarrollo web de bajo coste y entrega ultrarrápida: tu web lista en 48 horas.",
       },
       {
         titulo: "PlanTurnos",

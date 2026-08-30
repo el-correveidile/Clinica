@@ -81,6 +81,14 @@ a.caja .caja-cta{ font-family:var(--font-disp); font-size:.78rem; letter-spacing
 .proyecto-pantalla span{ font-family:var(--font-disp); font-style:italic; font-weight:600; font-size:clamp(1.4rem,2.5vw,2rem); line-height:1.1; }
 .proyecto-pantalla small{ font-size:.8rem; letter-spacing:.08em; opacity:.8; }
 
+.proyecto-destacado{ grid-column:1 / -1; border:2px solid var(--bermellon); }
+.proyecto-destacado iframe, .proyecto-destacado .proyecto-pantalla{ aspect-ratio:21/9; }
+.badge-destacado{
+  display:inline-block; font-family:var(--font-disp); font-size:.62rem; letter-spacing:.2em;
+  text-transform:uppercase; background:var(--bermellon); color:#fff; padding:3px 12px;
+  border-radius:20px; margin-bottom:8px;
+}
+
 .proyecto-puntos{ margin:18px 0 0; padding:0 0 0 2px; list-style:none; display:flex; flex-direction:column; gap:12px; }
 .proyecto-puntos li{ position:relative; padding-left:26px; color:var(--tinta-suave); }
 .proyecto-puntos li::before{ content:"—"; position:absolute; left:0; color:var(--bermellon); font-weight:600; }

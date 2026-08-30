@@ -49,9 +49,13 @@ export default async function AreaPage({ params }) {
             <p className="sub">{area.intro}</p>
             <div className="proyectos">
               {area.proyectos.map((p) => (
-                <article className="proyecto" key={p.url}>
+                <article
+                  className={p.destacado ? "proyecto proyecto-destacado" : "proyecto"}
+                  key={p.url}
+                >
                   <div className="proyecto-cabecera">
                     <div>
+                      {p.destacado && <span className="badge-destacado">Destacado</span>}
                       <h3>{p.titulo}</h3>
                       <p>{p.descripcion}</p>
                     </div>
