@@ -4,8 +4,8 @@ const nextConfig = {
     return [
       {
         source: "/olimpo-estepona",
-        destination: "https://webs.blablaele.com/",
-        permanent: true,
+        destination: "https://app.wordnext.tech/configurar",
+        permanent: false,
       },
     ];
   },
